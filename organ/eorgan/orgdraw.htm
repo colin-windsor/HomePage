@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<BODY BGCOLOR="#ffffEE">
+<FONT color=#990000 size=5>
+<H1>Colin and Mo's home organ</H1>
+<DIV id=controlDiv>
+<OBJECT id=d1 
+style="LEFT: 10px; WIDTH: 610px; POSITION: absolute; TOP: 40px; HEIGHT: 440px" 
+classid=CLSID:B6FFC24C-7E13-11D0-9B47-00C04FC2F51D></OBJECT></DIV>
+<DIV></DIV>
+<P> This section is written in Javascript. It may not show if this is deactivated. 
+<SCRIPT language=JScript event=onload for=window>
+m=d1.PixelLibrary; 
+ds=m.NewDrawingSurface(); 
+ds.Font("HELVETICA",16,0,0,0,0);
+xm=-300;xx=300;ym=-200;yx=200
+
+noct=4
+keyboard(-70,-60,4,0)
+ds.Text("Swell",90,-30);
+ds.Line(-110,-25,-70,-25);//Wire to merge
+
+keyboard(-70,-10,4,0)
+ds.Text("Great",90,20);
+ds.Line(-110,-5,-70,-5);//Wire to merge
+ds.Line(-170,-25,-140,-25);//Wire to merge
+ds.Line(-190,0,-190,40);//Wire to merge
+
+
+keyboard(-70,140,2.3,1)
+ds.Text("Pedals",120,180);
+ds.Line(-80,140,-70,140);//Wire to merge
+ds.Line(-80,140,-80,20);//Wire to merge
+ds.Line(-80,20,-180,20);//Wire to merge
+ds.Line(-180,20,-180,0);//Wire to merge
+
+
+speaker(-250,-150,25)
+speaker(250,-150,25)
+speaker(-250,100,27)
+speaker(250,100,27)
+speaker(0,100,27)
+speaker(-200,120,62)
+ds.Text("Speakers",-0,90);
+ds.Text("Woofer",-200,200);
+ds.Line(-237,-125,-237,100);//Wire to speaker
+ds.Line(-223,105,-200,105);//Wire to speaker
+ds.Line(-110,105,0,105);//Wire to speaker
+ds.Line(25,105,250,105);//Wire to speaker
+ds.Line(263,-125,263,100);//Wire to speaker
+ds.Line(-155,110,-155,120);//Wire to woofer
+
+rect(-38,-178,100,62)
+rect(-40,-180,105,67.5)
+ds.Text("Display",-20,-130);
+
+rect(-200,80,90,30)
+ds.Text("Amplifier",-190,105);
+
+rect(-200,40,90,30)
+ds.Text("Sound card",-190,58);
+
+rect(140,40,38,100)
+ds.Text("Computer",180,90);
+
+ds.Line(155,40,155,-140);//wire to display         
+ds.Line(155,-140,62,-140);         
+
+
+rect(-40,-75,100,-20)
+ds.Text("Keyboard",-25,-78);
+
+ds.Line(150,40,150,-80);//wire to computer display         
+ds.Line(150,-80,62,-80);
+
+
+rect(220,0,15,15)
+ds.Text("USB hub",180,-10);
+ds.Line(175,40,175,0);//wire to USB         
+ds.Line(175,0,220,0);         
+
+ds.Line(140,50,-110,50);//Wire to soundcard
+ds.Line(-155,70,-155,80);//Wire soundcard to amp
+
+ds.Line(140,50,-110,50);//Wire to soundcard
+ds.Line(140,50,-110,50);//Wire to soundcard
+
+
+rect(-200,-30,30,30)
+rect(-140,-30,30,30)
+ds.Text("Midi merges",-190,-5);
+
+arial(165,-150,20)
+ds.Text("TV arial",175,-150);
+ds.Line(165,40,165,-150);//wire to  TV         
+
+ds.Line(170,40,170,-80);//wire to phone         
+ds.Line(170,-80,300,-80);//wire to phone         
+ds.Text("Phone line",200,-60);
+
+
+d1.Image=ds.Image; 
+d1.Start();
+
+function arial(xpos,ypos,hig) {
+xp=xpos
+yp=ypos
+xq=xp-hig/2
+yq=yp-hig
+for(i=0; i<5; i++) {
+ ds.Line(xp,yp,xq,yq);         
+ xq=xq+hig/4
+ }
+}
+
+
+function rect(xpos,ypos,wid,hig) {
+xp=xpos
+xq=xp+wid
+yp=ypos
+yq=yp+hig
+ds.Line(xp,yp,xq,yp);         
+ds.Line(xq,yp,xq,yq);         
+ds.Line(xq,yq,xp,yq);         
+ds.Line(xp,yq,xp,yp);
+}
+
+
+function speaker(xpos,ypos,wid) {
+xp=xpos
+xq=xp+wid
+yp=ypos
+yq=yp+wid
+rad=wid
+ds.Line(xp,yp,xq,yp);         
+ds.Line(xq,yp,xq,yq);         
+ds.Line(xq,yq,xp,yq);         
+ds.Line(xp,yq,xp,yp);
+ds.Line(xp,yp,xq,yq);         
+ds.Line(xp,yq,xq,yp);
+ds.ArcDegrees(xp,yp,0,360,rad,rad);   // Make circles
+         
+
+
+}
+
+
+function keyboard(xpos,ypos,noct,io) {
+x=xpos
+dx=5
+xw=4
+yw=45
+yb=12.5
+if(io==1){
+ dx=10
+ xw=2.5
+ yw=45
+ yb=40
+}
+yp=ypos
+nk=8*noct
+for(i=0; i<nk; i++) {
+xp=x
+xq=x+xw
+yp=ypos
+yq=yp+yw
+ds.Line(xp,yp,xq,yp);         
+ds.Line(xq,yp,xq,yq);         
+ds.Line(xq,yq,xp,yq);         
+ds.Line(xp,yq,xp,yp);
+j=i
+
+//ds.Text(i,-230+30*i,-20);
+//ds.Text(j,-230+30*i,-40);
+
+if((j==0) || (j==1) || (j==3) || (j==4) || (j==5) || (j==8) || (j==9) || (j==11) || (j==12) || (j==13) ||(j==16) || (j==17) || (j==19) || (j==20) || (j==21) || (j==24) || (j==25) || (j==27) || (j==28) || (j==29)) {
+xp=x+0.7*xw
+xq=x+1.6*xw
+yq=yp+0.6*yw
+if(io==1){
+ xp=x+0.7*xw+io*3
+ xq=x+1.6*xw+io*3
+ yq=yp+0.25*yw
+}
+ds.Line(xp,yp,xq,yp);         
+ds.Line(xq,yp,xq,yq);         
+ds.Line(xq,yq,xp,yq);         
+ds.Line(xp,yq,xp,yp);
+}
+x=x+dx        
+ }
+
+
+
+
+}
+</SCRIPT>
+</FONT></BODY></HTML>

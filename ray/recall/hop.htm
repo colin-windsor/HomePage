@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>hop</TITLE>
+<META NAME="Template" CONTENT="C:\Program Files\Microsoft Office\Office\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff">
+
+<PRE>DECLARE SUB graph ()
+DECLARE SUB plo (k!)
+    CLS : RESTORE
+    PRINT "Hopfield model"
+    CONST m = 5                       ' Edge side
+    CONST n = 2                       ' Number of pictures
+    CONST ipl = 1                    ' Plotting switch
+    DIM SHARED a(m * m, n)              ' Pictures
+    DIM SHARED t(m * m, m * m)         ' Synapses
+    RANDOMIZE 2
+    IF ipl = 1 THEN CALL graph
+    PRINT "Read images"
+    FOR k = n TO 0 STEP -1
+st:     LOCATE 3 + 7 * k
+        READ p$: IF ipl = 0 THEN PRINT p$
+        FOR i = 1 TO m * m
+            READ a(i, k)
+            NEXT i
+        plo (k)
+       
+        IF k &lt;&gt; 0 THEN
+            LOCATE 2, 1: PRINT "Memorise    "
+            FOR j = 1 TO m * m
+                FOR i = 1 TO m * m
+                    IF i &lt;&gt; j THEN
+                        y = 1 + (2 * a(i, k) - 1) * (2 * a(j, k) - 1)
+                        t(i, j) = t(i, j) + y / 2
+                        END IF
+                    NEXT i
+                NEXT j
+            END IF
+            IF k &gt; 0 THEN INPUT i$
+        NEXT k
+
+    LOCATE 1, 1: PRINT p$; "   "
+    LOCATE 2, 1: PRINT "Recall      "
+    INPUT i$
+    FOR it = 1 TO m * m * 5
+        k = 0
+        s = 0                   ' Threshold sum
+        j = INT(m * m * RND + 1)
+        FOR i = 1 TO m * m
+            IF i &lt;&gt; j THEN
+                IF a(i, 0) = 1 THEN s = s + t(i, j):  ELSE s = s + n - t(i, j)
+                END IF
+            NEXT i
+        IF s &lt; n * (m * m - 1) / 2 THEN a(j, 0) = 0:  ELSE a(j, 0) = 1
+        LOCATE 4, 1
+        plo (k)
+        mt = it / (m * m)
+        IF INT(mt) = mt THEN LOCATE 5, 1: PRINT "Iteration "; mt: INPUT i$
+        NEXT it
+        INPUT i$
+        GOTO st
+
+    DATA "      man"
+    DATA 0,0,1,0,0
+    DATA 1,1,1,1,1
+    DATA 0,0,1,0,0
+    DATA 0,1,0,1,0
+    DATA 1,0,0,0,1
+    DATA "      dog"
+    DATA 0,0,0,0,0
+    DATA 0,0,0,0,0
+    DATA 0,1,0,0,1
+    DATA 1,1,1,1,1
+    DATA 0,1,0,1,0
+    DATA "     seed1"
+    DATA 0,0,1,0,0
+    DATA 0,0,1,0,0
+    DATA 0,0,0,0,0
+    DATA 0,0,0,0,0
+    DATA 0,0,0,0,0
+    DATA "     seed2"
+    DATA 0,0,0,0,0
+    DATA 0,0,0,0,0
+    DATA 0,0,0,0,0
+    DATA 1,1,0,0,0
+    DATA 0,0,0,0,0
+    DATA "     noise"
+    DATA 0,0,0,0,0
+    DATA 0,1,0,1,1
+    DATA 0,1,1,0,0
+    DATA 0,0,1,1,0
+    DATA 1,0,0,0,1
+
+SUB graph
+        SCREEN 8
+        VIEW (0, 0)-(499, 199)
+        WINDOW (0, 0)-(12, 12)
+END SUB
+
+SUB mat
+     LOCATE 1, 20
+     FOR i = 1 TO m * m
+          LOCATE 1 + i, 20
+          FOR j = 1 TO m * m
+               PRINT USING "#"; t(i, j);
+          NEXT j
+          PRINT
+     NEXT i
+END SUB
+
+SUB plo (k)
+        IF ipl = 0 THEN
+          FOR i = 1 TO m * m
+            PRINT a(i, k);
+            IF i / m = INT(i / m) THEN PRINT
+            NEXT i
+        END IF
+        
+        IF ipl = 1 THEN
+          iy = m
+          IF k = 0 THEN sx = 0: sy = 0
+          IF k = 1 THEN sx = 7: sy = 0
+          IF k = 2 THEN sx = 7: sy = 6
+          LINE (sx, sy)-(m + sx, m + sy), 14, B
+          FOR i = 1 TO m * m
+            ix = ix + 1
+            IF a(i, k) &gt; 0 THEN
+              LINE (ix - 1 + sx, iy - 1 + sy)-(ix + sx, iy + sy), 14, B
+              PAINT (ix - .5 + sx, iy - .5 + sy), 15, 14
+            ELSE
+              PAINT (ix - .5 + sx, iy - .5 + sy), 0, 14
+            END IF
+            IF i / m = INT(i / m) THEN ix = 0: iy = iy - 1
+            NEXT i
+        END IF
+END SUB</PRE></BODY>
+</HTML>

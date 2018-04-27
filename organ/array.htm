@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>Array Sample</TITLE>
+
+
+</HEAD>
+
+<BODY BGCOLOR=WHITE TOPMARGIN=15 LEFTMARGIN=20>
+ 
+
+<OBJECT ID="DAControl"
+  STYLE="position:absolute; left:5; top:40;width:900;height:200;z-index: -1" 
+  CLASSID="CLSID:B6FFC24C-7E13-11D0-9B47-00C04FC2F51D">
+</OBJECT>
+
+<SCRIPT LANGUAGE="JScript">
+<!--
+      array();
+
+ function array( )
+ {
+
+ // The DirectAnimation library
+  m=DAControl.PixelLibrary;
+  ima=m.OvalAnim(m.DANumber(20),m.DANumber(20));
+  ls=m.DefaultLineStyle.Color(m.Red);
+  lt=m.LocalTime;
+  slt=m.Sin(m.Mul(lt,m.DANumber(20.0)));
+  ima=ima.Transform(m.Translate2Anim(slt,m.DANumber(2)));	  
+  ima=ima.Draw(ls);
+
+
+  PosArr=new Array(m.DANumber(0),m.DANumber(50),m.DANumber(100),m.DANumber(150));
+  Pos=m.Array(PosArr);  //Create a DAArray object
+  Index=m.Mod(m.LocalTime,Pos.Length()) ;
+  CyclePos=Pos.NthAnim(Index);
+  imar=m.OvalAnim(CyclePos,m.DANumber(20));
+  ls=m.DefaultLineStyle.Color(m.Blue);
+  imar=imar.Transform(m.Translate2Anim(m.DANumber(20),CyclePos));
+  imar=imar.Draw(ls);
+  imar=m.Overlay(ima, imar);
+
+  p1=m.Point2Anim(m.DANumber(20),CyclePos);
+  p2=m.Point2Anim(m.DANumber(-20),m.DANumber(-20));
+  ilin=m.line(p1,p2);
+  ilin=ilin.Draw(ls);
+  imar=m.Overlay(ilin, imar);
+
+  irec=m.RectAnim(CyclePos,m.DANumber(20));
+  ls=m.DefaultLineStyle.Color(m.Blue);
+  irec=irec.Transform(m.Translate2Anim(m.DANumber(20),CyclePos));
+  irec=irec.Draw(ls);
+  imar=m.Overlay(irec, imar);
+
+
+  //imar=imar.Draw(ls);
+
+
+
+  DAControl.Image=imar;
+  DAControl.Start();
+}
+//-->
+</SCRIPT>
+<CENTER>
+<H2>Array Sample</H2>
+<INPUT TYPE=BUTTON VALUE="Show" NAME="StartBtn" OnClick="start()">
+</CENTER>
+
+</BODY>
+</HTML>

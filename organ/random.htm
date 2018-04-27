@@ -1,0 +1,63 @@
+
+<HTML> 
+<HEAD>
+<TITLE>DirectAnimation SDK, JScript sample</TITLE>
+<SCRIPT LANGUAGE="JScript">
+<!--
+if (window.top.frames.length!=0 && window.top.frames[0].ShowNoButtons!=null)
+    window.top.frames[0].ShowNoButtons();
+//-->
+</SCRIPT>
+<!--STRIP_END-->
+</HEAD>
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+	 
+
+<BODY BGCOLOR=WHITE TOPMARGIN=15 LEFTMARGIN=20>
+<OBJECT ID="DAControl"
+   STYLE="position:absolute; left:30%; top:100;width:600;height:300" 
+   CLASSID="CLSID:B6FFC24C-7E13-11D0-9B47-00C04FC2F51D">
+</OBJECT>
+<SCRIPT LANGUAGE="JScript">
+<!--
+  m = DAControl.MeterLibrary;
+  img = m.EmptyImage;
+  for(i=0; i<8; i++) {
+    block = m.SolidColorImage(m.Red);
+    block = block.Crop(m.Point2(-.002,-.002),m.Point2(.002,.002));
+
+    xf =   m.Translate2Anim( m.Sub(m.Mul(m.DANumber(.01),m.DANumber(i)),m.DANumber(0.05)),
+  			       m.DANumber(.01) );
+
+    xf = m.Compose2(     
+   m.Translate2Anim( m.Mul(periodicRandom(m.DANumber(i)),m.DANumber(.03)),
+  			         m.Mul(m.DANumber(.03),m.DANumber(.03)) ),
+            m.Translate2( -.035, -.035 ) );
+          
+    block = block.Transform(xf);
+    img = m.Overlay(img, block);
+  }
+
+  DAControl.Image = img
+  DAControl.Start();
+
+  // This function generates a DANumber that randomly changes after 
+  // the interval length has expired...
+  function periodicRandom(num) {
+//    lt=m.LocalTime;
+	lt=m.DANumber(1.0)
+    ev = m.Always.Snapshot(num);
+    randomInterval = new ActiveXObject("DirectAnimation.DANumber");
+    randomInterval.Init(
+      m.Until( m.UntilEx( lt, ev ), 
+      m.Timer(1.0), randomInterval));
+    return randomInterval;
+  }
+
+-->
+</SCRIPT>
+</FONT>
+</BODY>
+</HTML>
