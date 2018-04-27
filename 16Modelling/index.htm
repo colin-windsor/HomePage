@@ -1,0 +1,705 @@
+<HTML>
+<HEAD>
+<TITLE>16Heatdeposition</TITLE>
+</HEAD>
+<A HREF=../index.htm><IMG SRC="../home2.jpg" ALT="Colin's Homepage" ALIGN="LEFT"></A>
+<FONT FACE="Arial" SIZE=3>As submitted to Nuclear Fusion> Published as 
+<A HREF="http://iopscience.iop.org/article/10.1088/1741-4326/57/3/036001" >
+Nuclear Fusion, Volume <B>57</B>, Number 3 2016</A>
+
+<B><FONT FACE="Arial" SIZE=6><P>Modelling the power deposition into a spherical tokamak fusion power plant </B></FONT>
+
+<FONT FACE="Arial" SIZE=4><P>C G Windsor<SUP>1</SUP>, J G Morgan<SUP>2</SUP>, P F Buxton<SUP>1</SUP>, A E Costley<SUP>1</SUP>, G D W Smith<SUP>3</SUP> and A Sykes<SUP>1</SUP> 
+<BR><SUP>1</SUP>Tokamak Energy, D5, Culham Science Centre, Abingdon, OX14 3DB 
+<BR><SUP>2</SUP>Culham Electromagnetics, D5, Culham Science Centre, Abingdon, OX14 3DB
+<BR><SUP>3</SUP>Department of Materials, University of Oxford, 16 Parks Road, Oxford OX1 3PH, UK
+<BR>E-mail: colin.windsor@tokamakenergy.co.uk
+
+<FONT FACE="Arial" SIZE=4><P><B>Abstract</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+<p>Numerical studies have been made to improve the performance of the central column of a superconducting spherical 
+tokamak fusion pilot plant. The assumed neutron shield includes concentric layers of tungsten carbide and water. 
+The relative thickness of the water layers was varied and a minimum power deposition was found at about 17% of water. 
+It was found advantageous to have an approximately 1.7 times thicker water layer next to the core and a similarly thinner 
+layer next to the plasma. The use of tungsten boride instead of tungsten carbide was shown to make an improvement 
+especially if placed close to the central superconducting core, the inner layer alone reducing the power deposition by 29%. 
+Engineering features such as a central steel tie-bar, an insulating thermal vacuum gap, a wall gap next to the plasma 
+and knowledge of the vertical energy distribution are essential to a successful design and their effects on the power 
+deposition are shown in an appendix. The results have been fitted to model distributions and incorporated into the 
+Tokamak Energy System Code, which can then give predictions of the power deposition as a function of other 
+parameters such as the plasma major radius and the maximum magnetic field permitted on the superconductors.  
+<P>PACS numbers: 52.55.Fa, 28.52.-s,  84.71.Ba
+
+<FONT FACE="Arial" SIZE=4><P><B>1. Introduction</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>Calculations now suggest that by using the high plasma pressures possible with spherical tokamaks and the high 
+magnetic fields possible with high temperature superconducting (HTS) coils, it may be possible to construct a relatively 
+compact fusion power plant [1,2].  A key problem for this approach has been the power deposition from fusion neutrons 
+into a superconducting central column. The spherical tokamak approach implies a slender central core containing the 
+superconducting coils. However the effects of both radiation damage and power deposition into the core demand an 
+effective neutron and gamma shield. 
+
+<P>The outer edge of the shield receives mostly 14 MeV fusion neutrons. The shield aims to reduce the power deposited 
+in the core both by attenuation of the particle fluxes and by lowering particle energies, since absorption cross sections 
+generally increase with decreasing energy. High-energy neutrons are best attenuated by heavy metals since they typically 
+have larger cross-sections, around 10 barns, above MeV energies. Tungsten is particularly useful because of its
+ absorptive “giant resonances” in the energy range 10 eV to 10 keV. Gamma ray production from 
+(n,<span style='font-family:Symbol'>g</span>) reactions is 
+significant, giving rise to appreciable fluxes of gamma rays with energies around 1 MeV. 
+
+<P>In all cases the power deposition arising from both neutrons and gamma rays must be computed, as their contributions 
+are comparable. Water or some other coolant will be necessary to remove the heat deposited, but at MeV energies water 
+has quite low cross sections for both scattering and attenuation with mean free paths more than 0.1 m. Nearer to the core 
+energies are lower and the water moderation becomes more effective. At this stage, elements with large absorption cross 
+sections, such as boron, can remove neutrons.  Increasing the shield thickness is always an option but if the shield is too 
+thick the performance advantages of the spherical tokamak are reduced.  Careful optimisation is necessary to achieve 
+the best compromise between radiation damage, cryogenic cooling requirements and tokamak performance. Using 
+Monte Carlo simulations computed with MCNP Version 6.1 [3] of the power deposition similar to those reported in [1]
+ several new results are obtained. The water layer thickness has been varied to reveal an optimum thickness. The water
+ layers’ spacing with increasing radius in the shield has been varied again showing an optimum having a thicker water 
+spacing close to the core where moderation is most needed. Shield materials have been varied: differing numbers of 
+radial layers of tungsten boride have been inserted into a tungsten carbide shield and shown to give appreciably lower 
+power deposition in the superconducting core, especially for the layer next to the core. 
+
+<P>In an appendix, the effects of engineering features such as a central tie-bar, a thermal vacuum gap to insulate the 
+central core, and a plasma-wall gap have been included. The shield thickness variation is extended to low thickness, 
+and the vertical distribution of the heat deposition along the length of the core has been evaluated and shown to follow 
+a roughly Gaussian distribution. 
+
+<P>The results for these and other extensions are presented here, and fitted to simple analytic functions, which have 
+been incorporated into the Tokamak Energy System Code described in [2]. It then becomes straightforward to 
+investigate the importance of each physics and engineering parameter and to provide a method for optimisation 
+of the design.   
+
+<P><IMG SRC="Fig1.jpg"><FONT FACE="Arial" Size=2><P><B> Figure 1.</B> 
+The pilot plant design [2] with <I>R<SUB>0</SUB></I>=1.35 m major radius and superconducting core radius <I>r<SUB>sc</SUB></I>=0.2 m and 
+inner shield thickness <I>d<SUB>shield</SUB></I> =0.32 m with added complexities including a tie-bar of radius <I>r<SUB>tie</SUB></I>=0.05 m, 
+a thermal vacuum gap of thickness <I>d<SUB>vac</SUB></I>=0.03 m and plasma-wall gap of thickness <I>d<SUB>gap</SUB></I>= 0.05 m. 
+The outer shield has a thickness of 0.37 m. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>
+
+
+<FONT FACE="Arial" SIZE=4><P><B>2. Modelling the main factors affecting the power deposition</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+
+<p>In the earlier paper [1] a step-wise approach was proposed starting with the simplest realistic model of a power plant, 
+with a superconducting core of radius <I>r<SUB>sc</SUB></I>, a neutron shield of thickness <I>d<SUB>shield</SUB></I> and a toroidal plasma of major radius <I>R<SUB>0</SUB></I>. 
+To this model several engineering variables have been added, such as a central tie-bar of radius <I>r<SUB>tie</SUB></I> to help carry the 
+stresses induced in the core, a thermal vacuum gap of thickness <I>d<SUB>vac</SUB></I> to insulate the cold superconducting core (say at 20 K) 
+from the warm neutron shield, and a plasma-facing wall gap of thickness <I>d<SUB>gap</SUB></I> on the outside of the shield, which may 
+contain a vacuum vessel, and plasma-facing tiles. These additions are illustrated in figure 1. 
+
+
+<FONT FACE="Arial" Size=2><P><B> Table 1.</B> A selection of the input and output variables of the Tokamak Energy 
+System Code. </FONT>
+
+<P><TABLE BORDER=1>
+<TR><TD>Input parameter</TD><TD>Value</TD><TD>Output parameter</TD><TD>Value</TD></TR>
+<TR><TD>Radius of central col, <I>R<SUB>c</SUB></I> (m)</TD><TD>0.55 </TD><TD>Major radius of plasma <I>R<SUB>0</SUB></I> (m)</TD><TD> 1.35 </TD></TR>
+<TD>Aspect ratio of plasma, <I>A</I></TD><TD> 1.8 </TD><TD>Minor radius of plasma <I>a</I> (m)</TD><TD>0.75 </TD></TR>
+<TD>Elongation of plasma, kappa</TD><TD> 2.64 </TD><TD>Fusion power, <I>P<SUB>fus</SUB></I> (MW)</TD><TD> 175 </TD></TR>
+<TD>Triangularity of plasma, delta (-)</TD><TD>0.5 </TD><TD>Alpha power <I>P<SUB>alpha</SUB></I> (MW)</TD><TD> 35 </TD></TR>
+<TD>Initial radius of tie rod, <I>R<SUB>tie</SUB></I> (m)</TD><TD>0.05 </TD><TD>Neutron Power <I>P<SUB>neut</SUB></I> (MW)</TD><TD> 140 </TD></TR>
+<TD>Thickness of conductor, <I>T<SUB>sc</SUB></I> (m)</TD><TD>0.15 </TD><TD>Current drive power, <I>P<SUB>cd</SUB></I> (MW)</TD><TD> 35 </TD></TR>
+<TD>Thickness of vacuum shield, <I>T<SUB>vac</SUB></I> (m)</TD><TD>0.03 </TD><TD>Rod current, <I>I<SUB>rod</SUB></I> (MA)</TD><TD> 25 </TD></TR>
+<TD>Thickness of inner shield, <I>d<SUB>shield</SUB></I> (m)</TD><TD>0.32 </TD><TD>Thickness of outer shield, (m)</TD><TD>0.37 </TD></TR>
+<TD>Plasma wall gap, <I>g</I> (m)</TD><TD>0.05 </TD><TD>Central electron density, <I>ne<SUB>0</SUB></I> (x10<SUP>20</SUP> m<SUP>-3</SUP>)</TD><TD> 3.83 </TD></TR>
+<TD>Central temperature, <I>T<SUB>0</SUB></I> (keV)</TD><TD> 16.33 </TD><TD>Plasma current, <I>I<SUB>p</SUB></I> (MA)</TD><TD> 6.89 </TD></TR>
+<TD>Wall loading <I>P<SUB>wall</SUB></I> (MW/m<SUP>2</SUP>)</TD><TD> 1.82 </TD><TD>Safety factor (Hugill definition)</TD><TD> 2.91 </TD></TR>
+<TD>Fusion gain <I>Q<SUB>fus</SUB></I></TD><TD> 5 </TD><TD>Thickness of shielding, <I>T<SUB>shield</SUB></I> (m)</TD><TD>0.32 </TD></TR>
+<TD>Toroidal field, <I>B<SUB>T</SUB></I> (T)</TD><TD> 3.65 </TD><TD>tauE' from IPB98y2 scaling (s)</TD><TD>0.283 </TD></TR>
+<TD>Average mass number</TD><TD> 2.5 </TD><TD>tauE from Petty2008 scaling (s)</TD><TD>0.357 </TD></TR>
+<TD>Density profile exponent, <I>s<SUB>n</SUB></I></TD><TD>0.5 </TD><TD>H (IPB98y2)</TD><TD> 1.99 </TD></TR>
+<TD>Temperature profile exponent, <I>S<SUB>t</SUB></I> </TD><TD> 1.5 </TD><TD>H (Petty2008)</TD><TD> 1.57 </TD></TR>
+<TD>Max field on conductor, <I>B<SUB>cond</SUB></I> (T)</TD><TD> 25 </TD><TD>Heat deposition into core <I>P<SUB>tot</SUB></I> (MW)</TD><TD>0.0536 </TD></TR>
+</TABLE>
+ 	
+<P>An objective of this work was to enhance the utility of the Tokamak Energy System Code, described in [2] together 
+with its supplementary material. This reference suggested that further engineering details were planned to be 
+incorporated into the code and this has been done in the present work. The System Code has both input and 
+output variables and table 1 shows a selection of these variables defining the reference pilot plant design used 
+in the present paper. The numbers differ slightly from those in reference [2] because of subsequent refinements to the code.
+
+<P>was shown in [1] that the logarithm of the power deposition <I>P<SUB>tot</SUB></I> was linear in the three principal parameters
+ (<I>R<SUB>0</SUB></I>, <I>r<SUB>sc</SUB></I>, <I>d<SUB>shield</SUB></I>) to around 5% accuracy over wide ranges and this result remains the starting point for the present work. 
+The power deposition into the cryogenic central superconducting core can then be represented in the System Code 
+by a single spreadsheet entry or MATLAB equation
+                                                                                          				
+<P><I>log<SUB>e</SUB>P<SUB>tot</SUB>= log<SUB>e</SUB>(P<SUB>neut</SUB>/140)   +   
+[log<SUB>e</SUB>(0.05286) - (<I>R<SUB>0</SUB></I> - 1.35)*1.276 + (<I>r<SUB>sc</SUB></I> - 
+0.2)*6.752 - (<I>d<SUB>shield</SUB></I> - 0.32)*13.733] </I>  		 (1)    
+
+<P>Where <I>P<SUB>tot</SUB></I> is the total deposited power in MW and <I>P<SUB>neut</SUB></I> is the tokamak 
+neutron power in MW.  0.05286 is the power deposition in MW in the reference design and the next three terms are 
+the coefficients from [1] of the logarithm of the power deposition with respect to major radius <I>R<SUB>0</SUB></I>, 
+superconducting core radius <I>r<SUB>sc</SUB></I>, and shield 
+thickness <I>d<SUB>shield</SUB></I> as deviations from their values in the reference design of table 1. 
+This equation will be extended 
+through this paper.
+
+<P>The details of the engineering extensions to the code are given in the Appendix. Their effects on the deposited 
+power are summarised in figure 2 for changes in parameters around the reference design with major radius <I>R<SUB>0</SUB></I>=1.35 m, 
+superconducting core radius <I>r<SUB>sc</SUB></I> =0.20 m, which includes a tie-bar radius <I>r<SUB>tie</SUB></I> =0.05 m, so that the superconductor 
+thickness is dsc =0.15 m. Also included is a thermal vacuum gap <I>d<SUB>vac</SUB></I>=0.03 m, 
+and a plasma-wall gap thickness <I>d<SUB>gap</SUB></I> =0.05 m. These figures lead to a power deposition <I>P<SUB>tot</SUB></I> = 0.053 MW. 
+Using the System Code it is possible to evaluate how the power deposition changes as each of the variables 
+is changed individually. 
+
+<P><IMG SRC="Fig2.jpg"><FONT FACE="Arial" Size=2><P><B>Figure 2.</B> 
+The calculated deposited power into a central superconducting core of a simplified plant as a function of 
+superconducting core radius <I>r<SUB>sc</SUB></I>, vacuum gap thickness <I>d<SUB>vac</SUB></I>, wall gap thickness <I>d<SUB>gap</SUB></I> ,
+ major radius <I>R<SUB>0</SUB></I> 
+and tie-bar radius <I>r<SUB>tie</SUB></I> All the results are presented against a single distance increment whose starting point 
+corresponds to the reference design with a central column radius <I>R<SUB>c</SUB></I>=0.55 m,  
+tie-bar radius <I>r<SUB>tie</SUB></I> =0.05 m, the superconducting core radius <I>r<SUB>sc</SUB></I>,=0.2 m, the vacuum gap <I>d<SUB>vac</SUB></I>, =0.03 m, 
+shield thickness Tshield=0.32 m,  plasma wall gap <I>d<SUB>gap</SUB></I>=0.05 m, and major radius <I>R<SUB>0</SUB></I> =1.35 m. 
+When changing the wall gap and major radius the central column radius changes along with the fusion energy. 
+In all cases the shield thickness is changed to keep the major radius constant, the central temperature 
+adjusted to reach 0.8 of the Greenwald density limit and the toroidal field adjusted to reach 0.9 of the Troyon beta limit.  
+</FONT>
+
+<P>Figure 2 shows the power deposition on a log scale and it is clear that over this limited distance scale, all the variations, 
+except that due to the tie-bar radius, follow linear plots with distance on this logarithmic scale. 
+The gradients of the variables listed in decreasing absolute order are shown in the figure caption. 
+The tie-bar gradient is only appropriate near the value <I>r<SUB>tie</SUB></I>=0.05 m.
+
+<P>It is seen that the superconducting core radius causes an appreciably faster variation than any of the other variables. 
+This may be understood because the power deposition into the core naturally varies as the core cross-sectional area, 
+so as the square of the core radius. In addition any increase in core radius causes a corresponding decrease in the 
+shield thickness to maintain a constant overall radius for the central column. Thus the minimisation of the core radius 
+is a key feature in any plant. The second most important term is the thermal vacuum gap thickness. Any increase here 
+diminishes the shield thickness directly. It is seen that reducing the 0.03 m vacuum gap thickness assumed here would 
+give a significant improvement. Increasing the plasma-wall gap is more complex as this alters the outer radius of the 
+whole core region (<I>R<SUB>c</SUB></I>) and so besides reducing the shield thickness, increases the fusion power. 
+However the net effect is closely similar to making changes in the vacuum gap thickness. 
+Changes in the tie-bar thickness are made with the constraint of a constant superconducting core cross-sectional area. 
+The end result is close to quadratic and is seen to give only a minor effect.
+
+<P>Increasing the plasma major radius does cause an appreciable decrease in the deposited power and so 
+suggests a clear solution if the deposited power is deemed too high. 
+
+<FONT FACE="Arial" SIZE=4><P><B>3. Water-cooling channel effects in the design of the neutron shield</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>In the first estimates for the Costley et al power plant design [2], a cylindrical tungsten carbide alloy shield 0.32 m 
+thick was assumed, composed of 4 cylindrical water coolant layers of 0.0125 m thickness equally spaced within the shield. 
+The water fraction <I>F<SUB>W</SUB></I> across the total thickness of the shield was thus 0.1875. 
+A set of computations was made choosing 6 different cooling channel thicknesses to vary this fraction between 
+0.094 and 0.28. The results are shown in table 2 and figure 3.
+
+<FONT FACE="Arial" Size=2><P><B> Table 2.</B> The  MCNP computation of deposited power <I>P<SUB>mcnp</SUB></I>  
+in the superconducting core as a function of the linear fraction <I>f<SUB>W</SUB></I> of water in a tungsten carbide 
+alloy shield composed of 4 cylindrical water channels of equal width and spacing.</FONT> 
+ 
+<TABLE BORDER=1>
+<TR><TD>Water fraction (<I>f<SUB>W</SUB></I>)</TD><TD>0.0938 </TD><TD>0.125 </TD><TD>0.1563 </TD><TD>0.1875 </TD><TD>0.2188 </TD><TD>0.25 </TD>
+</TR>
+<TD><I>P<SUB>mcnp</SUB></I> (MW)</TD><TD>0.057 </TD><TD>0.0542 </TD><TD>0.0529 </TD><TD>0.0533 </TD><TD>0.0548 </TD><TD>0.0575 </TD>
+</TR>
+</TABLE>
+
+<P><IMG SRC="Fig3.jpg"><FONT FACE="Arial" Size=2><P><B>Figure 3.</B> The MCNP calculation of deposited power <I>P<SUB>tot</SUB></I>  
+into the central superconducting core of a 1.35 m major radius pilot plant with a 0.32 m thick shield composed 
+of 4 cylindrical water layers within a tungsten carbide alloy shield, plotted as a function of the linear fraction
+ <I>F<SUB>W</SUB></I>  of water across the shield (triangles). The line shows the parabolic fit to the MCNP results used in the 
+System Code. Plasma parameters do not change during the scan.</B></font>
+<FONT FACE="Times New Roman" SIZE=3>
+
+
+<P>Although the scale of figure 3 is expanded, it shows a rather rapid increase in the power deposition if the water fraction 
+is not within a relatively narrow range between 0.1 and 0.25. The optimum fraction is around 0.168. The line shows a 
+parabolic fit to the data with an additional power deposition for a water fraction <I>F<SUB>W</SUB></I> equal to 
+&#916;log<SUB>e</SUB><I>P<SUB>tot</SUB></I> = 0.715(<I>F<SUB>W</SUB></I>   -  0.168)2 in MW units. This term may also be added to the square bracket of equation 1. 
+Again this relationship can be expected to hold only for configurations not far from the reference plant variables. 
+
+<P>A second set of computations was carried out to consider whether it would be preferable to have unequal water-cooling 
+spaces across the shield. In table 3 and figure 4 are shown the results for the power deposition as a function of the ratio 
+of the cooling channel thickness next to the core divided by the mean thickness. The power deposition is reduced 
+if the thickness of the water layer nearest to the core is greater than the average thickness. Clearly the extra moderating 
+capability of the water layers is preferable nearest to the core rather than nearest to the plasma.  There is an optimum in 
+the thickness next to the superconducting core at about 1.66 times the average water thickness, when the power deposition 
+is reduced by about 9%.
+
+<FONT FACE="Arial" Size=2><P><B> Table 3.</B> The power deposition <I>P<SUB>tot</SUB></I>  into the central superconducting core of a 1.35 m major radius pilot plant with a 
+neutron shield of tungsten carbide alloy and water cooling channels, where the width of the channels varies from an 
+inner value <I>d<SUB>inner</SUB></I> next to the core compared to the average value <I>d<SUB>mean</SUB></I>.</FONT> 
+
+<TABLE BORDER=1>
+<TR><TD>Material</TD><TD>1/5 WB</TD><TD>2/5 WB</TD><TD>3/5 WB</TD><TD>4/5 WB</TD><TD>Pure WB</TD><TD>Graded 1/5 WB</TD></TR>
+<TR><TD>MCNP (MW)</TD><TD> 0.0364 </TD><TD> 0.0342 </TD><TD> 0.0335 </TD><TD> 0.0326 </TD><TD> 0.0327 </TD><TD> 0.0338 </TD></TR>
+<TD>System code (MW)</TD><TD> 0.036 </TD><TD> 0.0346 </TD><TD> 0.0337 </TD><TD> 0.0331 </TD><TD> 0.0325 </TD><TD> 0.0349 </TD></TR>
+</TABLE>
+
+<P><IMG SRC="Fig4.jpg"><FONT FACE="Arial" Size=2><P><B>Figure 4.</B> The MCNP calculated deposited power P<SUB>mcnp</SUB> into the central superconducting core of a 1.35 m major radius 
+pilot plant as a function of the ratio <I>R<SUB>T</SUB></I> of the thickness of the water-cooling layer nearest to the core divided by the 
+average thickness when the water channel thickness is varied linearly across the shield for a fixed total shield thickness 
+and total water thickness. Plasma parameters do not change during the scan.</FONT>
+  
+<P>The variation follows an approximately parabolic relationship with the relative thickness <I>R<SUB>T</SUB></I> around this minimum. 
+The line in figure 4 corresponds to a System Code prediction of the power deposition change relative to the constant 
+water thickness <I>R<SUB>T</SUB></I>=1 of  &#916;log<SUB>e</SUB><I>P<SUB>tot</SUB></I>=-0.00212+ 0.0095(<I>R<SUB>T</SUB></I>-1.66)2  in MW units. Again this relationship can be 
+expected to hold only for configurations not far from the reference plant variables.
+
+<FONT FACE="Arial" SIZE=4><P><B>4. The choice and distribution of the neutron shield material</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>The earlier paper [1] considered several possible materials for the neutron and gamma shield necessary to limit 
+both the heating and the radiation damage of the superconducting core. These included water, hydrocarbon, 
+zirconium borohydride, and manganese/europium iodide, but excluded pure tungsten. A tungsten carbide alloy 
+combines the good gamma shielding properties of the tungsten with the good moderation properties of carbon. 
+The gamma shielding is dependent on the overall density, which is 19.25 g/cm3 for pure tungsten, and 15.63 g/cm3 
+for tungsten carbide. Good moderation requires low atomic weight materials such as carbon or hydrogen.
+
+<P>A different mode of shielding is to use atoms with a high absorption cross section such as boron. The isotope 
+10B in particular has a large neutron absorption cross section varying from 600 barns at 1 eV to around a barn at 10 MeV. 
+Tungsten boride alloys have been prepared in a similar way to those of tungsten carbide although they could be more 
+expensive and difficult to manufacture. Another possible advantage is that it has more favourable oxidation properties.  
+Tungsten carbide oxidises to volatile CO<SUB>2</SUB> whereas tungsten boride refractory metal borides, (with appropriate silicon 
+additions) can form very stable borosilicate glasses [4,5].
+
+<FONT FACE="Arial" Size=2><P><B> Table 4.</B> Table 4.  MCNP computations of the power deposition in MW into the superconducting core for the 1.35 m plasma 
+radius pilot plant. Again the shields are 0.32 m thick with water-cooling in four layers 15 mm thick. Shields 
+composed of: pure tungsten (W), tungsten carbide alloy (WC) and tungsten boride alloy (WB) were considered.  
+Also the 5 shield carbide layers were replaced one by one with boride layers up to pure WB.   The shields were 
+0.32 m thick with water-cooling in four layers 15 mm thick except for the “Graded 1/5” case where the water layer 
+thickness was graded to be larger next to the core.</FONT> 
+
+<TABLE BORDER=1>
+<TR><TD>Material</TD><TD>1/5 WB</TD><TD>2/5 WB</TD><TD>3/5 WB</TD><TD>4/5 WB</TD><TD>Pure WB</TD><TD>Graded 1/5 WB</TD></TR>
+<TR><TD>MCNP (MW)</TD><TD> 0.0364 </TD><TD> 0.0342 </TD><TD> 0.0335 </TD><TD> 0.0326 </TD><TD> 0.0327 </TD><TD> 0.0338 </TD></TR>
+<TR><TD>System code (MW)</TD><TD> 0.036 </TD><TD> 0.0346 </TD><TD> 0.0337 </TD><TD> 0.0331 </TD><TD> 0.0325 </TD><TD> 0.0349 </TD></TR>
+</TABLE>
+
+<P>The phase diagram of tungsten boride is complex with several possible compounds. This study concentrates on WB, 
+which was found to be more favourable than WB2 suggesting  that the heavy tungsten is the most useful atom. 
+Table 4 and figure 5 gives cause for optimism in the superconducting core shield design.  Firstly the pure tungsten 
+shield material (with water cooling) gives a power deposition some 18% lower than tungsten carbide. However a 
+uniformly spaced shield of tungsten boride is seen to be considerably better being some 35% lower than tungsten carbide. 
+Bi-tungsten boride is also better than the carbide by 26% but it appears to have no advantage over tungsten boride 
+and will not be considered further.
+
+
+<P><IMG SRC="Fig5.jpg"><FONT FACE="Arial" Size=2><P><B>Figure 5.</B>
+ The MCNP computations of power deposition into the superconducting column for tungsten carbide shields 
+with an increasing number of carbide shields replaced by boride from the core outwards. A pure tungsten shield is also shown. 
+The line is calculated from the System Code formula. The open circle shows the single inner boride layer with a 
+graded water thickness having more water close to the core.  The closedopen diamond shows the deposited power 
+using a pure tungsten shield. Plasma parameters do not change during the scan.</B></font>
+<FONT FACE="Times New Roman" SIZE=3>
+
+
+<P>	Because tungsten boride particularly captures lower energy neutrons it might be better placed in the inner side 
+of the shield next to the superconducting core. An MCNP computation was made with just the inner of the five cylinders 
+of the shield composed of tungsten boride with the outer four cylinders nearest to the plasma being made of tungsten carbide. 
+A 29% reduction of the power deposition into the core was obtained. Putting the tungsten boride on the outer, 
+plasma side of the shield, where its volume is much larger, gave almost no improvement in the power deposition. 
+Replacing more of the carbide layers with boride gives only a minor improvement as shown in figure 5 although 
+replacing 4 out of 5 layers gave the best, 36% reduction. Having a single inner boron carbide layer with unequal 
+water spacing gave a 34% reduction as shown by the open circle.
+
+<P>The dependence of the power deposition on number of tungsten boride layers has been fitted for use in the 
+System Code as shown by full line in figure 5. The fit assumes an additional power deposition for a number <I>n<SUB>WB</SUB></I>  
+of tungsten boride layers equal to 
+
+<P>Dlog<SUB>e</SUB><I>P<SUB>tot</SUB></I> = 0.638+0.362*(1- <I>n<SUB>WB</SUB></I>0.13/1.232) with <I>P<SUB>tot</SUB></I> in MW units.
+
+
+<FONT FACE="Arial" SIZE=4><P><B>5. Benchmarking the System Code power deposition over a range of plasma radius</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>The refinements to the power deposition calculations detailed here can be collected together into the equation 
+for the power deposition <I>P<SUB>tot</SUB></I>  in MW
+
+<P>log<SUB>e</SUB><I>P<SUB>tot</SUB></I>= log<SUB>e</SUB>(P<SUB>neut</SUB>/140) +[log<SUB>e</SUB>(0.05419) - 
+(<I>R<SUB>0</SUB></I> - 1.35)*1.256 + (<I>r<SUB>sc</SUB></I> - 0.2)*6.752 - (<I>d<SUB>shield</SUB></I> - 0.32)*13.733 
++1.53 * (<I>d<SUB>vac</SUB></I> - 0.03)) ] * [1+13.4905(<I>F<SUB>W</SUB></I> -0.168)<SUP>2</SUP>  - 0.091+ 
+0.176(<I>R<SUB>T</SUB></I>-1.66)<SUP>2</SUP> + 0.638+0.362*(1- <I>n<SUB>WB</SUB></I><SUP>0.13</SUP>/1.232) +0.013+4.03<I>r<SUB>tie</SUB></I>]  						(2)    
+
+<P>where the new variables include the vacuum gap thickness <I>d<SUB>vac</SUB></I>, the tie bar radius <I>r<SUB>tie</SUB></I>, the length fraction of water 
+in the neutron shield <I>F<SUB>W</SUB></I>, the ratio of the inner water layer thickness to the average thickness <I>R<SUB>T</SUB></I>, and the number of 
+tungsten boride layers <I>n<SUB>WB</SUB></I>. 
+
+<FONT FACE="Arial" Size=2><P><B> Table 5.</B>Some predictions of the power deposition from the System Code Psc compared with the MCNP Monte Carlo 
+computations Pmc for several possible tokamaks of differing radii. The first two have narrow superconducting cores. 
+The middle row is for the pilot plant [2]. The 4th row attempts to model the 1.4 m major radius plant design considered by 
+Brown et al [6], and the last row models a possible fusion power plant design of around 2 m major radius.</FONT>
+
+<TABLE BORDER=1>
+<TR><TD>Model</TD><TD><I>R<SUB>0</SUB></I></TD><TD><I>r<SUB>sc</SUB></I></TD><TD><I>d<SUB>shield</SUB></I> (m)</TD><TD>HPpetty</TD><TD><I>P<SUB>SC</SUB></TD><TD><I>P<SUB>MC</SUB></I></TD></TR>
+<TR><TD>Costley reference</TD><TD>1.35</TD><TD> 0.2 </TD><TD> 0.320 </TD><TD> 1.56 </TD><TD> 0.0536 </TD><TD> 0.0536 </TD></TR>
+<TR><TD>Princeton design</TD><TD>1.40</TD><TD> 0.23</TD><TD> 0.322 </TD><TD> 1.46 </TD><TD> 0.0182 </TD><TD> 0.022 </TD></TR>
+<TR><TD>Major radius ~2 m </TD><TD>2.1375</TD><TD> 0.3 </TD><TD> 0.580 </TD><TD> 0.95 </TD><TD> 0.0011 </TD><TD>  0.0038 </TD></TR>
+</TABLE>
+
+<P>These terms have been incorporated into the System Code but the additions have mostly been made around 
+the major radius <I>R<SUB>0</SUB></I>=1.35 m corresponding to the pilot plant proposed in [2]. Other plants with different major radii 
+are of importance and four further MCNP computations have been made as listed in table 5 and plotted against
+major radius in figure 6. It is seen the Monte Carlo code computations generally agree well with the System Code 
+well near the reference design, but less well far away. 
+
+
+<P><IMG SRC="Fig6.jpg"><FONT FACE="Arial" Size=2><P><B>Figure 6.</B> 
+The power deposition into the superconducting core for several tokamaks as a function of their major radius. 
+The points and line are the System Code predictions and the crosses the MCNP computations. 
+The Princeton point is an attempt to reproduce their 1.4 m radius study [6] with a 3.2T toroidal field, 
+around 100 MW fusion power and 1 MW/m2 wall loading. The 2.13 m point an attempt to model a design with around 
+2 m major radius with a 0.58 m thick shield giving only around 3 kW of energy deposition. Slimmer superconductor 
+cores have a maximum field on the conductor above 25 T. In this plot the Petty H factor is allowed to vary from 1.73 
+at <I>R<SUB>0</SUB></I>=1.35 m to 0.95 at <I>R<SUB>0</SUB></I>=2.13 m. All computations have the other input parameters listed in table 1 constant 
+and satisfy the defined density and beta limits. </B></font>
+
+		
+<P>An important engineering concern is the maximum field <I>B<SUB>cond</SUB></I>  that can be allowed on 
+the superconductor. This will generally be at the outer surface of the superconducting core and will determine the 
+maximum toroidal field at the plasma centre. If the maximum field is chosen too high for a given operating temperature 
+then the probability of a quench is increased. If it is set too low then the performance of the magnet will be diminished. 
+This is illustrated in figure 7 which shows the change in the Petty 2008 H factor[7] as the maximum field on the 
+superconductor is varied. The variables mostly correspond to their reference values, and indeed the fusion and 
+deposited powers are unchanged. However the toroidal field increases from 2.96 to 
+4.44 T across the plot. The plasma pressure increases and the H factor decreases, leading to a greater fusion gain.  
+
+<P><IMG SRC="Fig7.jpg"><FONT FACE="Arial" Size=2><P><B> Figure 7.</B> The change in the Petty 2008 H factor as the maximum 
+field on the superconducting core is varied. Most other variables are at their reference values. 
+The dashed line corresponds to the plasma pressure rising to larger than 0.9 of the beta limit. </B></font>
+
+
+<FONT FACE="Arial" SIZE=4><P><B>6.  The dependence of the power deposition on plasma radius and other variables</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>Using the Tokamak Energy System Code, Version 5 updated on 04/06/2015, and including the parameterised 
+power deposition defined in equation 2 it has been possible to predict how the power deposition into the central 
+column depends on other key parameters of a pilot plant. The following assumptions were made. A tie-bar 
+radius <I>r<SUB>tie</SUB></I> = 0.05 m was used, with a vacuum gap <I>d<SUB>vac</SUB></I> = 0.03 m, and a plasma wall gap 0.05 m. 
+These constraints for a major radius <I>R<SUB>0</SUB></I>=1.35 m and a superconducting core radius <I>r<SUB>sc</SUB></I>=0.20 m gave a 
+power deposition <I>P<SUB>tot</SUB></I>=53.2 kW with a neutron shield thickness <I>d<SUB>shield</SUB></I>=0.32 m.  Working from this starting point 
+it is possible to investigate the change in deposited power with a series of other variables.
+
+<P>The confinement time is an important variable, since the ratio of the energy confinement time to its scaling law 
+prediction defines the H factor, which is important in reaching fusion energy gain. Generally fusion gain will be 
+possible at lower fusion powers
+
+<P>if the energy confinement time is higher than that found from the scaling laws, that is H>1, and operation at low 
+fusion power is essential for smaller devices. The H factor according to the formalism of Petty in 2008 [7] for the 
+<I>R<SUB>0</SUB></I>=1.35 m reference pilot plant configuration with the above engineering conditions was 1.563. This corresponds 
+to 1.98 against the ITER IPB98y2 scaling. 
+
+<P>Extending the major radius beyond the 1.35 m for the proposed pilot plant may well be a necessary condition 
+if the high temperature superconductors need extra shielding protection to reduce radiation damage [8]. 
+It is therefore prudent to consider using the System Code to evaluate the power deposition as a function of major radius. 
+Major radius is an output parameter of the System Code so the scans are made varying the radius of the 
+central column (<I>R<SUB>c</SUB></I>). The increase in major radius can be achieved by increasing either the shield thickness 
+or the superconducting core radius, or a combination of both. It is possible to do this while keeping many parameters 
+constant including, for example, the fusion gain and the tokamak aspect ratio, while keeping constant some chosen 
+parameter such as the deposited power, the radius of the superconducting core or the fusion power. 
+
+<P><IMG SRC="Fig8.jpg"><FONT FACE="Arial" Size=2><P><B>Figure 8.</B> The required Petty[7] H factor, or ratio of the energy confinement time to the value predicted from scaling laws, 
+plotted against plasma major radius for (i) a constant deposited power <I>P<SUB>tot</SUB></I>=53.6 kW: (ii) a constant superconducting 
+core radius of <I>r<SUB>sc</SUB></I>=0.2 m and (iii) a constant fusion power Pfus=175 MW achieved by adjusting the wall loading. 
+In all cases the central temperature and toroidal field have been adjusted to give the defined density and beta limits. 
+Other variables are kept constant as in table 1.</FONT>  
+
+<P>Figure 8 shows the dependence of the Petty[7] H factor on tokamak major radius according to three assumed 
+conditions. The black open triangles show the rapidly reducing H factor obtained if the scan is performed at a 
+constant deposited power. This is achieved by changing the wall loading to keep the deposited power at the 
+reference value 53.6 kW. The red circles, having a slower decrease in H factor with radius, is the calculation with 
+constant central core radius and varying shield thickness. An identical curve is obtained by varying the core radius 
+at constant shield thickness since the plasma conditions are unchanged. The deposited power varies from 0.135 to 
+0.054 kW across this curve. The blue triangles correspond to varying the wall loading until the fusion power equals 
+the constant value 175 MW of the 1.35 m major radius reference pilot plant. The small change in H factor is in 
+accordance with predictions that fusion power and the H factor are the key variables in determining the 
+tokamak power gain [2,9]. The deposited power reduces from 0.170 MW to 0.010 MW across this curve.
+ 
+<P>A conclusion from figure 8 is that increasing the plasma radius at constant fusion gain generally requires a lower 
+H factor primarily because the fusion power is increasing. The most favourable engineering design will generally use 
+the minimum H factor. In the following computations to explore the variation of deposited power with the plasma 
+major radius, a condition will be made that the Petty[7] H factor is kept at a fixed value, taken here at the value 
+HPetty:2008=1.563 of the reference design [2]. This is achieved by adjusting the wall loading input parameter 
+so that the constant H factor is maintained. 
+
+
+<P><IMG SRC="Fig9.jpg"><FONT FACE="Arial" Size=2><P><B>Figure 9.</B> 
+The power deposition into the superconducting core as a function of plasma major radius for the condition 
+that the Petty H factor HPetty=1.573. The changes in toroidal field, maximum field on the superconductor, fusion power, 
+shield thickness and wall loading are also shown. The circled points show the <I>R<SUB>0</SUB></I>=1.35 m case used to define the 
+constant Petty H factor. Other input variables are kept constant, with the values of table 1, except where adjusted to 
+give the appropriate density and beta limits. The open squares show an exponential fit to the power deposition showing 
+a factor 10 decrease for each 0.307 m increase in major radius.</FONT>
+
+<P>In figure 9 an approach is taken where output results from the System Code are plotted as a function of the plasma 
+major radius under the assumption that the H factor remains constant. As many as possible of the input variables are 
+kept constant. In particular the superconducting core is kept at a constant radius and carries a constant total current 
+so that its construction need not be changed. To keep the assumed H factor constant, the wall loading input parameter 
+is changed. Figure 9 shows the power deposition reducing by two orders of magnitude from 53.6 to 0.4 kW as the 
+radius increases from 1.35 to 2 m and the shield thickness increases from 0.32 to 0.61 m.  
+At the same time the fusion power reduces only slightly from 175 to 161 MW and the toroidal field at the major 
+radius of the plasma is reduced from 3.7 to 2.6 T. The maximum field on the superconductor increases slightly 
+from 24.7 T to 25.9 T. The decrease in power deposition is well represented by an exponential decrease 
+with a 1/10 decrease every 0.307 m shown by the open black squares.
+
+<P>There are many other important input variables whose effect on the power deposition into the centre column 
+may be evaluated using the System Code.  Examples of such results are given in figure 10 which shows the 
+power deposition plotted against the relative changes of aspect ratio, fusion gain, elongation, triangularity, density and 
+beta limit fractions. 
+Each of the variables starts from the assumed reference conditions of the pilot plant.
+At each point the wall loading is adjusted to give the reference Petty[7] H factor of 1.5733. 
+It is seen that the power deposition is decreased by increasing the elongation or beta limit fraction, and reduced 
+by increasing the aspect ratio or the fusion gain. It is little changed by changes in triangularity or the   density limit fraction. 
+Of these the greatest effects are from reducing the aspect ratio and increasing the elongation – two factors which 
+tend to go together naturally. 
+
+<P><IMG SRC="Fig10.jpg"><FONT FACE="Arial" Size=2><P><B>Figure 10.</B>  The power deposition into the superconducting core, for several input parameters of the System Code 
+as a function of the ratio to their values for the proposed pilot plant with plasma radius of 1.35 m. At each point 
+the The Petty[7] H factor is fixed at the value 1.573 by varying the wall loading. All other input parameters have the 
+values given in table 1, except where adjusted to give the appropriate density and beta limits. Configurations 
+where these limits are exceeded are shown dashed.</B></font>
+<FONT FACE="Times New Roman" SIZE=3>
+
+ 
+<FONT FACE="Arial" SIZE=4><P><B>7. Conclusions</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+
+<P>Earlier calculations of the power deposition into the core of a superconducting tokamak using the MCNP code 
+have been extended to optimise the design of the neutron shield and to include several engineering details. 
+They suggest an optimal neutron shield could be a mixture of tungsten carbide layers with intervening water-cooling 
+layers with about 17% of water. The water layer thickness has been optimised: too thin a water layer gives 
+insufficient moderation, too thick gives insufficient gamma attenuation. The layer radial spacing has been optimised: 
+a thicker spacing close to the core gives moderation where it is needed, while a thinner spacing next to the plasma 
+gives better gamma shielding. Shield materials have been optimised: the inclusion of tungsten boride into a tungsten 
+carbide shield is shown to give appreciably lower power deposition, especially in the layer next to the core. 
+Next to the superconducting core the water layers should be thicker, and neutron absorbing tungsten boride becomes 
+advantageous compared to tungsten carbide. The results have been modelled and incorporated into the 
+Tokamak Energy System Code as a step towards the optimisation of the physics and engineering of a pilot plant. 
+For example the Petty[7] scaling H factor required for a given fusion gain is shown to drop rapidly with plasma radius 
+at constant deposited power, but less rapidly at constant core size, and to become almost independent of radius 
+at constant fusion power. Maintaining the Petty[7] scaling H factor at a constant reference level of 1.563, it is shown 
+that the power deposition decreases by two orders of magnitude as the major radius increases from 1.35  to 2.0 m. 
+Under similar conditions it is shown that the deposited power rises with superconducting core radius, aspect ratio 
+and fusion gain but falls with increasing elongation and beta limit fraction. It is not strongly dependent on the 
+triangularity or density limit fraction.
+
+<P>The results presented here suggest that a relatively inexpensive spherical tokamak of 1.35 m radius would 
+have a 53 kW power deposition into its superconducting core. This could be extracted by a feasible cryogenic 
+power of 2.8 MW. Reducing the plasma radius at constant superconducting core radius and aspect ratio puts 
+up the cryogenic costs, while increasing it puts up the cost of the superconducting tapes and general engineering costs. 
+However other factors, such as mechanical stress and diverter load, outside the scope of this paper, could 
+change the optimal radius. Another uncertainty is the effect of radiation damage on the superconductors, which 
+may require the deposited power to be appreciably decreased. Our results suggest that each increase of shielding 
+thickness by 0.307 m reduces the power deposition by an order of magnitude.
+
+
+
+<FONT FACE="Arial" SIZE=4><P><B>References</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>[1] C G Windsor, J G Morgan and P F Buxton, “Heat deposition into the superconducting central column of a spherical tokamak fusion plant”, Nuclear Fusion 55, 023014, (2015)
+<BR>[2] A E Costley, J Hugill and P F Buxton “On the power and size of tokamak fusion pilot plants and reactors”, Nuclear Fusion 55, 033001, (2015)
+<BR>[3] T. Goorley, M. James, T. Booth, F. Brown, J. Bull, L. J. Cox, J. Durkee, J. Elson, M. Fensin, R. A. Forster, J. Hendricks, H. G. Hughes, R. Johns, B. Kiedrowski, R. Martz, S. Mashnik, G. McKinney, D. Pelowitz, R. Prael, J. Sweezy, L. Waters, T. Wilcox and T. Zukaitis, "Initial MCNP6 release overview", Nuclear Technology, 180, 3, 298-315, (2012)
+<BR>[4] C M Carney, T A  Parthasarathy and M K Cinibulk, “Oxidation resistance of hafnium diboride ceramics with additions of silicon carbide and tungsten boride or tungsten carbide”, J. Am. Ceram. Soc., 94, no. 8, 2600–2607, (2011)
+<BR>[5] W G Fahrenholtz and G E Hilmas, “Oxidation of ultra-high temperature transition metal diboride ceramics”, International Materials Reviews 57, 61-72,  (2012)
+<BR>[6] T Brown, J Menard, L El-Gueblay and A Davis, “PPPL ST-FNSF Engineering Design Details”, Fusion Science and Technology, 68, 277-281, (2015)
+<BR>[7] C C Petty, “Sizing up plasmas using dimensionless parameters”, Phys. Plasmas 15, 080501, (2008) http://scitation.aip.org/content/aip/journal/pop/15/8/10.1063/1.2961043
+<BR>[8] R Prokopec, D X Fischer. H W Weber and M Eisterer, “Suitability of coated conductors for fusion magnets in view of their radiation response”, Superconductor Science and Technology, 28, 0953-2048-28-1-014005, (2015)
+<BR>[9] A E Costley, “On the fusion triple product and fusion power gain of tokamak pilot plants and reactors”, Nuclear Fusion 56, 066003, 2016
+<BR>[10] H R Wilson, “SCENE - simulation of self-consistent equilibria with neoclassical effects”, UKAEA-FUS 271 (1994)
+.
+<FONT FACE="Arial" SIZE=4><P><B>Appendix: Engineering extensions to the superconducting core design</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>
+
+<P>This appendix first considers the three engineering extensions to the shield design illustrated in figure 1. 
+These have been evaluated in a series of MCNP computations around the reference point 
+(<I>R<SUB>0</SUB></I>=1.35 m, <I>r<SUB>sc</SUB></I>=0.2 m, <I>d<SUB>shield</SUB></I>=0.32 m). 
+
+<P>The first is the thickness of the vacuum gap <I>d<SUB>vac</SUB></I> needed to insulate the cold superconducting core from the 
+neutron shield. Table A1 shows the raw results for the power deposition into the superconducting core for vacuum gaps 
+from zero to 0.06 m. These results include no tie-bar or plasma-wall gap. Outside the vacuum gap is an enclosing neutron 
+shield which is changed in thickness to maintain the total thickness of the centre column constant.  
+
+<FONT FACE="Arial" Size=2><P><B> Table A1. </B>The power deposition into the central core of a pilot plant design with <I>R<SUB>0</SUB></I>=1.35 m major radius and a 
+superconducting core radius  <I>r<SUB>sc</SUB></I>=0.23 m as a function of the vacuum gap thickness <I>d<SUB>vac</SUB></I>. The neutron shield thickness 
+<I>d<SUB>shield</SUB></I>  changes to keep the core radius constant. </FONT>
+
+<TABLE BORDER=1>
+<TR><TD><I>d<SUB>vac</SUB></I> (m)</TD><TD> 0 </TD><TD> 0.01 </TD><TD> 0.02 </TD><TD> 0.03 </TD><TD> 0.04 </TD><TD> 0.05 </TD><TD>0.06 </TD></TR>
+<TD><I>d<SUB>shield</SUB></I>(m)</TD><TD> 0.37 </TD><TD> 0.36 </TD><TD> 0.35 </TD><TD> 0.34 </TD><TD> 0.33 </TD><TD> 0.32 </TD><TD> 0.31 </TD></TR>
+<TD><I>P<SUB>tot</SUB></I>(MW)</TD><TD> 0.0295 </TD><TD> 0.0346 </TD><TD> 0.0405 </TD><TD> 0.0472 </TD><TD> 0.0552 </TD><TD> 0.0638 </TD><TD> 0.0745 </TD></TR>
+</TABLE>
+
+<P>The crosses in figure A1 show these data and the full line the prediction of the System Code given by adding 
+the term  <I>Dlog<SUB>e</SUB>P<SUB>tot</SUB></I> = 1.53 * (<I>d<SUB>vac</SUB></I>(m) - 0.03) in MW units to equation 1. 
+The power deposition variation is close to exponential and so appears linear on a log plot.  
+The small vertical displacement arises because the superconducting core radius <I>r<SUB>sc</SUB></I> was 0.23 m rather than 0.20 m. 
+
+
+
+
+
+<P><IMG SRC="FigA1.jpg"><FONT FACE="Arial" Size=2><P><B> Figure A1.</B> The deposited power into a central 
+superconducting core as a function of the vacuum gap 
+thickness <I>d<SUB>vac</SUB></I> between the superconducting core and the neutron shield. The triangles are MCNP computations 
+and the curve is the analytic fit incorporated into the Tokamak Energy System Code.</B></font>
+  
+
+<P>A second engineering addition was to evaluate the effect of a Eurofer steel tie-bar of radius <I>r<SUB>tie</SUB></I> 
+at the centre of 
+the superconducting core. This was computed for <I>r<SUB>tie</SUB></I>  ranging up to 0.07 m. 
+The thermal vacuum gap <I>d<SUB>vac</SUB></I> was 
+0.03 m. In order to keep the cross-sectional area of superconductor constant, the thickness of the 
+superconducting core is increased slightly (by less than 0.01 m) and the extra space taken from the vacuum gap. 
+The power deposition increase is relatively small (~5%) over the range as shown in table A2. 
+
+
+<P><FONT FACE="Arial" Size=2><P><B> Table A2.</B> The power deposition into the central core of a pilot plant 
+design with <I>R<SUB>0</SUB></I>=1.35m major radius as a function of the tie-bar radius.  
+The superconducting core radius changes to make the core area constant and the extra space is taken up by 
+a reduction in the vacuum gap thickness. </FONT>
+
+<TABLE BORDER=1>
+<TR><TD><I>r<SUB>tie</SUB></I> (m)</TD><TD> 0.00 </TD><TD> 0.03 </TD><TD> 0.04 </TD><TD> 0.05 </TD><TD> 0.06 </TD><TD> 0.07 </TD></TR>
+<TD><I>r<SUB>sc</SUB></I>  (m)</TD><TD> 0.1936 </TD><TD> 0.1960 </TD><TD> 0.1977 </TD><TD> 0.2000 </TD><TD> 0.2030 </TD><TD> 0.2059 </TD></TR>
+<TD><I>d<SUB>vac</SUB></I>  (m)</TD><TD> 0.0364 </TD><TD> 0.0340 </TD><TD> 0.0323 </TD><TD> 0.0300 </TD><TD> 0.027 </TD><TD> 0.0241 </TD></TR>
+<TD><I>P<SUB>core</SUB></I> (kW)</TD><TD> 0.0519 </TD><TD> 0.0517 </TD><TD> 0.0516 </TD><TD> 0.0514 </TD><TD> 0.0515 </TD><TD>0.0514 </TD></TR>
+<TD><I>P<SUB>tie</SUB></I> (kW)</TD><TD> 0.0000 </TD><TD> 0.0006 </TD><TD> 0.001 </TD><TD> 0.0015 </TD><TD> 0.0021 </TD><TD> 0.0028 </TD></TR>
+<TD><I>P<SUB>tot</SUB></I> (kW)</TD><TD> 0.0519 </TD><TD> 0.0522 </TD><TD> 0.0526 </TD><TD> 0.0529 </TD><TD> 0.0536 </TD><TD> 0.0542 </TD></TR>
+</TABLE>
+
+<P>The power depositions into both the tie-bar and the rest of the superconducting core were evaluated separately 
+but the power deposition into the tie-bar was only some 3% of the total for a tie-bar radius of 0.05 m.  
+In figure A2 the triangles show the total power deposition from the tie-bar plotted against the square of the tie-bar radius. 
+Note the greatly expanded vertical scale. The actual change in power deposition on including a 0.05m radius tie-bar 
+is only about 2% so that the tie-bar, with its comparatively small cross-sectional area, does not make an important contribution. 
+The line in figure A2 shows the System Code prediction with the addition of a term 
+Dlog<SUB>e</SUB><I>P<SUB>tot</SUB></I>=0.013+ 4.03*<I>r<SUB>tie</SUB></I>(m)<SUP>2</SUP> in MW units to equation 1. 
+The deviations are small in absolute terms and are probably caused by Monte Carlo statistical errors.</FONT>
+
+
+<P><IMG SRC="FigA2.jpg"><FONT FACE="Arial" Size=2><P><B>Figure A2.</B> 
+The deposited power into a central superconducting core as a function of the square of the radius of 
+a steel tie-bar placed at the centre of the superconducting core.  The triangles are MCNP computations and the 
+curves are from the analytic equation incorporated into the Tokamak Energy System Code. 
+Plotted against the square of the tie-bar radius the fit is roughly linear but the changes are small and so are 
+probably affected by statistical error.</B></font>
+
+
+
+<P>A third engineering addition to be considered is the plasma-wall gap. This includes the tokamak “first wall” 
+with any vacuum vessel and plasma-facing tiles needed to withstand the presence of the plasma. 
+No further MCNP runs need to be done for this addition, since its space may taken up by a reduction in the neutron 
+shield thickness.
+
+<P>Another important engineering question is the vertical distribution of the power deposition into the superconducting core. 
+The concentration of the neutron production near the mid-plane of the plasma means that the power deposition 
+into the core is concentrated here too and it is important to know the form of the vertical profile of the power deposition. 
+The previous study [1] analysed the power deposition into just the centre and the outer regions.  The present study 
+extends this to 11 regions as shown in table A3. 
+
+<FONT FACE="Arial" Size=2><P><B> Table A3.</B> The 11 vertical segments into which the power deposition was divided. 
+The figures are for a fusion pilot 
+plant of major radius 1.35 m and a vertical extent of  ±2.37 m.</FONT> 
+
+<TABLE BORDER=1>
+<TR><TD>Segment</TD><TD>Vertical range (m)</TD><TD>Mean height (m)</TD><TD>Thickness (m)</TD></TR>
+<TR><TD>1</TD><TD>	-2.37 to –2.00</TD><TD>	-2.185</TD><TD>	0.37</TD></TR>
+<TR><TD>2</TD><TD>	-2.00 to –1.55</TD><TD>	-1.775</TD><TD>	0.45</TD></TR>
+<TR><TD>3</TD><TD>	-1.55 to –1.10</TD><TD>	-1.325</TD><TD>	0.45</TD></TR>
+<TR><TD>4</TD><TD>	-1.10 to –0.65</TD><TD>	-0.875</TD><TD>	0.45</TD></TR>
+<TR><TD>5</TD><TD>	-0.65 to –0.20</TD><TD>	-0.425</TD><TD>	0.45<</TD></TR>
+<TR><TD>6</TD><TD>	-0.20 to 0.20</TD><TD>	0</TD><TD>	0.40</TD></TR>
+<TR><TD>7</TD><TD>	+0.20 to + 0.65</TD><TD>0.425</TD><TD>	0.45</TD></TR>
+<TR><TD>8</TD><TD>	+0.65 to +1.10</TD><TD>	0.875</TD><TD>	0.45</TD></TR>
+<TR><TD>9</TD><TD>	+1.10 to +1.55</TD><TD>	1.325</TD><TD>	0.45</TD></TR>
+<TR><TD>10</TD><TD>	+1.55 to +2.00</TD><TD>	1.775</TD><TD>	0.45</TD></TR>
+<TR><TD>11</TD><TD>	+2.00 to +2.37</TD><TD>	2.185</TD><TD>	0.37</TD></TR>
+
+</TABLE>
+
+<P>As in earlier computations the superconducting core was 0.2 m in radius and simplified to represent a uniform 
+density of a mixture of Hastelloy and copper with 25% by volume of liquid neon cooling, around a 0.05 m radius steel tie rod.  
+The neutron shield was of total thickness 0.32 m and composed of 5 equal layers of shield 
+(tungsten or tungsten carbide alloy) 0.052 m thick, and 4 layers of pure water 0.015 m thick. 
+Since the plasma is vertically symmetric, the sectors at equal distances from the mid-plane should give similar results, 
+but the statistical nature of Monte Carlo calculations means that the results are not exactly symmetric. 
+The two outer segments are actually within the top and bottom shields.
+
+<FONT FACE="Arial" Size=2><P><B> Table A4.</B> The parameters of the 12 ellipsoidal toroids describing the plasma neutron production profile.  The
+figures are for a fusion pilot plant of major radius 1.35 m and include the plasma major and minor radii, 
+vertical height and normalised intensity.</FONT> 
+
+<TABLE BORDER=1>
+<TR><TD>Shell</TD><TD>Major radius <I>R<SUB>0</SUB></I> (m)</TD><TD>Minor radius <I>a</I> (m)</TD><TD>Vertical height <I>b</I> (m)</TD><TD>Intensity <I>I</I></TD></TR>
+<TR><TR><TD> 0 </TD><TD> 1.5815 </TD><TD> 0 </TD><TD> 0 </TD><TD> 1 </TD></TR>
+<TR><TD> 1 </TD><TD> 1.581 </TD><TD>0.0625 </TD><TD>0.1434 </TD><TD>0.9386 </TD></TR>
+<TR><TD> 2 </TD><TD> 1.577 </TD><TD>0.125 </TD><TD>0.287 </TD><TD>0.776 </TD></TR>
+<TR><TD> 3 </TD><TD> 1.5696 </TD><TD>0.1875 </TD><TD>0.4313 </TD><TD>0.5651 </TD></TR>
+<TR><TD> 4 </TD><TD> 1.5589 </TD><TD>0.25 </TD><TD>0.5765 </TD><TD>0.3625 </TD></TR>
+<TR><TD> 5 </TD><TD> 1.5447 </TD><TD>0.3125 </TD><TD>0.722 </TD><TD>0.2049 </TD></TR>
+<TR><TD> 6 </TD><TD> 1.5271 </TD><TD>0.375 </TD><TD>0.8681 </TD><TD>0.102 </TD></TR>
+<TR><TD> 7 </TD><TD> 1.5061 </TD><TD>0.4375 </TD><TD> 1.0155 </TD><TD>0.0447 </TD></TR>
+<TR><TD> 8 </TD><TD> 1.4817 </TD><TD>0.5 </TD><TD> 1.1665 </TD><TD>0.0173 </TD></TR>
+<TR><TD> 9 </TD><TD> 1.4539 </TD><TD>0.5625 </TD><TD> 1.3255 </TD><TD>0.0059 </TD></TR>
+<TR><TD> 10 </TD><TD> 1.4227 </TD><TD>0.625 </TD><TD> 1.4992 </TD><TD>0.0018 </TD></TR>
+<TR><TD> 11 </TD><TD> 1.388 </TD><TD>0.6875 </TD><TD> 1.6974 </TD><TD>0.0005 </TD></TR>
+</TABLE>
+
+<P>The plasma description, as superposed toroids of elliptical cross section, was enhanced to describe more 
+accurately the vertical distribution of neutron production. The revised description included 12 toroids whose 
+description follows SCENE code computations [10], and approximates the Miller description with four parameters, 
+major radius (<I>R<SUB>0</SUB></I>), minor radius <I>(a)</I>, vertical radius <I>(b)</I> and intensity (<I>I</I>), 
+for each shell. 
+These parameters are shown in table A4. The first “zero” shell is only used for illustration as it has no volume, 
+and it is seen that the last five shells have very low intensity compared to the first six. 
+
+<P><IMG SRC="FigA3.jpg"><FONT FACE="Arial" Size=2><P><B>Figure A3.</B> 
+The power deposited into the cryogenic tie-bar and superconducting core plotted against the mean 
+vertical height as a function of the elliptical cross section toroid number with a tungsten carbide alloy shield with water cooling.  
+The corresponding elliptical cross sections are shown on the right.</FONT>
+
+<P>MCNP computations were performed for each of the toroidal volumes described by the spaces between toroidal surfaces. 
+Combined with an assumed radial intensity profile, this enables the three-dimensional neutron production profile to be defined. 
+The raw MCNP results are expressed as the energy deposited per fusion neutron produced per gram of target material 
+for each vertical segment, and also for the three volumes of the tie-bar, superconducting core and shield. 
+For the present purposes we consider the total power deposition summed over the tie-bar and core volumes, 
+which defines the cryogenic power removal requirement.  
+
+
+<P><IMG SRC="FigA4.jpg"><FONT FACE="Arial" Size=2><P><B>Figure A4.</B>
+ The power deposited into the tie-bar and superconducting core for each of the 12 toroidal sections 
+defined in table 5 for tungsten carbide (triangles) and pure tungsten (open circles) shields with water cooling. 
+The crosses show the composite total power deposition when all sectors are summed with the appropriate area 
+and intensity values. </FONT>
+
+<P>Figure A4 shows these deposited powers for each of the volumes between the elliptical cross section toroids, 
+as a function of the outer toroid number, for a tungsten carbide alloy and shield with water-cooling. 
+The first three inner toroids give a Gaussian-like distribution, but the larger toroids show a double-peak distribution. 
+The areas under the curves of figure A3 representing the total energy deposition per neutron produced varies by only 
+about 10% as shown in figure A4. Because of the concentration of the neutron production into the first few toroids 
+these have by far the greatest influence, and the crosses in figure A4 show the total energy deposition evaluated 
+by a summation weighted by area and neutron intensity. It is seen that they are within 3% of the power deposition 
+from just the first toroid. Elsewhere in this paper the approximation of using just this central toroid has been adopted.
+
+<P>The vertical distribution of power deposition is calculated by multiplying the deposited powers for each vertical 
+section as shown in figure A3 by the relevant toroidal volumes and the normalised neutron intensities from table A4. 
+Because the sectors are of different heights they must be expressed as power deposition per metre as shown by 
+the solid triangles for tungsten carbide in figure A5. The open circles in figure A5 shows a similar computation 
+with identical geometrical sizes but using pure tungsten instead of tungsten carbide alloy in the neutron shield. 
+The height distribution is seen to be very similar but the deposited power is only 83% of that from the tungsten carbide 
+alloy
+
+<P>For modelling purposes, the distributions in figure A5 are quite well fitted by the Gaussian distribution shown by the 
+dashed line whose full width at half height is 2 m.
+
+<P><IMG SRC="FigA5.jpg"><FONT FACE="Arial" Size=2><P><B>Figure A5.</B>
+ The total power deposition per unit length into the tie-bar and superconducting column as a function of the mean 
+vertical position of the segments. They are shown for the tungsten carbide alloy and for a similar computation 
+with the same geometry but using pure tungsten and water in the neutron shield. The distributions approximate to 
+the Gaussian function shown dashed with a full width at half height of 2 m.</FONT>
+
+
+<P><HR></P></BODY>
+<P>&nbsp;</FONT>  Last updated 22/1/2017</P>
+</HTML>
+
