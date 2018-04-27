@@ -1,0 +1,30 @@
+<HTML>
+<BODY>
+<DIV ID=controlDiv><OBJECT 
+ID="DAViewer" 
+STYLE="position:absolute;left:10;top:10;width:600;height:450"
+CLASSID="CLSID:B6FFC24C-7E13-11D0-9B47-00C04FC2F51D"></OBJECT></DIV></DIV>
+<SCRIPT 
+LANGUAGE="JScript"for="window"event="onload">
+m=DAViewer.PixelLibrary; 
+ds=m.NewDrawingSurface(); 
+ds.Font("HELVETICA",16,0,0,0,0);
+ds.Polyline(new 
+Array(0,0,87,-50,187,-50,273,0,273,50,194,100,194,50,80,50,80,100,0,50,0,0,80,50,80,100,194,100,194,50,273,0));
+ds.ArcDegrees(86,-25,0,360,100,50);          // Oval centre of nut
+ds.LineDashStyle(2);                    // Set dashed for arrows
+ds.Line(136,0,-100,-100);               // Arrow lines
+ds.Line(43,0,-100,-20);
+ds.Line(43,50,-100,60);
+ds.LineDashStyle(1);                    // Reset to continuous
+ds.ArcDegrees(-150,-125,0,360,50,50);   // Make circles
+ds.ArcDegrees(-150,-45,0,360,50,50);
+ds.ArcDegrees(-150,35,0,360,50,50);
+ds.Text("1",-130,-96);                  // Label the circles
+ds.Text("2",-130,-16);
+ds.Text("3",-130,64);
+DAViewer.Image=ds.Image; 
+DAViewer.Start();
+</SCRIPT>
+</BODY>
+</HTML>

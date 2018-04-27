@@ -1,0 +1,144 @@
+<HTML>
+<BODY>
+<FONT SIZE = 5 COLOR = "#990000" >
+<H2>16, La Bruyere, St Martin du Vieux Belleme, 61130, Normandy, France</H1>
+<H1>Plan of the house</H1><P><HR></P>
+<DIV ID=controlDiv><OBJECT 
+ID="d1" 
+STYLE="position:absolute;left:10;top:100;width:600;height:800"
+CLASSID="CLSID:B6FFC24C-7E13-11D0-9B47-00C04FC2F51D"></OBJECT></DIV></DIV>
+<SCRIPT 
+LANGUAGE="JScript"for="window"event="onload">
+m=d1.PixelLibrary; 
+ds=m.NewDrawingSurface(); 
+ds.Font("HELVETICA",16,0,0,0,0);
+xm=-300;xx=250;ym=-350;yx=250
+wid=xx-xm;
+xc=0.05*wid;yc=0.05*wid;
+//ds.Text("0",xm+xc,ym+yc);
+sca=0.00075*wid;
+x0=0;y0=0;
+ds.Text("Ground floor",xm+xc+100*sca,ym+yc-50*sca);
+ds.Text("First floor",xm+xc+(530+100+100)*sca,ym+yc-50*sca);
+
+x1=sca*0;y1=sca*(1100);  <!-- Scale--> 
+x2=sca*500;y2=sca*(1100);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x1,ym+yc+y1-20*sca);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x2,ym+yc+y1-20*sca);         
+ds.Text("Scale: 5m",xm+xc+(x1+x2)/2,ym+yc+(y1+y2)/2);
+
+
+x1=sca*0;y1=sca*(450);  <!-- Lounge--> 
+x2=sca*(530);y2=sca*(450);
+x3=sca*(530);y3=sca*(450+480);
+x4=sca*0;y4=sca*(450+480);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+ds.Text("Lounge",xm+xc+x4,ym+yc+y4);
+
+x1=sca*(530+100);y1=sca*(450);  <!-- Bed3--> 
+x2=sca*(530+100+257);y2=sca*(450);
+x3=sca*(530+100+257);y3=sca*(450+480);
+x4=sca*(530+100);y4=sca*(450+480);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+ds.Text("Bedroom 3",xm+xc+x4,ym+yc+y4);
+
+x1=sca*(530+100+257+10);y1=sca*(550);  <!-- Bed2--> 
+x2=sca*(530+100+257+10+263);y2=sca*(550);
+x3=sca*(530+100+257+10+263);y3=sca*(550+380);
+x4=sca*(530+100+257+10);y4=sca*(550+380);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+ds.Text("Bedroom 3",xm+xc+x4,ym+yc+y4);
+
+x1=sca*(530+100+257+10);y1=sca*(450);  <!-- Hall--> 
+x2=sca*(530+100+257+10+263);y2=sca*(450);
+x3=sca*(530+100+257+10+263);y3=sca*(450+90);
+x4=sca*(530+100+257+10);y4=sca*(450+90);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+ds.Text("Landing",xm+xc+x4,ym+yc+y4);
+
+x1=sca*(530+100);y1=sca*(0);  <!-- Bed1--> 
+x2=sca*(530+100+330);y2=sca*(0);
+x3=sca*(530+100+330);y3=sca*(420);
+x4=sca*(530+100);y4=sca*(420);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+ds.Text("Bedroom 1",xm+xc+x4,ym+yc+y4);
+
+
+x1=sca*(0);y1=sca*(0);  <!-- Kitchen--> 
+x2=sca*(330);y2=sca*(0);
+x3=sca*(330);y3=sca*(420);
+x4=sca*(0);y4=sca*(420);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+ds.Text("Kitchen",xm+xc+x4,ym+yc+y4);
+
+
+x1=sca*(330+10);y1=sca*(0);  <!-- Bathroom--> 
+x2=sca*(330+10+190);y2=sca*(0);
+x3=sca*(330+10+190);y3=sca*(260);
+x4=sca*(330+10);y4=sca*(260);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+ds.Text("Bathroom",xm+xc+x4,ym+yc+y4);
+
+x1=sca*(530+100+330);y1=sca*(420);  <!-- Stairs--> 
+x2=sca*(530+100+330+90);y2=sca*(420);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x1,ym+yc+y1-15,xm+xc+x2,ym+yc+y2-15);         
+ds.Line(xm+xc+x1,ym+yc+y1-30,xm+xc+x2,ym+yc+y2-30);         
+ds.Line(xm+xc+x1,ym+yc+y1-45,xm+xc+x2,ym+yc+y2-45);         
+x1=sca*(330+10);y1=sca*(420);  <!-- Stairs--> 
+x2=sca*(330+100);y2=sca*(420);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x1,ym+yc+y1-15,xm+xc+x2,ym+yc+y2-15);         
+ds.Line(xm+xc+x1,ym+yc+y1-30,xm+xc+x2,ym+yc+y2-30);         
+ds.Line(xm+xc+x1,ym+yc+y1-45,xm+xc+x2,ym+yc+y2-45);         
+ds.Text("Stairs",xm+xc+x1,ym+yc+y1);
+x1=sca*(165-40);y1=sca*(434);  <!-- Stairs--> 
+x2=sca*(165+40);y2=sca*(434);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x1,ym+yc+y1-15,xm+xc+x2,ym+yc+y2-15);         
+
+x1=sca*(-20);y1=sca*(-20);  <!-- Outside--> 
+x2=sca*(330+10+190+20);y2=sca*(-20);
+x3=sca*(330+10+190+20);y3=sca*(450+480+20);
+x4=sca*(-20);y4=sca*(450+480+20);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+x1=sca*(530+100-20);y1=sca*(-20);  <!-- Outside--> 
+x2=sca*(530+100+330+10+190+20);y2=sca*(-20);
+x3=sca*(530+100+330+10+190+20);y3=sca*(450+480+20);
+x4=sca*(530+100-20);y4=sca*(450+480+20);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+
+
+d1.Image=ds.Image; 
+d1.Start();
+</SCRIPT>
+</BODY>
+</HTML>

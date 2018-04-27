@@ -1,0 +1,40 @@
+<HTML>
+<BODY>
+<FONT SIZE = 5 COLOR = "#990000" >
+<H2>16, La Bruyere, St Martin du Vieux Belleme, 61130, Normandy, France</H1>
+<H1>Drawing of the house</H1><P><HR></P>
+<DIV ID=controlDiv><OBJECT 
+ID="d1" 
+STYLE="position:absolute;left:10;top:100;width:1600;height:1000"
+CLASSID="CLSID:B6FFC24C-7E13-11D0-9B47-00C04FC2F51D"></OBJECT></DIV></DIV>
+<SCRIPT 
+LANGUAGE="JScript"for="window"event="onload">
+m=d1.PixelLibrary; 
+ds=m.NewDrawingSurface(); 
+ds.Font("HELVETICA",16,0,0,0,0);
+xm=-800;xx=350;ym=-450;yx=150
+
+ds.Line(xm,ym,xx,ym);         
+ds.Line(xx,ym,xx,yx);         
+ds.Line(xx,yx,xm,yx);         
+ds.Line(xm,yx,xm,ym);         
+ds.Text("2",-130,-16);
+ds.Line(xm,ym,xx,ym);         
+ds.Line(xx,ym,xx,yx);         
+ds.Line(xx,yx,xm,yx);         
+ds.Line(xm,yx,xm,ym);         
+
+wid=xx-xm
+sca=0.1*wid
+x0=0;y0=0
+ds.Line(x0-sca,y0-sca,x0+sca,y0-sca);         
+ds.Line(x0+sca,y0-sca,x0+sca,y0+sca);         
+ds.Line(x0+sca,y0+sca,x0-sca,y0+sca);         
+ds.Line(x0-sca,y0+sca,x0-sca,y0-sca);         
+
+d1.Image=ds.Image; 
+d1.Start();
+</SCRIPT>
+</BODY>
+</HTML>
+
