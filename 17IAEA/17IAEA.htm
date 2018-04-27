@@ -1,0 +1,823 @@
+<HTML>
+<HEAD>
+<TITLE>17IAEA</TITLE>
+</HEAD>
+<A HREF=../index.htm><IMG SRC="../home2.jpg" ALT="Colin's Homepage" ALIGN="LEFT"></A>
+
+<FONT FACE="Arial" SIZE=3>As approved for publication by Nuclear Fusion 14/9/17: <A HREF="http://iopscience.iop.org/article/10.1088/1741-4326/aa8c8d/meta"> A. Sykes et al 2018 Nucl. Fusion 58 016039</A>
+<B><FONT FACE="Arial" SIZE=6><P>Fusion Energy based on the Spherical Tokamak
+</B></FONT>
+
+<FONT FACE="Arial" SIZE=3><P>A. Sykes<SUP>1</SUP>, A.E. Costley<SUP>1</SUP>, C.G, Windsor<SUP>1</SUP>, O. Asunta<SUP>1</SUP>, G. Brittles<SUP>1</SUP>, 
+P. Buxton<SUP>1</SUP>, V. Chuyanov, J.W. Connor<SUP>1</SUP>, M.P. Gryaznevich<SUP>1</SUP>, B. Huang<SUP>1</SUP>, J. Hugill<SUP>1</SUP>, A. Kukushkin2,3, 
+D. Kingham<SUP>1</SUP>,   A.V. S. McNamara<SUP>1</SUP>,  J.G. Morgan<SUP>4</SUP>,  P. Noonan<SUP>1</SUP>, J.S.H. Ross1<SUP>1</SUP>,
+ V. Shevchenko<SUP>1</SUP>, R. Slade<SUP>1</SUP>and G. Smith<SUP>1,5</SUP> 
+<BR><SUP>1</SUP>Tokamak Energy, D5, Culham Science Centre, Abingdon, OX14 3DB 
+<BR><SUP>2</SUP>NRC “Kurchatov Institute”, Kurchatov Sq.1, 123182 Moscow, Russia 
+<BR><SUP>3</SUP>MRNU MEPhI, Kashirskoje Ave. 31,115409 Moscow, Russia
+<BR><SUP>4</SUP>Culham Electromagnetics, D5, Culham Science Centre, Abingdon, OX14 3DB
+<BR><SUP>5</SUP>Department of Materials, University of Oxford, 16 Parks Road, Oxford OX1 3PH UK 
+
+<BR>E-mail: alan.sykes@tokamakenergy.co.uk
+
+<P>15 December 2016, revised 19 July 2017
+<BR>Accepted for publication 14 September 2017
+
+<P><FONT FACE="Arial" SIZE=4><P><B>Abstract</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+<P>Tokamak Energy Ltd, UK, is developing spherical tokamaks 
+using high temperature superconductor magnets as a possible route 
+to fusion power using relatively small devices. 
+We present an overview of the development programme including details 
+of the enabling technologies, the key modelling methods and results, and the remaining challenges 
+on the path to compact fusion.
+
+<P>Keywords: fusion energy, spherical tokamak, high temperature superconductor
+
+<FONT FACE="Arial" SIZE=4><P><B>1. Introduction</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>Since the mid -1980s the spherical tokamak (ST) has been
+recognized as an important device for fusion research [1–4].
+Such devices demonstrate all the main features of high aspect
+ratio tokamaks but are relatively small and inexpensive to construct.
+Moreover, research has shown that they have beneficial
+properties such as operation at high beta [2], can be run at
+higher elongation [3, 4], and possibly exhibit higher confinement
+[4], although more data are needed at higher field and
+lower collisionality to determine this important aspect. Early                  
+attempts to design reactors based on STs did not produce convincing
+designs, and until recently STs have been mainly seen
+as useful research devices and possibly as neutron sources for
+component testing. However, recent advances in both tokamak
+physics and superconductor technology have changed the
+situation, and relatively small STs operating at high fusion
+gain are now considered possible. The key physics step is the
+realization that the power and the device size needed for high
+fusion gain may be considerably less than previous estimates,
+while the key technological step is the advent of ReBCO high
+temperature superconductors (HTS). In addition to operating
+at relatively high temperatures, HTS can also produce 
+and withstand relatively high magnetic fields: both of these
+properties are beneficial in the design of magnets for fusion
+devices especially for STs where space is limited in the central
+column. Sorbom <I>et al</I> [5] have considered the application of
+HTS to tokamaks of conventional aspect ratio and produced a
+design for ARC, a fusion power plant slightly greater in size
+than JET and at considerably higher field. In this paper, we
+describe the tokamak energy (TE) programme to develop an
+alternative route to fusion power based on STs constructed
+using HTS magnets, and the modelling and concept work
+underway to determine the optimum power and size of an
+ST/HTS fusion module. This work identifies key aspects in
+the physics and technology that significantly affect the size,
+power and feasibility of such a module. In parallel, experimental
+work is underway addressing these aspects, including
+the construction and operation of a series of STs. In this paper,
+we present recent new results and the status of the development
+programme, and we outline the intended next steps.
+
+<P>The paper is divided into five main sections. In section 2
+we summarise briefly our earlier modelling work that indicates
+that there is potentially a solution for a high fusion
+performance device at relatively small major radius and low
+aspect ratio. In section 3, we give an overview of the TE development
+programme; we include a brief description of the STs
+operated, presently under construction and planned at TE.
+Our predictions of the performance of a candidate ST fusion
+module are extended and updated in section 4. Possibilities for
+modular fusion are discussed briefly in section 5. A summary
+is given in section 6.
+<FONT FACE="Arial" SIZE=4><P><B>2. Power and size of tokamak pilot plants</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>Recent modelling with a system code based on an established
+physics model has shown that, when operated at reasonable
+fractions of the density and beta limits, tokamak pilot plants
+and reactors have a power gain, <I>Q<SUB>fus</SUB></I> , that is only weakly dependent
+on size; mainly it depends on <I>P<SUB>fus</SUB></I> , and H, where <I>P<SUB>fus</SUB></I>  is
+the fusion power and <I>H</I> is the confinement enhancement factor
+relative to empirical scalings [6]. Frequently the ITER reference
+scaling (IPB98y2) is used and <I>H</I> is defined relative to
+that. When expressed in dimensionless variables this scaling
+has a significant inverse dependence on the plasma beta,
+(ß<SUP>-0.9</SUP>). However, dedicated experiments on several devices in
+which the dependence of the confinement time on beta has
+been probed directly, have shown that the confinement time
+is almost independent of beta; alternative beta-independent
+scalings have been developed, for example that by Petty [7].
+These scalings are arguably more appropriate because they
+give consistency between single device and multi-device
+experiments. Modelling with the system code has shown that
+the power needed for a given fusion gain is a factor of two to
+four lower with these scalings (figure 1) [6].
+
+<P>The dependence on <I>P<SUB>fus</SUB></I>  implies that it is principally engineering
+and technological aspects, such as wall and divertor
+loads, rather than physics considerations, that determine the
+minimum device size. The lower power requirement arising
+from the beta-independent scalings is especially advantageous.
+Using the system code, a wide parameter scan was
+undertaken to establish possible regions of parameter space
+that could potentially offer high <I>Q<SUB>fus</SUB></I>  with acceptable engineering
+parameters. In addition to the high aspect ratio, large
+tokamak solution, a region of parameter space at low aspect
+ratio and relatively small major radius, and hence small
+plasma volume, has been identified (figure 1). The physics
+advantages (such as high beta) of low aspect ratio potentially
+enable a compact ST module to achieve a high fusion gain at
+a modest toroidal field (TF) of around 4 T, whereas a compact
+conventional aspect ratio tokamak requires a very high field
+on axis ~12 T to achieve high fusion gain—as evidenced by
+Ignitor [15]. A candidate device (ST135) with a major radius
+(<I>R<SUB>0</SUB></I>) of 1.35 m, aspect ratio (<I>A</I>) of 1.8 and magnetic field on
+axis (<I>B<SUB>T0</SUB></I>) of 3.7 T operating at <I>P<SUB>fus</SUB></I>  = 185 MW with a <I>Q<SUB>fus</SUB></I> 
+of 5 was suggested. The study that led to this proposal was
+mainly a physics study; engineering aspects were not investigated.
+Some important engineering and technological aspects
+are currently being developed and key results are presented in
+this paper (section 4).
+
+<FONT FACE="Arial" SIZE=4><P><B>3. TE experimental development programme</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P><I>3.1. HTS</I>
+<P>Use of conventional low temperature superconductor (LTS)
+for an ST fusion device appears impractical because thick
+shielding (>~1 m) would be needed to prevent neutrons heating
+the superconductor to above 4 K. With shielding of this thickness
+on the inner central column, the device would be very
+large. The advent of HTS, however, potentially provides
+a solution. HTSs were discovered in the late 1980s and the
+2nd generation ReBCO (where Re = Yttrium or Gadolinium)
+tapes have very promising properties; in particular, they are
+able to carry high currents under very high magnetic fields.
+Although superconductivity occurs at around 91 K in zero
+magnetic field, far better performance is achieved when cooled
+to around 20–40 K. Thus, for constructing tokamaks, HTS has
+potentially two advantages relative to LTS: an ability to carry
+more current at high field, and less demanding cryogenics [8].
+
+<P><IMG SRC="SykesFigure1.jpg"><FONT FACE="Arial" Size=2><P><B> Figure 1.</B> 
+<I>P<SUB>fus</SUB></I>  as a function of <I>R<SUB>0</SUB></I> at constant <I>Q<SUB>fus</SUB></I>  = 30, <I>H</I> = 1.5 for both IPB98y2 scaling and beta independent scalings for A = 3.2
+and <I>A</I>= 1.8. The values of some key engineering parameters are given in the text in the figure including the field at the conductor on the
+inboard side, <I>B<SUB>cond</SUB></I>. <I>P<SUB>div</SUB></I> is the transported loss power that has to be handled in the divertor after allowance for radiation losses. Details are
+given in [6]. The conventional large tokamak solution (left) and the potential low <I>A</I> solutions (right) are indicated. The circled areas show
+that, with the beta-independent scaling, the wall loads and divertor loads for a relatively small (<I>R</I> = 1.4 m) low aspect ratio (1.8) device
+would be in the range of 3.5 MW m<SUP>-2</SUP> and 45 MW m<SUP>-1</SUP> respectively, for the same <I>Q<SUB>fus</SUB></I> . 
+This is challenging (although proposals to reduce
+the divertor load in an ST are described in section 4.2) but in the region of those likely to have to be dealt with in much larger and more
+powerful devices. The value of <I>B<SUB>cond</SUB></I> is high in the case of the low <I>A</I> approach but potentially achievable using magnets made with HTS
+(sections 3 and 4).</B></font><FONT FACE="Times New Roman" SIZE=4>
+
+<FONT FACE="Arial" SIZE=4><P><I>3.2. ST25(HTS)</font></I>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>To gain experience with constructing tokamaks using magnets
+made from HTS, TE constructed a small but complete
+tokamak (figure 2). This provided the world’s first demonstration
+of a tokamak magnet where all the magnets are made
+from HTS. All coils (toroidal and poloidal) are wound from
+YBCO HTS tape. The 6-limb TF cryostat is cooled ‘cryo-free’
+to ~20 K using a single Sumitomo cold head seen above the
+vessel, thermal conduction from the HTS tape being provided
+by copper strips; the two poloidal field (PF) coils being cooled
+by He gas to 20–50 K. A 29 h run was obtained in June 2015,
+with an RF discharge in hydrogen (figure 2). The TF magnet
+in ST25(HTS) used a continuous length of 12 mm wide YBCO
+tape of 48 turns in each of 6 limbs which when operated at 400
+A would provide a TF at <I>R</I> = 0.25 m of ~0.1 T, chosen to
+permit current drive (CD) via 2.45 GHz microwave sources.
+This simple design is prone to single point failure (particularly
+at any of the several soldered joints), was not designed to
+tolerate quenches, and was operated considerably below the
+critical current which is ~1 kA at 20 K and in the low self-field
+which is <1 T at the inner TF limb. A high performance fusion
+ST will need a TF of 3–4 T, which requires the development
+of high current HTS cables. TE is currently developing HTS
+cable, joint and quench management technologies required to
+build and operate a larger device that will operate at higher
+field and with very large stored energy (section 3.4). A major
+challenge is the design of the central column, and this is being
+addressed in the design work for ST135 (section 4.1).
+<FONT FACE="Arial" SIZE=4><P><I>3.3. ST40</font></I>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+
+<P>To date STs have operated at TFs of less than 1 T. For high
+fusion performance, devices operating at 3 T or above will
+be needed. To construct an ST that can operate at fields at
+this level, innovative engineering solutions will be needed
+especially for the central column. To develop and demonstrate
+solutions to the key engineering aspects, TE is constructing a
+device (ST40) with copper magnets that is intended to operate
+at fields up to 3 T. Beyond this device TE is planning high field
+STs using HTS. ST40 (figure 3), will have a design field of
+<I>B<SUB>T0</SUB></I> = 3 T at major radius of <I>R<SUB>0</SUB></I> = 0.4 m, and a centre-rod current
+of 6 MA. Use of copper for the TF coil (as in all existing
+STs, except ST25HTS at TE) has the advantages of combining
+structural strength with good conductivity (especially when
+cooled to liquid nitrogen temperature). Whereas existing STs
+have operated typically at 0.3–0.5 T, with the recent MAST,
+Globus-M and NSTX upgrades striving for 1 T, innovative
+design features are employed to enable ST40 to operate at up
+to 3 T. Principal amongst these is the use of Constant Tension
+Curve TF limbs, specially designed so that over the permitted
+temperature rise (whether starting from ambient or from
+liquid nitrogen temperature) the expansions of the centre post
+and the return limbs are matched, so that minimal movement
+occurs at the critical top and bottom joints, a simple robust
+flexi-joint being provided to accommodate the movement.
+At fields of 3 T, stresses are high; and an external support
+structure based on two steel rings (shown in grey above
+and below the magnet) accommodates in-plane and out of
+plane forces, such as those arising from tolerance errors in
+the radial position, and the JxB twists arising from TF-PF
+and TF-solenoid interactions. The ST40 mechanical design
+was analysed extensively by a series of electromagnetic analyses
+using Opera [10], which simulated the forces expected
+in operational scenarios, including Vertical Displacement
+Events. These forces were then used in mechanical Finite
+Element Analyses of major components, using Ansys [11]. For
+example the central column of the TF magnet, formed from 24
+twisted wedge-shaped conductors, exhibits highest stress at
+the inner edge. For the maximum wedge current of 0.25 MA
+required to produce a field of 3 T at plasma major radius of
+0.4 m, this stress is ~100 MPa in the copper. The copper is half
+hard, with a yield stress around 180 MPa. Comparing this to
+the Von Mises yield criterion gives a factor of safety on yield
+of 1.8.
+
+<P>An important aid to obtaining such a high field is the use in
+ST40 of a minimal solenoid, made possible by the merging-compression
+(MC) process for plasma start-up. This should
+produce hot plasmas with currents of up to 2 MA without
+use of the central solenoid, which is only needed to maintain
+the flat-top current—assisted by the high bootstrap fractions
+expected, and CD from NBI or RF. Hence, the solenoid
+is considerably smaller than in MAST and NSTX and their
+upgrades. This reduces JxB twisting stresses, allows more
+copper for the TF column which reduces TF resistance and
+heating, and provides a stronger TF post.
+
+<P><IMG SRC="SykesFigure2.jpg"><FONT FACE="Arial" Size=2><P><B> Figure 2.</B> 
+Demonstration of 29 h RF discharge in ST25(HTS)
+in June 2015. The 6-limb TF magnet is cooled to ~20 K by the
+Sumitomo cold head shown above the magnet.</B></font><FONT FACE="Times New Roman" SIZE=4>
+
+<P>The centre post is constructed from 24 wedges, each
+twisted by 15 degrees over their length thus obviating the
+need for a TF compensating coil. The TF, solenoid and PF
+coils are powered by ‘Supercapacitors’ such as the Maxwell
+125 V, 63 F, 0.5 MJ transport module, providing a very economic
+power supply from laboratory power supplies. Each
+unit has a limiting fault current ~7 kA even under dead short
+conditions providing safety; an important consideration in a
+100 MJ capacitor bank. The plasma pulse length is limited
+by the temperature
+rise in the centre post; initial operations
+with a water-cooled TF magnet will provide a TF of 1–2 T
+at <I>R<SUB>0</SUB></I> = 0.4 m with a flat top of 1–3 s; operation with liquid
+nitrogen cooling considerably reduces resistance and hence
+heating and enables longer pulses, and should permit operation
+at up to 3 T with a flat top of ~1 s.
+<P>The MC coils (indicated in figure 3) operated successfully
+in START and MAST, and extrapolation to ST40 is discussed
+in [12]. The MC process involves the formation of plasma
+rings around each of the MC coils shown in figure 3 by rapid
+discharge of high voltage capacitor banks. These plasma rings
+attract each other and merge on the midplane, followed by
+an adiabatic compression of the plasma to the desired major
+radius of ~0.4 m. It is shown that plasma current immediately
+after merging increases with TF and linearly with MC coil
+current. In ST40 the TF and MC coil current are increased
+over those in MAST by factors of up to 6 and 2 respectively.
+Extrapolation indicates ST40 should have plasma current after
+merging of around 1 MA; the subsequent adiabatic compression
+phase halves the radius in ST40 and should approximately
+double the plasma current, assisted by the significant
+reduction in inductance of the plasma ring as it takes up the
+highly shaped ST form. The MC scheme will be operated at
+the highest performance permissible, to produce the highest
+possible plasma currents and plasma temperatures. The final
+design features MC coil currents of 600 kAt in each coil, produced
+by a 11 kV, 28 mF capacitor bank, with a downswing
+time of ~10 ms which induces the plasma rings, and uses very
+slender support legs (to minimise interference with the plasma
+rings which have changing helicity). The MC coil mounting
+structure was analysed in Ansys, and a prototype was tested
+to 10 000 cycles at the design load of 73 kN, and then finally
+pulled to destruction. Final failure occurred at approximately
+3 times the design load.
+
+<P>In addition to the original objective of providing a high
+vacuum version of the pioneering START ST at a tenfold
+increase in TF, the specification has been extended: indeed,
+it is expected that the MC scheme will provide up to 10 keV
+plasmas in ST40, the plasma being heated by the rapid conversion
+of magnetic field energy into plasma kinetic energy
+during the merging. Full details of its predicted performance,
+and of the expected evolution of electron and ion temperature
+profiles are provided in [12], based on extensive studies on
+both MAST and Japanese STs in collaboration with Y Ono
+and his team [13]. The ST40 device is currently under construction
+and is expected to begin operation in 2017.
+
+
+<FONT FACE="Arial" SIZE=4><P><B><I>3.4. Future development programme</B></font></I>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>As mentioned above, the intention is to combine the experience
+gained with the low field HTS device ST25(HTS) with
+that obtained with the high field copper device ST40 to design
+and construct high field STs using HTS for the magnets. The
+objectives will be to develop physics understanding of a high
+field ST, to test HTS cable technology, and to establish HTS
+performance during DT fusion conditions. ST40 should provide
+valuable information to determine energy confinement
+scaling in a high-field ST. TE is designing a high field HTS
+magnet, using cable technology similar to that described in
+section 4, to establish the engineering viability. Research is
+advancing rapidly on these topics, both in-house and worldwide,
+and the precise DT fusion experiments are still under
+consideration. As shown in section 4.3 these can range in
+size from small short pulse research devices, to steady state
+devices of major radius ~2 m.
+
+<P><IMG SRC="SykesFigure3.jpg">
+<FONT FACE="Arial" Size=2><P><B> Figure 3.</B> 
+Left: engineering drawing of ST40, showing the steel support rings above and below the vessel, and the merging-compression
+coils which provide an initial high current, hot plasma without need of the central solenoid. Right: model of the vacuum vessel and
+components of ST40. KINX simulations show [9] that growth rates of the highly elongated (
+<span style='font-family:Symbol'>k</span> ~ 2.6) plasma shown can be limited to e-fold
+times of ~20 ms by the passive plates (indicated), and can be stabilized by internal active feedback coils.
+</B></font><FONT FACE="Times New Roman" SIZE=4>
+
+<FONT FACE="Arial" SIZE=4><P><B>4. Conceptual design of a prototype fusion power module: ST135</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>While from a physics perspective it seems that a compact
+fusion module may be possible (section 2), the feasibility of
+such a device depends critically on there being satisfactory
+engineering solutions in a few critical areas. Three important
+components are the central column where it is necessary to
+handle the stress in this component at the same time as accommodating
+the HTS TF magnet; the divertor where it is necessary
+to handle high power loads; the inboard shielding which
+is needed to protect the HTS tape from bombardment from
+high energy neutrons so that it has an acceptable lifetime, and
+also to reduce the neutron heating to a level that can be handled
+with a reasonable cryogenic system. Possible solutions
+for these components are under study and development within
+TE, and are outlined in the following sections.
+
+<FONT FACE="Arial" SIZE=4><P><I>4.1. HTS central column design</font></I>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>One possible arrangement (figure 4) utilises two significant
+features of HTS tape: namely, operation at 20–30 K that gives
+sufficient current carrying capability at high magnetic field,
+but at much lower cryogenic cooling cost than operation at
+4 K, and the property that tape aligned parallel to the local
+magnetic field can carry several times more current than nonaligned
+tape. In this simple model the individual HTS tapes
+are bonded into multi-layer cables, and for the initial calculations
+we assume that the entire structure has the strength of
+half-hard copper.
+
+<P>Towards the geometric centre of the column, the magnetic
+field reduces and in consequence the current carrying capacity
+of the HTS tape increases. This makes it possible to reduce the
+number of tapes. For this simplified design, in which the HTS
+cables are arranged to produce a uniform current density over
+the central HTS magnet, we can derive a simple expression for
+the peak stress which is at <I>r</I> = 0, as follows.
+<P>Current density in the centre rod magnet is <I>J<SUB>cc</SUB> = 
+I<SUB>cc</SUB>/(<span style='font-family:Symbol'>p
+</span>R<SUB>cc</SUB><SUP>2</SUP>) </I>
+
+where <I>I<SUB>cc</SUB></I>(MA) is the total centre rod current, and 
+<I>R<SUB>cc</SUB></I>(m) is the
+radius of the magnet. Since we are assuming constant current
+density in the central column, the TF in Tesla at any radius
+<I>r(m)</I> within it is <I>B(r) = 0.2 r I<SUB>cc</SUB>/R<SUB>cc</SUB><SUP>2</SUP></I>. 
+If we neglect hoop stress and integrate the J × B force from <I>r</I>
+to <I>R<SUB>cc</SUB></I> we can obtain the 
+inward force at any radius within the central column. We find
+that the peak compressive stress
+ (<I><span style='font-family:Symbol'>s</span><SUB>cc</SUB></I>) occurs at the column
+axis, and is
+
+<DIR><P><I><span style='font-family:Symbol'>s</span><SUB>cc</SUB>= 0.25<span style='font-family:Symbol'>p</span>
+B<SUB>T<SUB>0</SUB></SUB><SUP>2</SUP>
+(R<SUB>0</SUB> R<SUB>cc</SUB><SUP>2</SUP>)<SUP>2</SUP></I>  MPa   (1)
+</DIR>
+<P>where we have used Ampere’s law <I>B<SUB>T<SUB>0</SUB></I> = 
+0.2 I<SUB>cc</SUB>/<I>R<SUB>0</SUB></I> to replace
+<I>I<SUB>cc</SUB></I>, where <I>B<SUB>T<SUB>0</SUB></SUB></I>
+ is the TF in Tesla at the plasma major radius
+<I>R<SUB>0</SUB></I>(m).
+
+<P>For the reference ST135 design, <I>R<SUB>0</SUB></I> = 1.35 m, <I>R<SUB>cc</SUB></I> = 0.25 m,
+plasma current = 7.2 MA, <I>B<SUB>T<SUB>0</SUB></I> = 3.7 T, <I>A</I> 
+= 1.8, elongation
+<span style='font-family:Symbol'>k</span> = 2.64, and so the peak field at the edge of the HTS magnet
+is 20 T and the central column current is 25 MA. With a neutron
+shield thickness of 0.35 m, the calculated peak radial
+stress is 320 MPa. This is high but is in the form of uniform
+hydrostatic compression when an axial compressive stress of
+the same order is provided (below).
+
+<P>A finite element analysis of the centre column with a
+Young’s modulus of 90 GPa and Poisson’s ratio of 0.35 gives
+a peak stress of 255 MPa. This lower figure reflects the support
+provided by tangential stiffness. However a practical centre
+column containing cooling channels and various materials
+with different mechanical properties is likely to have higher
+localised stress. We find expression (1), although approximate,
+useful for scoping studies.
+
+<P>Expression (1) shows that forces increase as the square of
+the TF, but reduce as the square of the central column radius.
+Hence for example, a 0.05 m addition (20%) to the HTS core
+radius (accompanied by a 0.05 m decrease in shield thickness,
+if it is desired to maintain the aspect ratio of 1.8), reduces the
+field at <I>R<SUB>cc</SUB></I> to 16.7 T and the peak stress to 205 MPa whilst
+maintaining a field of 3.7 T at <I>R<SUB>0</SUB></I> = 1.35 m.
+
+<P>Other stresses are also important: in particular, stresses
+arising from axial loads at the inboard TF leg are considerable
+and can be the limiting stresses [14] depending on the device
+design. These stresses are not yet included in our analysis.
+The compact radial build of an ST module, however, should
+make it feasible to include an external mechanical structure to
+apply a pre-load compression of the centre-rod. If this can be
+accomplished successfully, then the compressive stress would
+dominate. As a point of comparison, we note that Ignitor has
+developed a design solution along these lines [15]. In that
+case, the necessary mechanical strength has been obtained
+by designing the copper coils and its steel structural elements
+(C-clamps, central post, bracing rings) in such a way that the
+entire system, with the aid of an electromagnetic press when
+necessary, can provide the appropriate degree of rigidity to the
+central legs of the coils to handle the electrodynamic stresses,
+while allowing enough deformation to cope with the rapid
+thermal expansion of the short pulse machine. The compact
+aspect of an ST should make a similar approach possible.
+Whereas it is conventional to twist superconductor cables
+to minimize AC losses these will not be significant in the TF
+magnet of an ST power plant as this will have a slow rise to
+reach a constant peak current. With a suitable design, use can
+be made of the substantial increase in performance afforded
+by aligned operation, giving a corresponding reduction in cost.
+
+<P><IMG SRC="SykesFigure4.jpg"><FONT FACE="Arial" Size=2><P><B> Figure 4.</B> 
+Example of a monolithic HTS centrepost. Orange
+rectangles represent cables of HTS tapes; blue circles the cooling
+tubes; yellow areas copper for support and quench protection. In
+this model, the number of HTS tapes in each cable is chosen to
+provide constant current density
+</B></font><FONT FACE="Times New Roman" SIZE=4>
+
+<FONT FACE="Arial" SIZE=4><P><I>4.2. Divertor load</font></I>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+
+<P>High power plasmas in relatively small devices would impose
+high divertor loads if operated in the single-null (SN) configuration,
+especially in an ST where the inner strike point is
+at low radius, and space to mitigate the power load by angled
+strike points or long divertor legs is limited. However the use
+of double-null divertor (DND) operation, as studied extensively
+on the START and MAST STs [16], can considerably
+improve the loading, as the DND configuration is very favourable
+for the ST concept. Firstly, the inner SOL is now (largely)
+isolated from the outer, and it is found that most scrape-offlayer
+(SOL) power escapes through the outer segment and so
+is incident on the outer strike points; the inner/outer power
+ratio varies widely, dependent on plasma conditions. During
+ELMs the ratio can be over 20 times higher; during inter-ELM
+periods when the core heating is partially retained, the ratio
+can fall to 4, approximately the ratio of the inner and outer
+SOL areas; but the average ratio is typically taken as 10 in
+MAST [17].
+
+<P>Full analysis of the divertor performance requires exact
+specification of the machine parameters and the detailed
+divertor design. These details are not available at the present,
+pre-conceptual phase of the ST135 project. Instead, it is
+instructive to compare our divertor with the FNSF design [3]
+that is similar to ST135. FNSF is particularly relevant because
+an HTS version of the (copper magnet) FNSF series was developed
+as a joint study between TE and PPPL, and is presently
+used as a concept design for ST135, as reported in [18]. The
+study of divertor loads in an <I>R<SUB>0</SUB></I> = 1.7 m version of FNSF [3]
+estimates the peak divertor loads for both the inner and outer
+DND strikepoints to be less than 10 MW m<SUP>-2</SUP>. The load on the
+divertor target is roughly <I>P<SUB>div</SUB>/S<SUB>w</SUB></I>,
+ where <I>P<SUB>div</SUB></I> = <I>P<SUB>SOL</SUB></I> - <I>P<SUB>rad</SUB></I> is
+the power delivered to the targets and <I>S<SUB>w</SUB> 
+<span style='font-family:Symbol'>a</span>  R<SUB>trg</SUB> ×  f<SUB>x</SUB>
+ × <span style='font-family:Symbol'>l</span><SUB>q</SUB></I> is
+the effective wetted area. Here <I>P<SUB>SOL</SUB></I> is the power entering the
+scrape-off layer (SOL); <I>P<SUB>rad</SUB></I> the power spread over the side
+walls, mostly by radiation;  <I>R<SUB>trg</SUB></I> is the radius of the strike point;
+<I>f<SUB>x</SUB></I> the flux expansion from the midplane to the target and 
+<I><span style='font-family:Symbol'>l</span><SUB>q</SUB></I>
+represents the width of the SOL at the midplane as given by
+Eich scaling [19]. In reality, <I>S<SUB>q</SUB></I> includes also flux broadening
+and non-proportional power dissipation in the divertor, but for
+first estimates one can consider them proportional to 
+<I><span style='font-family:Symbol'>l</span><SUB>q</SUB></I>.
+
+<P>ST135 is designed to have <I>P<SUB>fus</SUB></I>  = 200 MW and 
+<I>Q<SUB>fus</SUB></I>  = 5,
+whereas the FNSF design envisages <I>P<SUB>fus</SUB></I>  = 160 MW and
+<I>Q<SUB>fus</SUB></I>  = 2. The heat entering the plasma is the combination
+of alpha heating and auxiliary heatink
+112 MW in FNSF and 80 MW in ST135, and after radiation
+losses due to impurity, Bremsstrahlung and cyclotron radiation
+this will enter the SOL. The strike points <I>R<SUB>trg</SUB></I> are at about
+20% larger radius in FNSF and expansion <I>f<SUB>x</SUB></I> should be very
+similar. The Eich scaling predicts <span style='font-family:Symbol'>l</span><SUB>q</SUB></I> varying as B-1.2
+pol and Bpol
+is a factor 1.4 higher in FNSF, so 
+<I><span style='font-family:Symbol'>l</span><SUB>q</SUB></I> is a factor 1.5 larger in
+ST135. Overall, we conclude that the strike areas should be
+similar; and since <I>P<SUB>SOL</SUB></I> is approximately 30% less, the peak
+power on each outer divertor in ST135 should be ~7 MW m<SUP>-2</SUP>
+compared to ~10 MW m<SUP>-2</SUP> in FNSF. This estimate suggests
+that the power loading of the divertor targets in ST135 should
+be tolerable. However the effectiveness of DND operation in
+limiting inner strike point loads, especially if fast transients
+such as ELMs are present, is important and requires further
+experimental results on position control, ELM mitigation,
+timescales of load transients, etc. Experiments on ST40 are
+planned to deal with some of these aspects. Other key engineering
+aspects, such as the parallel heat flux and manufacturing
+and installation accuracies of the divertor tiles also need
+investigation.
+<FONT FACE="Arial" SIZE=4><P><I>4.3. Shielding, energy deposition, 
+neutron flux and damage
+in the central core</I></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>An extensive investigation of candidate materials for the inner
+shield has been carried out and tungsten carbide with water
+cooling has been identified as a promising material [20].
+MCNP Monte Carlo Code [21] calculations of the attenuation
+due to this shield have been carried out. The attenuation of the
+neutron flux, and associated heat deposition in the central core,
+as a function of shield thickness have been parameterised
+and included in the TE System Code [20]. The heat deposited will
+have to be removed actively with a cryoplant and an estimate
+of the power requirement is also included. To determine the
+optimum shield thickness several factors have to be taken into
+account simultaneously. For a device of given <I>Q<SUB>fus</SUB></I> , <I>H</I> factor
+and aspect ratio <I>A</I>, it is necessary to consider each of the attenuation
+due to the shield, the magnetic field on the HTS tape and
+the radial stress in the central column. The TE system code has
+been extended so that these different aspects can be considered
+simultaneously. It was found that in order to keep the peak radial
+stress around its limiting value of 320 MPa as the major radius
+increased, the radius of the superconducting core also needed to
+increase but less rapidly than the shield thickness increase. The
+extra space in the radial build as the major radius increases is
+used to increase both the thickness of the shield and of the HTS
+core in the ratio: 92% to shield thickness <I>T<SUB>shield</SUB></I> , 8% to the HTS
+core radius <I>R<SUB>cc</SUB></I> which approximately maintains constant stress.
+As an example, for a reference plasma (<I>Q<SUB>fus</SUB></I>  = 5, <I>P<SUB>fus</SUB></I>  = 201
+MW, H(IPB98y2) = 1.9, A = 1.8, <span style='font-family:Symbol'>k</span> = 2.64,
+ ß<SUB>N</SUB> = 4.5), we present in figure 5 the variation of key parameters with major
+radius.
+<P>We see that at the reference major radius for ST135
+(<I>R<SUB>0</SUB></I> = 1.35 m), the shield thickness is 0.31 m, the field on the
+conductor is 20.2 T, the plasma current is 7.2 MA, the neutron
+heating to the central column is 97.7 kW, and the wall load
+is 1.88 MW m<SUP>-2</SUP>. To handle this level of neutron heating we
+estimate that a cryogenic plant of 3.0 MW wall-plug power
+would be needed. It is clear from the figure that as the shield
+thickness increases the heating of the central column reduces
+rapidly.
+
+<P>Using expression (1), the peak stress in the central column
+is 326 MPa. From the comparison with FNSF (section 4.2)
+the peak divertor load would be ~7 MW m-2. For all values
+of <I>R<SUB>0</SUB></I>, q*(Menard) defined as 
+5 × (1 + <span style='font-family:Symbol'>k</span>
+<SUP>2</SUP>)/2a<SUP>2</SUP>B/(RI) is >~ 2.8,
+the value recommended for avoidance of disruptions in
+NSTX [3].
+
+<P>The crosses in figure 5 show computations of the energy
+deposition into the superconducting core made using the
+MCNP code. It is seen that the fit to the System Code prediction
+is good over a wide range of radius without the need for
+any change in parameters. The left of the figure corresponds
+to the limit of zero shield thickness and it is seen that only
+here, for shield thickness below a few cm, that the computed
+deposited power falls significantly below the simple exponential
+dependence of form 10<SUP>3</SUP> × exp[-6.61(<I>R<SUB>0</SUB></I> - 1.35)] kW
+(where <I>R<SUB>0</SUB></I> is in m). A key aspect not yet included is any change
+in tape performance due to irradiation by neutrons. The neutron
+flux across the outer surface of the superconducting core
+has been calculated using MCNP. The full triangles in figure 6
+show the neutron flux above 0.1 MeV for the outer surface of
+the superconducting core as measured in the central mid-plane
+region (8.6% of the total core height) where the flux is highest.
+The flux variation with major radius fitted at larger radii above
+1 m is shown by the dashed lines to decay exponentially
+appreciably faster than that for the power deposition mentioned
+earlier with a form 3.54 × 10<SUP>17</SUP> exp[-7.08(<I>R<SUB>0</SUB></I> - 1.35)]
+n s<SUP>-1</SUP> m<SUP>-2</SUP>. It is seen that for lower major radii below 1 m the
+flux is rather lower than predicted from the exponential decay.
+Indeed for zero shield thickness, which occurs at major radius
+0.592 m, the flux is only a fraction 0.283 of its expected value.
+This is modeled as shown in the full lines by subtracting from
+the above function 5.45 × 10<SUP>19</SUP> exp[-14.56(<I>R<SUB>0</SUB></I> - 0.592)].
+
+<P><IMG SRC="SykesFigure5.jpg"><FONT FACE="Arial" Size=2><P><B> Figure 5.</B> 
+Heating power deposited in the superconducting core, and other key parameters, as a function of plasma major radius. The scan
+has been performed with a constant HIPB98y2 = 1.9, the central temperature adjusted to give 0.8 of the Greenwald density limit, and the TF
+adjusted to give 0.9 of the beta limit. The extra space made available by increasing the major radius has been divided in the ratio 92% to the
+shield thickness <I>T<SUB>shield</SUB></I>  and 8% to the HTS core radius <I>R<SUB>cc</SUB></I> across the plot. The circles show the reference design at 1.35 m major radius. The
+crosses show the energy deposition calculated independently using the MCNP code.
+</B></font><FONT FACE="Times New Roman" SIZE=4>
+
+
+
+
+<P><IMG SRC="SykesFigure6.jpg"><FONT FACE="Arial" Size=2><P><B> Figure 6.</B> The neutron flux across the outer surface of the mid-plane region of the superconducting core for neutron energies above 0.1
+MeV is shown by the full blue triangles (right-hand scale). The number of seconds of continuous running which correspond to a total
+neutron fluence of 10<SUP>23</SUP> m<SUP>-2</SUP> are shown by the open diamonds (left hand scale). The dashed lines are fitted exponentials with a slope 7.0833
+m<SUP>-1</SUP>. The blue line is a fit to the flux distribution and the black line the corresponding running time.
+
+</B></font><FONT FACE="Times New Roman" SIZE=4>
+
+
+<P>Inevitably the HTS performance will degrade but information
+on the extent of the degradation is limited. Eisterer’s work
+on HTS tapes [22] irradiated in a fission reactor has suggested
+that the tape lifetime corresponds to a total neutron fluence of
+about 10<SUP>23</SUP> m<SUP>-2</SUP>. The open diamonds in figure 6 show the seconds
+of continuous running assuming this fluence limit. For
+many scientific objectives, the actual running time is likely
+to be composed of many relatively short pulses. However, the
+measurements by Eisterer were made at ambient temperatures
+rather than ~30 K as expected during operation. They were
+made using a reactor flux whose energy dependence may be
+quite different from that expected behind the neutron shield of
+a fusion plant. Gamma radiation damage has not been included
+and may be important. Raising the temperature of the tape
+temporarily (annealing) may restore tape performance. In this
+case also information is limited and dedicated R&D is needed.
+<FONT FACE="Arial" SIZE=4><P><B>5. A modular power plant</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+
+<P>If a relatively small fusion module is feasible, then a possible
+alternative supply of fusion power based on a modular
+concept may be available. Compared to ST135, a higher <I>Q<SUB>fus</SUB></I> 
+would be needed, ~10–20, and the tritium breeding ratio
+would need to be >1. To meet these requirements, the device
+would probably have to be somewhat larger than ST135 but
+still small relative to the large DEMOs considered for the
+single device approach. The energy confinement in STs at
+high field, and the thickness of shielding needed to protect the
+HTS, especially on the central column, have a strong impact
+on the minimum size. It is expected that within the next few
+years better estimates in both cases will be available through
+dedicated R&D and it will be possible to optimise the size
+and power of a ST fusion module. The economics and operational
+advantages of a modular concept, utilizing perhaps 11
+small 100 MW units, (10 working and 1 undergoing maintenance)
+have already been outlined [23]. The advantages
+include improved availability; cyclic maintenance; the need
+for only a relatively small hot cell; a sharing of start-up and
+energy conversion facilities; the possibility of providing
+plant output varying in time by switching individual modules,
+and the economics of mass-production. STs can exhibit
+the combination of high bootstrap fraction and high beta—
+important both for maximizing power gain and in obtaining/
+maintaining the plasma current, especially in the absence of a
+central solenoid. In this latter respect, recent predictions that
+RF techniques can provide full plasma current initiation and
+ramp-up [24] are encouraging; initial tokamak-like plasma
+can be formed by using electron Bernstein wave (EBW) startup
+alone [25]. Then EBW CD may be used further for the
+plasma current ramp-up because of its relatively high efficiency
+<I><span style='font-family:Symbol'>h</span> = 
+R<SUB>0</SUB></I>n<SUB>c</SUB>I<SUB>CD</SUB>/P<SUB>RF</SUB> ~ 
+0.035 (10<SUP>20</SUP> A W<SUP>-1</SUP> m<SUP>2</SUP></I>) [26] at
+low electron temperatures. EBW CD efficiency remains high
+even in over-dense (<I><span style='font-family:Symbol'>w</span><SUB>pe</SUB>
+ > <span style='font-family:Symbol'>w</span><SUB>ce</SUB></I> ) plasma [27]. At the reactor
+level of temperatures ~10 keV, EBW CD efficiency 
+<span style='font-family:Symbol'>h</span> ~ 0.1
+would become compatible with other CD methods so a combination
+of different CD techniques with different accessibilities
+to the plasma may become beneficial.
+
+<FONT FACE="Arial" SIZE=4><P><B>6. Summary</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+<P>The TE programme is aimed at developing the ST as a future
+power source. Areas that have a high leverage on the feasibility
+of this approach have been identified and are under
+study in current R&D. Two such areas are the energy confinement
+scaling at high field (3–4 T), and the impact of fusion
+neutron irradiation on the properties of HTS rare earth tape
+at 20–30 K. Both are under investigation and the data should
+be available in the near future. Favourable results could lead
+to economic fusion based on modular high gain STs of relatively
+small size (<I>R<SUB>0</SUB></I> < 1.5 m); less favourable results could
+lead to larger but still economic ST fusion power plants of
+around 1.5–2 m major radius. In either case, the small scale
+of the fusion modules should lead to rapid development and
+make possible the resolution of the remaining key outstanding
+physics and technology steps that are needed for the realisation
+of fusion power.
+
+<FONT FACE="Arial" SIZE=4><P><B>References</B></font>
+<FONT FACE="Times New Roman" SIZE=4>       
+
+
+
+<P>[1] Peng Y-K.M. and Strickler D.J. 1986 Features of spherical
+torus plasmas Nucl. Fusion 26 769
+<BR>[2] Sykes A. <I>et al</I> 1999 The spherical tokamak programme at
+Culham Nucl. Fusion 39 1271
+<BR>[3] Menard J.E. <I>et al</I> 2016 Fusion nuclear science
+facilities and pilot plants based on the spherical
+tokamak Nucl. Fusion 56 http://iopscience.iop.org/
+article/10.1088/0029-5515/56/10/106023/
+<BR>[4] Ono M. and Kaita R. 2015 Recent progress on spherical torus
+research Phys. Plasmas 22 040501
+<BR>[5] Sorbom B.N. <I>et al</I> 2015 ARC: A compact, high-field, fusion
+nuclear science facility and demonstration power plant with
+demountable magnets Fusion Eng. Des. 100 378–405
+<BR>[6] Costley A.E., Hugill J. and Buxton P.F. 2015 On the power
+and size of tokamak fusion pilot plants and reactors Nucl.
+Fusion 55 033001
+<BR>[7] Petty C.C. 2008 Sizing up plasmas using dimensionless
+parameters Phys. Plasmas 15 080501
+<BR>[8] Sykes A. <I>et al</I> 2014 Recent advances on the spherical tokamak
+route to fusion power IEEE Trans. Plasma Science
+42 482–8
+<BR>[9] Gryaznevich M.P. <I>et al</I> 2016 Overview and status of
+construction of ST40 2016 IAEA Fusion Energy Conf.,
+paper FIP/P7-19 (Kyoto) https://conferences.iaea.org/
+indico/event/98/session/31/contribution/509
+<BR>[10] Opera finite element Simulation Software www.operafea.com/
+<BR>[11] Ansys software http://www.ansys.com/en-GB
+<BR>[12] Gryaznevich M.P. and Sykes A. 2017 Mergingcompression
+formation of high temperature tokamak
+plasma Nucl. Fusion 57 http://iopscience.iop.org/
+article/10.1088/1741-4326/aa4ffd/
+<BR>[13] Ono Y. <I>et al</I> 2015 High power heating of magnetic
+reconnection in merging tokamak experiments Phys.
+Plasmas 22 055708
+<BR>[14] Morris J. <I>et al</I> 2015 Implications of toroidal field coil stress
+limits on power plant design using process Fusion Des.
+Eng. 98–9 1118–21
+<BR>[15] Bombarda F., Coppi B., Airoldi A., Cenacchi G. and
+Detragiache P. 2004 Ignitor: physics and progress
+towards ignition Braz. J. Phys. 34 https://doi.org/10.1590/
+S0103-97332004000800050
+<BR>[16] Counsell G.F. <I>et al</I> 2002 Boundary plasma and divertor
+phenomena in MAST Plasma Phys. Control. Fusion 44 827–43
+<BR>[17] Harrison J.R., Fishpool G.M. and Kirk A. 2013 L-mode and
+inter-ELM divertor particle and heat flux width scaling on
+MAST J. Nucl. Mater. 438 S356
+<BR>[18] Brown T., Menard J., El Guebaly L. and Davis A. 2015 PPPL
+ST-FNSF engineering design details Fusion Sci. Technol.
+68 277–81
+<BR>[19] Eich T. <I>et al</I> 2013 Scaling of the tokamak near the scrape-off
+layer H-mode power width and implications for ITER Nucl.
+Fusion 53 093031
+<BR>[20] Windsor C.G., Morgan J.G. and Buxton P.F. 2015 Heat
+deposition into the superconducting central column of a
+spherical tokamak fusion plant Nucl. Fusion 55 023014
+<BR>[21] Goorley T. <I>et al</I> 2012 Initial MCNP6 release overview Nucl.
+Technol. 180 298–315
+<BR>[22] Prokopec R., Fischer D.X., Weber H.W. and Eisterer M. 2014
+Suitability of coated conductors for fusion magnets in view
+of their radiation response Supercond. Sci. Technol. 28
+https://doi.org/10.1088/0953-2048/28/1/014005
+<BR>[23] Gryaznevich M.P., Chuyanov V.A., Kingham D., Sykes A.
+and Tokamak Energy Ltd 2015 Advancing fusion by
+innovations: smaller, quicker, cheaper J. Phys.: Conf. Ser.
+591 012005
+<BR>[24] Raman R. and Shevchenko V. 2014 Solenoid-free plasma
+start-up in spherical tokamaks Plasma Phys. Control.
+Fusion 56 103001
+<BR>[25] Shevchenko V. <I>et al</I> 2010 Electron Bernstein wave
+assisted plasma current start-up in MAST Nucl. Fusion
+50 022004
+[26] Shevchenko V. 2002 Generation of noninductive current by
+electron-Bernstein waves on the COMPASS-D tokamak
+Phys. Rev. Lett. 89 265005
+[27] Laqua H.P. <I>et al</I> 2003 Electron-Bernstein-wave current drive
+in an overdense plasma at the Wendelstein 7-AS Stellarator
+Phys. Rev. Lett. 90 075003
