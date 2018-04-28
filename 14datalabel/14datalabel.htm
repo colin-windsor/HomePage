@@ -1,0 +1,377 @@
+<HTML>
+<HEAD>
+<TITLE>IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 11, NO. 1, JANUARY 2014</TITLE>
+</HEAD>
+<A HREF=../index.htm><IMG SRC="../home2.jpg" ALT="Colin's Homepage" ALIGN="LEFT"></A>
+<A HREF="http://ieeexplore.ieee.org/document/6488722/">IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 11, NO. 1, 
+JANUARY 2014</A> 
+<P><B><FONT SIZE=5>A Data Pair-Labeled Generalized Hough Transform
+for Radar Location of Buried Objects</B></font>
+<P>C.G. Windsor<SUP>a</SUP>, L. Capineri<SUP>b</SUP>, P. Falorni<SUP>b</SUP> 
+<P><SUP>a</SUP>116, New Road, East Hagbourne, OX11 9LD, UK
+
+<P><SUP>b</SUP>Dept of Electronics and Telecommunications, University of Florence, Via S. Marta 3, 50139, Florence, Italy
+
+<P><B><I>Abstract</I>  A method is presented for isolating the overlapping hyperbolic arcs found when a radar scan 
+is made over several adjacent buried objects. The reflected signal is first converted into a series of data pairs 
+<I>(y<SUB>j</SUB>, t<SUB>j</SUB>)</I> giving, for a radar antennae position <I>y<SUB>j</SUB></I> along the scan, the times-of-flight <I>t<SUB>j</SUB></I> of the maxima or minima in the reflected radar amplitude. The generalised Hough transform method has been extended to record in an associative store the sets of data pairs contributing to each bin in the Hough accumulator space. A cluster of high bins, defining a peak in this space, may then be broken down into its contributing data pairs. This gives the important advantage that conventional least squares algorithm can be used to reveal the object position, depth, and radius or velocity. The method is demonstrated on real radar data from buried pipes. The radius of a 0.18m radius concrete pipe at 1m depth is estimated at 0.14m. </B> 
+
+<P>Keywords: Ground-penetrating radar, Generalised Hough transform, buried pipes, diameter measurement
+
+<P>I. INTRODUCTION
+
+<P>THE LOCATION of buried targets from ground penetrating
+radar data is a common problem for nondestructive
+evaluation of civil structures [1], concrete [2], soil [3],
+archaeology [4], and for landmine detection [5]. Here, we
+present a method that is able to isolate the radar reflection
+from a particular buried object. For example, in surface scans
+perpendicular to several buried pipes, each buried pipe gives
+a wavelet of reflections, forming inverted hyperbolic arcs
+that may overlap to give a complex pattern. Human eyes
+are generally good at separating these arcs, but automatic
+characterization is not easy. Mathematically, to determine the
+real space positions of the pipes from the reflected radar
+pattern is an inverse problem of some complexity. Standard
+treatments include synthetic aperture focussing [6], frequency
+domain field inversion [6], genetic algorithms [7], and neural
+networks [8].
+
+<P><IMG SRC="DataLabelFig1.jpg" >
+<P><FONT FACE="Arial" SIZE=2>Fig. 1. Reflected radar intensity (grayscale) as the radar probe is scanned`
+across a road as a function of the position (<I>Y<SUB>i</SUB></I>) and the time-of-flight (<I>t<SUB>i</SUB></I>).
+The dark circles are the bright (positive) phase maxima and the light circles
+the dark phase (negative) minima. The three objects <I>A,B</I>, and <I>C</I> are utilities
+buried in the road.</FONT>
+
+<P>The Hough transform originated in image analysis [9] with
+two variables. The extended Hough transform using more variablesfs
+was used in radar time of flight in [10], and extended to
+pipes of finite diameter in [11]–[14]. In a recent comprehensive
+analysis [15], the general case of pipes at a given position <I>Y</I> ,
+depth <I>Z</I>, radius <I>R</I>, measured in a medium of unknown velocity
+<I>V</I> , was considered.
+
+<P>II. EXPERIMENTAL ARRANGEMENT FOR RADAR DETECTION OF BURIED OBJECTS
+
+<P>A radar antenna, placed just above the surface, is scanned
+across the objects to give a B-scan, defining the reflected
+intensity <I>S(y, t)</I> as a function of the round-trip time of flight
+<I>t</I> along the scan <I>Y</I> . Each buried object gives a generally
+hyperbolic pattern as the range becomes a minimum when the
+antenna is over the object, as shown in Fig. 1. This shows the
+conventional B-scan representation of the reflected intensity as
+a grey scale, representing reflected intensity, with time of flight
+<I>t</I> vertical, and distance <I>Y</I>  across the road horizontal. The source
+was a FC = 600 MHz central frequency pulsed RIS model
+radar developed by the IDS company in Pisa, Italy [16]. The
+image is acquired with a time sampling of TS = 2.5 × 10<SUP>-8</SUP>s,
+and with a lateral step of 0.01 m. The average soil velocity
+V was estimated at 1.23 × 10<SUP>8</SUP> ms<SUP>-1</SUP> and so the wavelength
+<span style='font-family:Symbol' SIZE=5>l</span></font>C = V/FC = 0.205m and the time sampling TS corresponds to
+a distance V.TS/2 = 0.0154m. The problem is that in general
+there are many overlapping signals from the different buried
+objects, and many spurious signals arising from extraneous
+objects, such as stones, and from layered structures in the
+ground. The location was a test ground, and the nature of
+some objects was known. The inverted hyperbola in the center
+(denoted by <I>B</I> in Fig. 1) is known to be from a concrete
+pipe 0.36m in diameter, buried at a depth of about 1m. The
+reflection on the right-hand side, (<I>C</I>), is from an electric utility
+cable of 0.08-m diameter. The nature of the strong reflection to
+the left (<I>A</I>) is unknown. The different nature of the reflecting
+objects is shown by the phase of the principal reflected signal.
+The concrete pipe gives a dark-phase principal reflection with
+ringing satellite arcs above and below. The other two objects
+have a light-phase principal reflection with weaker satellites.
+The problem faced is clear. The reflections from the three
+main objects overlap to a considerable degree. Also there is
+considerable clutter noise from the nature of the soil, and to
+the top of the figure, rather intense flat signals representing the
+layered structure of the road. Presented here is an automatic
+method for isolating the reflected signals from any one object.
+
+
+<P>III. GENERATION OF DATA PAIRS LEADING TO THE GENERALIZED HOUGH TRANSFORM
+
+<P>The first step, as illustrated by the light and dark circles in
+Fig. 2, is to reduce the B-scan to two sets of discrete data pairs
+<I>(y<SUB>j</SUB>, t<SUB>j</SUB>)</I>, at the positions, where the B-scan reflected intensity
+is maximum or minimum. The light and dark phase sets may
+be considered separately. In general, we have four unknown
+parameters for any buried pipe: 1) its position <I>Y</I> across the
+road; 2) its depth <I>Z</I>; 3) its radius <I>R</I>; and 4) the radar velocity
+of the soil <I>V</I>. The forward solution relating <I>y</I> and <I>t</I> for these
+unknown parameters is
+
+<P><I>V t<SUB>j</SUB>/2= [(y<SUB>j</SUB> - Y)<SUP>2</SUP> + Z<SUP>2</SUP>] <SUP>1/2</SUP> -  R.  </I>    (1)
+
+<P>Note that it is assumed the time scale is measured from main
+bang reflection from the surface of the soil. In the generalized
+Hough transform, a problem with <I>n</I> unknown parameters is
+solved by randomly choosing n data pairs <I>(y<SUB>j</SUB>, t<SUB>j</SUB>), j = 1, n</I>
+from the complete data and using analytic methods to solve
+for the <I>n</I> unknown parameters <I>X<SUB>j</SUB> , j = 1, n</I>. An n-dimensional
+accumulator space is set up and incremented by 1 at the position
+[<I>X<SUB>j</SUB></I>]. The process is repeated many times with different
+random choices of data pairs until a significant peak is seen at
+the accumulator space. This peak defines the probable values
+of the <I>n</I> unknown parameters.
+
+<P><IMG SRC="DataLabelFig2.jpg" >
+<P><FONT FACE="Arial" SIZE=2>Fig. 2. Bright phase data pairs are shown by the dark circles. The Hough
+accumulator space in the variables <I>Y</I> and <I>Z</I> derived from these is superimposed
+as a grey scale. This has been normalized so that the maximum accumulator
+bin is black. Peaks in the accumulator space are seen close to each object <I>A</I>,
+<I>B</I>, and <I>C</I>.</FONT>
+
+<P>In general, the more unknown variables to be found, the
+more correlated the solutions. Therefore, we begin with the
+simplest relevant case of a point object (<I>R = 0</I>) in soil whose
+radar velocity may at least be estimated at a value <I>V=v</I>. In this
+case, <I>n</I> = 2 and only doublet data pairs <I>(y<SUB>i</SUB>, t<SUB>i</SUB></I>) and 
+<I>(y<SUB>j</SUB>, t<SUB>j</SUB>)</i> need
+be chosen. The chosen points must be different, so that <I>i = j</I>.
+Also note that when the points are different but very close, the
+solution will be ill-conditioned, and the solution will not be
+so accurate. The solutions for the unknown variables <I>Y</I> and <I>Z</I>
+
+<P><I> Y = [(y<SUB>i</SUB><SUP>2</SUP> - y<SUB>j</SUB><SUP>2</SUP>) - (t<SUB>i</SUB><SUP>2</SUP> - t<SUB>j</SUB><SUP>2</SUP>)v<SUP>2</SUP>/4)]/[2(y<SUB>i</SUB> - y<SUB>j</SUB>)]
+
+<P>Z = (vt<SUB>i</SUB>/2)<SUP>2</SUP> - (y<SUB>i</SUB> - Y)<SUP>2</SUP>. </I>  (2)
+
+<P>In this case, the accumulator space is only 2-D and is easily
+plotted in real space [<I>Y, Z</I>]. Fig. 2 shows such an accumulator
+space for the bright phase data pairs of Fig. 1. The results are
+for 100 000 random choices of data pairs. The spatial resolution
+of the accumulator space <I>DY</I> = 0.02m in the direction of
+the scan, and <I>DZ</I> = 0.015m in depth. These values are comparable
+with the lateral step of 0.01m and the time sampling
+distance of 0.015 m. Many of the iterations are not recorded
+and do not result in any increment to the accumulator space.
+For example, the solution may be imaginary, or the range of
+the solutions may lie outside specified ranges of interest.
+It is seen from Fig. 2 that the accumulator space shows a
+number of significant dark areas indicating the positions of
+hyperbolic arc apexes, including each of the three principal
+hyperbolas denoted by <I>A</I>,
+<I>B</I>, and <I>C</I> in Fig. 1. There is also
+a background of ignorance at around the 10% level, covering
+most of the area near the apex points. This background arises
+from plausible solutions, arising from data pair choices where
+one point may lie on the hyperbola of interest but the other lies
+on a different hyperbola, on a noise signal or on a soil layer
+signal. The resulting background may center on the apex of
+interest, but extends at a relatively uniform level over a wide
+area.
+
+<P>IV. LABELING OF DATA-PAIRS USING A HOUGH ASSICIATIVE STORE
+
+<P>The accumulator space is conventionally an array with
+dimensionality equal to the number of unknown parameters.
+An integer array is conventionally chosen with each unknown
+variable being appropriately digitized with a step size <I>X<SUB>i</SUB></I>
+for each variable <I>X<SUB>i</SUB></I>. An associative store is mathematically
+equivalent, but instead is a series of linear integer arrays,
+with one array describing the digitized value of each unknown
+parameter, and one accumulator array describing the number
+of hits for that set of variables <I>X<SUB>i</SUB></I>. Each Hough iteration,
+with a new random choice of data pairs and solutions <I>X<SUB>i</SUB></I>,
+first produces a fresh member <I>j</i> of the associative store,
+with an initial accumulator value of 1. However, after the
+first iteration, the solutions <I>X<SUB>i</SUB></I> are examined to see if any
+of the existing members of the store corresponds to the
+current solution. If this happens, then the existing accumulator
+value is incremented by 1. The associative method has many
+advantages in Hough solutions with highly peaked solutions.
+In this letter, a second associative store has been introduced
+with the objective of recording all contributing data pairs. It
+is composed of a new series of digital arrays whose index <I>k</I> is
+incremented for each recorded Hough iteration. For <I>n</I> unknown
+variables, these arrays record the indices <I>j(i), i = 1, n</I> of each
+of the <I>n</I> data pairs <I>(y<SUB>j</SUB>, t<SUB>j</SUB>)</I>, contributing to each recorded
+iteration. A further index associates the recorded iteration
+number <I>k</I> with each bin <I>j</I> of the main associative store. The
+extra storage and computation causes no significant issues on
+a standard personal computer and the programs reported here
+run in only a few seconds.
+
+<P>The objective is to identify peaks in the Hough accumulator
+space and so to locate the contributing data pairs that define
+the hyperbolic arc arising from a given defect. The method
+used is to define for <I>n</I> unknown variables <I>X<SUB>i</SUB></I> a hyper-radius
+<I>R=  <span style='font-family:Symbol' SIZE=5>S</span></font><SUB< i=1,n </SUB>a<SUB>i</SUB> (<I>X<SUB>i</SUB></I>-X<SUB>0i</SUB>)<SUP>2</SUP></I>, where the amplitudes <I>a<SUB>i</SUB></I> are chosen
+according to the spread of the variable to include the most
+appropriate cluster of large amplitude bins in the accumulator
+space. Bins lying within this radius are defined as belonging
+to the arc apex, provided that their amplitude is above a
+defined lower limit, say 20% of the peak amplitude. This
+figure is a compromise between including all the data pairs
+associated with a defect and rejecting false alarm pairs that
+only spuriously occur within the proscribed hyper-radius. In
+Fig. 3, the maximum included radius has been chosen as
+four bins along both <I>Y</I> and <I>Z</I> axes. These included bins are
+shown by closed squares, and the contributing data points from
+all bins defined as belonging to the apex are indicated by
+closed triangles. It is seen that the merged bins form a close
+cluster, and that the chosen contributing data pairs form a fair
+representation of the arc.
+
+<P><IMG SRC="DataLabelFig3.jpg" >
+<P><FONT FACE="Arial" SIZE=2> Fig. 3. Contributing data pairs for object <I>C</I> are shown by the closed dark
+triangles. The crosses are data pairs deleted by the threshold on contribution
+numbers. The results of a three-unknown parameter least-squares fit are
+shown. The full line is the best fit given by these parameters. At the top
+of the figure, the residuals are shown on a five-times expanded scale.</FONT>
+
+<P>V. CONVENTIONAL LEAST-SQUARES FITTING TOFIND THE SOIL VELOCITY
+
+<P>Now that the data pairs contributing to object <I>C</I> have been
+delineated, conventional least-squares fitting to (1) becomes
+feasible. Since it is known that object <I>C</I> is an electric cable
+of only 0.04-m diameter, we may assume that it is a point
+scattering source (<I>R = 0</I>) and fit simultaneously to the three
+remaining parameters: object position <I>Y</I>, depth <I>Z</I>, and soil
+velocity <I>V</I>. This enables the radar velocity to be defined for
+this region of the soil as <I>V</I> = 1.142 × 108 ms<SUP>-1</SUP>. Now that
+
+
+
+the first object hyperbola and its contributing points have
+been defined, a search may be made for further hyperbolas.
+However, since we have noted all the contributions to
+the accumulator space from the data pairs contributing to
+the first object, it is possible to scan through the whole
+of the accumulator space, searching for, and deleting,
+any contributions that have involved data pairs defined as
+belonging to this object. This clear-out process lowers the
+background of ignorance mentioned in Section III by removing
+those contributions arising from the first object hyperbola.
+
+
+
+<P>VI. FITTING A RADIUS TO THE CONCRETE PIPE <I>B</I> USING THE DARK PHASE DATA PAIRS
+
+<P>The concrete pipe is better defined from the dark phase
+data pairs, and the light circles in Fig. 4 show these as in
+the B-scan in Fig. 2. The grey scale shows the corresponding
+Hough accumulator space. This time, the highest bin in the
+accumulator space is for peak B and the dark squares show
+the merged high bins forming the cluster for apex B. A much
+bigger cluster of high bins is now present and a radius of
+eight bins proved necessary, twice the size used for the more
+compact peak C. The simulated shape of a 0.18-m radius
+pipe is shown in the right-hand top corner and confirms the
+larger size of the cluster expected. Once again, the number of
+contributions from each data point was thresholded. The closed
+triangles show the contributing points after thresholding and
+define the hyperbolic arc associated with this defect. The black
+crosses show the data pairs removed by thresholding. The
+thresholding process removed many data pairs whose affinity
+with the hyperbolic arc was dubious.
+
+
+<P><IMG SRC="DataLabelFig4.jpg" >
+<P><FONT FACE="Arial" SIZE=2> Fig. 4. Dark phase data pairs are shown by the light circles. The central
+object B gave the largest contributions to the Hough accumulator space, shown
+by the grey scale. The merged accumulator bins forming the apex are shown
+by the dark squares. The contributing data pairs for object B are shown by
+the dark triangles. The crosses are data pairs deleted by the threshold on
+contribution numbers. The results of a three-unknown parameter least-squares
+fit for the position <I>Y</I> , the depth Z, and the radius <I>R</I> at the velocity determined
+from peak <I>C</I> give the values shown in the figure. The full line is the best fit
+given by these parameters. At the base of the figure, the residuals are shown
+on a five-times expanded scale. At the top right in black, a simulation of a
+0.18m pipe measured on a <I>Y Z</I> Hough transform shows the true form of the
+accumulator bin distribution.</FONT>
+
+<P>This time, the velocity was assumed to be determined from
+object <I>C</I>, as described in Section VI. With <I>V</I> held at the value
+1.142 × 10<SUP>8</SUP> ms<SUP>-1</SUP> determined from this fit, a least-squares fit
+was made to the remaining three parameters: object position
+<I>Y</I>, depth <I>Z</I>, and pipe radius <I>R</I>. The full line shows the best fit
+to the contributing points, and the fitted parameters are shown.
+The fit of the theoretical line to the contributing points is good.
+It is noteworthy that the fitted radius of 0.14m is not far from
+the actual value of 0.18 m.
+
+<P>VII. CONCLUSION
+
+<P>A generalized Hough transform method for locating buried
+objects using radar was extended by recording in an associative
+store the position/time data pairs that form a contribution to
+any bin in the Hough accumulator space. By merging high
+bins in the accumulator space, and noting the data pairs that
+contribute to the peak, the data pairs lying on a hyperbolic arc
+attributable to a particular object may be defined. Having defined
+these data pairs, a conventional least-squares method may
+be used to determine unknown parameters of the object. Using
+real radar data from buried pipes, it was possible to identify
+two known pipes and to evaluate to 25% accuracy the diameter
+of a 0.36-m diameter buried concrete pipe at around 1-m depth.
+
+<P>ACKNOWLEDGEMENT
+
+<P>The authors would like to thank Prof. G. Borgioli, B.
+Morini, and Dr. S. Matucci for their useful comments and
+suggestions.
+
+<P>REFERENCES
+<P>[1] D. J. Daniels, “Surface penetrating radar for industrial and security
+applications,” Microwave J., vol. 37, no. 12, pp. 68–82, Dec.
+1994.
+<BR>[2] J. H. Bungey and S. G. Millard, “Radar inspection of structures,”
+in Proc. Int. Civ. Engnrs. Struct. Buildings., vol. 99. 1993,
+pp. 173–178.
+<BR>[3] M. M. Golovko and G. P. Pochanin, “Automatic measurement of
+ground permittivity and automatic detection of object location with GPR
+images containing a response from a local object,” in Ultrawideband
+Radar: Applications and Design. Gainesville, FL, USA: J. D. Taylor
+Associates/CRC Press, May 2012.
+<BR>[4] T. Imai, T. Sakayama, and T. Kanemori, “Use of ground-probing radar
+and resistivity surveys for archaeological investigation,” Geophysics, vol.
+52, no. 2, pp. 137–150, Feb. 1987.
+<BR>[5] D. J. Daniels, “A review of GPR for landmine detection” Int. J. Sens.
+Imaging, vol. 7, no. 3, pp. 90–123, Sep. 2006.
+<BR>[6] E. M. Johansson and J. E. Mast, “Three-dimensional ground-penetrating
+radar imaging using synthetic aperture time-domain focusing,” in Proc.
+SPIE Advance. Microwave Millimeter Wave Detectors, vol. 2275. 1994,
+p. 205.
+<BR>[7] E. Pasolli, F. Melgani, and M. Donelli, “Automatic analysis
+of GPR images: A pattern-recognition approach,” IEEE Trans.
+Geosci. Remote Sens., vol. 47, no. 7, pp. 2206–2217, Jul.
+2009.
+<BR>[8] C. Windsor, L. Capineri, and P. Falorni, “The classification of buried
+pipes from radar scans,” INSIGHT, J. Brit. Inst. Non Destruct. Testing,
+vol. 45, no. 12, pp. 817–821, Dec. 2003.
+<BR>[9] R. O. Duda and P. E. Hart, “Using the Hough transforms to detect
+lines and curves in pictures,” Commun. ACM, vol. 15, no. 1, pp. 11–15,
+Jan. 1972.
+<BR>[10] T. C. K. Molyneaux , S. G. Millard, J. H. Bungey, and I. Q. Thou,
+“Radar assessment of structural concrete using neural network,” NDT
+Int., vol. 28, no. 5, pp. 281–288, 1995.
+<BR>[11] K. Deguchi, T. Okada, and I. Morishita, “Analysis of underground
+radar image using generalized Hough transformation technique,”
+Trans. Soc. Instrum. Control Eng., vol. 25, no. 7, pp. 72–75,
+1989.
+<BR>[12] F. C. Morabito and M. Campolo, ‘A novel neural network approach
+in non-destructive testing,” in Proc. 3rd Int. Conf. Comput.
+Electromag., IEE Conf. Publ. no. 420. Apr. 1996, pp.
+364–369.
+<BR>[13] M. R. Shaw, T. C. K. Molyneaux, S. G. Millard, M. J. Taylor, and
+J. H. Bungey, “Assessing bar size of steel reinforcement in concrete
+using ground penetrating radar and neural networks,” Insight Non-
+Destruct. Testing Condition Monitoring, vol. 45 no. 12, pp. 813–816,
+2003.
+<BR>[14] R. Hunik, “Detection and sizing of cables and leads with sub-surface
+radar,” in Proc. 12th World Conf. Non-Destructive Testing, 1989, pp.
+1261–1266.
+<BR>[15] C. G. Windsor and L. Capineri, “Automated object positioning from
+ground penetrating radar images, INSIGHT,” J. Brit. Inst. Non Destruct.
+Testing, vol. 40, no. 7, pp. 482–488, 1998.
+<BR>[16] L. Borgioli, P. Capineri, S. Falorni, Matucci, C. G. Windsor, “The
+detection of buried pipes from time-of-flight radar data,” IEEE
+Trans. Geosci. Remote Sens., vol. 46, no. 8, pp. 2254–2266, Aug.
+2008.
+<BR>[17] G. Manacorda [Online]. Available: http://www.giga-radar.info/docs/
+Manacorda.htm<P> 
