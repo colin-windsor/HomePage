@@ -1,0 +1,16 @@
+<HTML><FONT SIZE = 5 COLOR = "#990000" >
+<BODY>
+<H2>16, La Bruyere, St Martin du Vieux Belleme, 61130, Normandy, France</H1>
+<H1>The ancient Roman spring at la Herse" in Belleme forest.</H1><P><HR></P>
+<IMG SRC="outherse.jpg">
+<p>An easy cycle ride up into the forest and across to the Montagne road soon brings
+you to the old Roman spring called "La Herse". 
+
+<P>There is a noticeboard with all the details in French. The spring itself does not look
+too clear, but it is reputed to have magical medicinal even aphrodisiac powers.
+
+<p>There is a lovely octagonal wooden house near the spring.
+<IMG SRC="outhersehouse.jpg">
+<P><font size="2">Last updated 7/7/2005</P>
+<P>&nbsp; </P></BODY>
+</HTML>
