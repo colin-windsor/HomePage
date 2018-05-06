@@ -1,89 +1,959 @@
 <HTML>
 <HEAD>
-<TITLE>INDEX</TITLE>
-
+<TITLE>14Heatdeposition</TITLE>
 </HEAD>
-<BODY BGCOLOR="FFFFEE">
-<P><A HREF=index.htm><IMG SRC="home2.jpg" ALT="Colin's Homepage" ALIGN="LEFT"></A>
-<FONT SIZE=6 ><STRONG>Colin Windsor's Home Page
-</FONT></STRONG></P>
-<P><HR></P>
-<FONT SIZE=4 ><IMG SRC="cwdraws.jpg" ALIGN="RIGHT"></A>
-<P>Work address: <A href="http://www.tokamakenergy.co.uk">Tokamak Energy</A>, D5, Culham Innovation Centre, OX14 3DB, UK </P>
-<P>Phone: 01235 812083
-<A HREF="photo.htm">Photo</A>:</P>
-<P>Email: <A HREF="mailto:colin.windsor@tokamakenergy.co.uk">
-colin.windsor@tokamakenergy.co.uk</A></P> 
-<p>Home email:<A HREF="mailto:mo.windsor@talktalk.net">
-mo.windsor@talktalk.net</A></P>
-<UL>
-<LI><A HREF="qualif.htm">Qualifications:</A> BA(Class I) Oxon. 1960, DPhil 1963, FInstP 1975, 
-FBInstNDT 1993, <A HREF="frs.htm">FRS 1995</A></LI>
+<A HREF=../index.htm><IMG SRC="../home2.jpg" ALT="Colin's Homepage" ALIGN="LEFT"></A>
+<FONT FACE="Arial" SIZE=3>Published in <A HRef="http://iopscience.iop.org/article/10.1088/1741-4326/57/3/036001">
+Nucl. Fusion <B>55</B> (2015) 023014 (10pp)</A></FONT>
 
-<LI> <A HREF="cv.htm">CV</A>,  <A HREF="dates.htm"> Key dates</A>,
-<A HREF="wwho.htm">Who's Who entry</A>,<A HREF="skills.htm">Skills</A>:
-<A HREF="jobdesc.htm">Research Management</A></LI>
+<B><FONT FACE="Arial" SIZE=6><P>Heat deposition into the superconducting central column 
+of a spherical tokamak fusion plant</P>
+</B></FONT>
+<FONT FACE="Arial" SIZE=5><P>C.G. Windsor<SUP>1</SUP>, J.G. Morgan<SUP>2</SUP> 
+and P.F. Buxton<SUP>1,3</SUP></P>
 
-<LI> <A HREF="publications.htm">Publications:</A> </LI>
+<FONT FACE="Times New Roman" SIZE=4><BR><SUP>1</SUP> Tokamak Energy, D5, Culham Science Centre, Abingdon, OX14 3DB, UK
+<BR><SUP>2</SUP> Culham Electromagnetics, D5, Culham Science Centre, Abingdon, OX14 3DB, UK
+<BR><SUP>3</SUP> York Plasma Institute, Department of Physics, University of York, Heslington, York, YO10
+5DD, UK
+<P>E-mail: colin.windsor@virgin.net
+<BR>Received 20 August 2014, revised 27 November 2014
+<BR>Accepted for publication 28 November 2014
+<BR>Published 23 January 2015
 
-<LI><A HREF="papers.htm">On-line papers: </A><U> </U>
-Selected papers in magnetism, neutrons, neural nets, NDT, finance,
- fusion and mine detection  </LI>
 
-<LI><A HREF="books.htm">Books: </A>(Pulsed Neutron Scattering, 
-4 Computer Models, Solid State Science) </LI>
+<FONT FACE="Arial" SIZE=4><P><B>Abstract</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+<p>A key challenge in designing a fusion power plant is to manage the heat 
+deposition into the central core containing superconducting toroidal field coils.
+Spherical tokamaks have limited space for shielding the central core from fast neutrons
+produced by fusion and the resulting gamma rays. This paper reports a series of 
+three-dimensional computations using the Monte Carlo N-particle code to calculate the 
+heat deposition into the superconducting core. For a given fusion power, this
+is considered as a function of plasma major radius <I>R<sub>0</sub></I>, core radius 
+<I>r<sub>sc</I></sub> and shield thickness <I>d</I>. Computations over the ranges 
+0.6 m <= <I>R<sub>0</sub></I> <=  1.6 m, 0.15 m <=  <I>r<sub>sc</sub></I> <=  0.25 m 
+and 0.15 m <=  <I>d</I> <=  0.4 m are presented. The deposited power shows an
+exponential dependence on all three variables to within around 2%. The additional 
+effects of source profile, the outer shield and shield material are all considered. 
+The results can be interpolated to 2% accuracy and have been successfully incorporated into
+a system code. A possible pilot plant with 174 MW of fusion is shown to lead to a 
+heat deposition into the superconducting core of order 30 kW. An estimate of 1.7 MW is 
+made for the cryogenic plant power necessary for heat removal, and of 88 s running
+time for an adiabatic experiment where the heat deposition is absorbed by a 10K temperature rise.
 
-<LI><A HREF="patents.htm">Patents</A>: elastic matching, signature verification, arc matching </A> </LI>
+<P>Keywords: spherical tokamak, fusion reactor, high-temperature superconductors
 
-<LI><A HREF="duddell.htm">IoP Duddell Medal 1986 </A>for developments in instrumentation </LI>
+<FONT FACE="Arial" SIZE=4><P><B>1. Introduction</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
 
-<LI><A HREF="profile.htm">Personal profile</A> by Lucinda Kowol published in INSIGHT:</LI>
+<P>Calculations now suggest that by using the high plasma pressures
+possible with spherical tokamaks and the high magnetic
+fields possible with high-temperature superconducting coils, it
+may be possible to construct a relatively compact fusion power
+plant [1, 2]. A key problem for this approach has been the
+heat deposition from fusion neutrons into a superconducting
+core. Algebraic estimates of this heating power have been
+made by Stambaugh <I>et al</I>  [3]. For the Vulcan project Hartwig
+<I>et al</I>  [4] also used the Monte Carlo N-particle MCNP code
+but calculated the power deposition into the superconducting
+core as a function of shield thickness at a fixed core and
+plasma radius. A detailed discussion of the inboard shield
+of ARIES-ST, with a conventional, central column, is given
+by El-Guebaly <I>et al</I>  [5]. Their choice of a copper conductor
+was influenced by the cooling and shielding requirements of
+a conventional, low-temperature superconducting alternative.
+In contrast, the cryoplant requirements for a high-temperature
+superconducting central column, operating at 20K rather than
+4K, are much less severe and we show that adequate shielding
+can be provided without compromising the low aspect ratio of
+a spherical tokamak design. The inboard shield must avoid
+any radial or other gaps that would allow neutron and gamma
+streaming.
 
-<LI><A HREF="resume/resume.htm">Research Resumes: </A> 
-(Single page outlines of particular research achievements) </LI>
+<P>We adopt a step-wise approach here, focusing on the
+shielding requirements. Rather than making all computations
+at the full level of detail, the complications are added in turn and
+their individual effects noted. For most of the computations the
+simplest practical model of a toroidal plasma at a major radius
+<I>R<sub>0</sub></I> is taken with an elliptical cross-section of minor radius <I>a</I>
+and elongation  &#954; around a 
+cylindrical superconducting core of
+radius <I>r<SUB>sc</SUB></I>, surrounded by an annular shield of 
+thickness <I>d</I>. Heat
+deposition into the superconducting core is presented over a
+wide range of these variables, and the results are discussed in
+geometric terms. The addition of an external shield at a radius
+<I>R<SUB>ext</SUB></I> and corresponding upper and lower shields at heights of
+±<I>Z<SUB>ext</SUB></I> , is then considered and this is shown to increase the heat
+deposition by a small but significant contribution of order 6%.
+A further refinement is to define a radial profile of neutron
+production density described with a superposition of toroidal
+shells with differing elliptical cross-sections and differing
+power densities. This is shown to have heat deposition changes
+at a 20% level. Several potential shielding materials are
+considered. Tungsten carbide with water cooling was found
+to be the most promising on account of its high density and
+high atomic number, with the presence of low atomic number
+materials also providing neutron moderation. The results,
+corrected for the effects of the external shield and plasma
+profile are interpolated using least-squares fitting into a form
+that can be incorporated into the plasma system codes used
+for power plant design such as that by Costley <I>et al</I> [2].
+The particular example of a pilot plant with a major radius
+<I>R<sub>0</sub></I> = 1.35 m, a core radius <I>r<SUB>sc</SUB></I> = 0.23 m and a shield
+thickness <I>d</I>= 0.37 m, similar to that considered by Costley
+<I>et al</I>  will be considered throughout this study. It differs from
+the design reported by Costley <I>et al</I>  by neglecting engineering
+features such a 0.05 m radius central tie-bar, a 0.03 m thermal
+shield insulation gap and a 0.05 m plasma–wall gap. MCNP
+computations show the inclusion of these particular features
+increases the heat deposition by some 89% over the simplified
+model. This significant increase results principally from the
+reduction in the thickness of the neutron shield to make room
+for the thermal break and the tie-bar. Further work aims to
+study these and other engineering factors individually to reveal
+their relative magnitudes.
 
-<LI><A HREF="sciencestory/ScienceStory.htm"><U>Science Story</A></U>: An account of the science in Colin's life </LI>
+<P>MCNP6.1 is the latest release of a general-purpose,
+continuous-energy, general-geometry Monte Carlo code for
+N particles [6, 7]. It is a radiation transport code designed to
+track many particle types over a broad range of energies. It is
+supplied with an extensive library of nuclear cross-sections,
+allowing the computation of nuclear interactions of fast
+neutrons, gamma rays and other secondary particles with most
+naturally occurring isotopes of common elements. Detailed
+isotopic compositions can be specified for all materials used
+in a model.
+With a long history of use in fusion research and
+incorporating substantial validation efforts, MCNP is the
+standard fusion neutronics tool with the ability to calculate
+a number of important nuclear quantities, including nuclear
+heating, radiation dose and damage, and tritium breeding. The
+detailed design for an optimized spherical tokamak power
+plant has yet to be made. The present calculations were
+performed with an idealized model of such a plant, while
+still maintaining full three-dimensional geometry, but with the
+simplifying assumption of axisymmetry. Compared with a
+full model, the results are much faster to obtain, more flexible
+and appropriate for a design study where parameters are being
+swept. Following such an optimization, a more detailed
+computation would be made.
 
-<LI><A HREF="bass/bass.htm">Between round and square: </A> 
-(Notes on the construction of a bass recorder) </LI>
+<P>A more detailed design study would also need to consider
+several additional factors affected by the choice and thickness
+of the neutron shield material. Induction losses could occur
+within a thick conducting shield. Radiation damage to the
+high-temperature superconductor may depend on different
+factors from those for its heat deposition. Activation and
+decay-heat production after operations need to be considered.
+If tritium breeding is envisaged, even on the outer shield,
+then the neutron reflectivity of the inner shield needs to be
+considered.
 
-<LI><A HREF="therapy/therapy.htm">Cycle Therapy: </A> 
-(My account of getting to terms with prostate cancer) </LI>
+<P>A second function of the neutron shield is to reduce
+the neutron damage to the high-temperature superconducting
+material. This can also be studied using MCNP but
+is not considered here. Experimental studies [8] show
+that at moderate levels the damage to high-temperature
+superconductors kept at 20K is limited at typical neutron
+fluences.
 
-<LI><A HREF="Landsend/sponsoredride.htm">A ride from Lands
-End to East Hagbourne in aid of the Prostate Cancer Society </A>  </LI>
+<FONT FACE="Arial" SIZE=4><P><B>2. The starting point: a simplified cylindrical model</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
 
-<LI><A HREF="china/china.htm">A visit to China: </A> </LI>
+<P>The simplest realistic model of a tokamak power plant will
+have the following three components, as shown in figure 1:
 
-<LI><A HREF="kenya/kenya.htm">
-A visit to Kenya: </A> </LI>
+<P> (i) A central superconducting core of radius <I>r<SUB>sc</SUB></I> containing
+the superconducting tapes, their cooling channels and
+the strengthening materials needed to restrain the large
+magnetic forces produced. The width of this core is
+variable within the range from 0.15 to 0.25 m, depending
+on the currents needed to produce the required magnetic
+fields. In these first computations no detailed design
+is assumed; instead a homogeneous idealization of coil
+material, cooling and strengthening material is defined.
+An example coil material consists of 52.5% Hastelloy
+C-276, 22.5% copper and 25% neon cooling liquid by
+volume. Liquid neon has a high refrigerating capacity
+compared with gaseous helium on a per unit volume basis.
+The average density of this homogenized material was
+computed at 6.98 g cm<SUP>-3</SUP>.
 
-<!--<LI><A HREF="sponsor/xxxxx.htm">Sponsored Cycle Ride: </A> 
-(Spain to East Hagbourne) </LI> -->
+<P> (ii) An annular radiation shield of thickness <I>d</I> varying from
+0.15 to 0.3 m. Options for the shielding material are
+discussed in section 6 but tungsten carbide with water
+cooling was the best investigated and is used in most of
+the computations. This is assumed to be in the form of
+concentric cylinders, separated by concentric layers of
+cooling water.
 
-<LI><A HREF="music/music.htm"><U>Musical compositions: </A></U> Several allow you to listen to a MIDI file </LI>
+<P> (iii) A neutron-producing plasma. The MCNP code allows
+toroidal sources of elliptical cross-section to be defined
+and versions of such a source composed of a superposition
+of several such toroidal volumes with varying radii can
+describe a source profile of some complexity. This source
+representation will be discussed in section 5, where we
+show that a single small elliptical torus centred close to
+the magnetic axis produces over half the emitted neutrons
+and deposits power in the core within 1% of the weighted
+superposition of eight toroids of varying sizes describing
+a typical plasma profile.
 
-<LI><A HREF="wedding/wedding.htm">Colin and Mo's Wedding: </A> Some pictures from 29/10/05 </LI>
+<P><IMG SRC="fig1.jpg">
+<FONT FACE="Arial" SIZE=2><P><B>Figure 1. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>
+The simple toroidal model with three-dimensional
+cylindrical geometry. The central core contains the
+high-temperature superconductors. It is surrounded by a cylindrical
+neutron shield. The toroidal plasma volume is assumed to produce
+neutrons uniformly within the central ellipse. The outer plasma
+boundary is also shown.
+</font>
 
-<LI><A HREF="tree2/col+mo.htm">Dynamic family tree: </A> 
-    <A HREF="george/george.htm">My Father's life</A>; 
-    <A HREF="ray/ray.htm">My Mother's life; </A>
 
-<LI><A HREF="jane\index.htm">My daughter Jane's home page</A></LI>
+<P> The calculations assume a surrounding cylindrical outer
+boundary of height ±1.5 m and radius 1.6 m but no structural
+vessel or outer shielding. The purpose of this surface is to
+terminate the tracking of escaping particles that can have no
+further interaction with the structural components of the model.
+The effects of including a realistic outer shield over a rather
+larger outer boundary are considered in section 4.
+The MCNP calculation proceeds by tracking the progress
+of some large number of fusion neutrons, typically around
+a million. These calculations take around 2 h following 1.5
+million particle histories. At each collision the possible
+reactions with the particular material are evaluated and
+outgoing particles followed. The objective is to capture
+fully the reactions that lead to nuclear heating from the
+source neutrons. This results in there being more neutrons
+to follow from (n,2n) reactions, and also many gamma rays
+to follow from the (n,<span style='font-family:Symbol'>g</span> ) 
+reactions. Typically the heating
+from gamma rays is comparable with that from neutrons as
+found in the Vulcan studies [4]. As the numbers of neutrons
+and gamma rays decrease due to the shielding process, it is
+possible to improve the Monte Carlo statistics by increasing the
+number of tracked neutrons by artificially splitting them, and
+correspondingly reducing their weights, to give roughly similar
+neutron populations in each part of the material. The output
+from MCNP includes neutron and gamma ray mean free paths.
+In the shielding layer it is approximately 20 mm for neutrons,
+increasing to approximately 25 mm in the superconducting
+alloy core. Gamma ray mean free paths are about 25% shorter.
+The cylindrical core and annular shield have therefore been
+divided up into five radial sections with thicknesses of the
+order of these mean free paths. For example with a core radius
+<I>r<SUB>sc</SUB></I> = 0.15 m, the radial steps are at 0.03, 0.06, 0.09, 0.12 and
+0.15 m. With a shield thickness <I>d</I>= 0.15 m the five radial
+steps are at 0.18, 0.21, 0.24, 0.27 and 0.30 m. The program
+evaluates the statistical significance of all the computed output
+quantities (‘tallies’ in MCNP terminology), and these statistics
+are satisfactory for all the cases presented. The statistical
+accuracy of the MCNP computations is estimated in the output
+file to be of order 1%. Aconsiderably larger error of order 10%
+must be expected on the overall reliability when the assumed
+simplifications of the geometry and plasma profile are taken
+into account.
 
-<LI><A HREF="organ/organ.htm"><U>Organ playing </A></U> </LI>
+<P>A further separation has been made of the central core
+and shield into separate tally zones for their upper, central and
+lower parts, with the central zone being defined as ±0.2 m from
+the mid-plane. This separation is to enable the heating to be
+determined in the peak mid-plane region of the core where the
+heating per unit length is expected to be a maximum.
+The MCNP user may define energy bins to refine the
+information computed about the tallies. For the present
+computations twelve bins have been used, ranging from
+0–1 keV up to 20–25 MeV; a few energetic particles are created
+in the latter range. Figure 2 shows the relative weights of the
+neutron and gamma heating contributions for each of these
+energy bands. It is seen that the neutrons have most weight
+in the energy range from 1 to 10 MeV. There is only a small
+contribution to the heat deposition from the energy range below
+10 keV. The total heat deposition from neutrons and gammas
+is about the same for these parameters, however the neutron
+heating is more concentrated in the central mid-plane region.
 
-<LI><A HREF="singing/singing.htm"><U>Singing </A></U> - nothing banishes your troubles better than a good sing! </LI>
+<FONT FACE="Arial" SIZE=4><P><B>3. The calculation of heat flow into the central core</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
 
-<LI><A HREF="green/green.htm"><U>The greening of our house:</A></U> solar water heating, a rainwater toilet and LED starlights</A></U> </LI>
+<P>A fusing plasma of say 174 MW total power emits some
+139 MW as neutrons with the remainder as alpha particles.
+The alphas are slowed down within the plasma itself and their
+energy is mostly transported into the divertor region and partly
+transferred by relatively low energy radiation from the plasma
+onto the surface of the neutron shield and the remainder of the
+first wall. The alpha energy does not contribute significantly
+to the heat deposition into the body of the neutron shield or
+the superconducting core. We therefore consider only the heat
+deposition from the neutron production.
 
-<LI><a href="16labru/16labru.htm">Our house at 16 La Bruyere, Belleme, France</a>
+<P>The MCNP program produces an output file which
+contains both physics results and information about the Monte
+Carlo statistics. For example in the case of a core radius
+<I>r<SUB>sc</SUB></I> = 0.15 m and shield thickness <I>d</I>= 0.15 m the energy
+deposited into the mid-plane <I>z</I> = ±0.2 m zone of the core
+region is <I>E<SUB>cc</SUB></I> = 6.40 × 10<SUP>-8</SUP> MeV per gram of this region per
+incident fusion neutron. Later in the output file the energy
+depositions into the upper zone z > 0.2 m, <I>E<SUB>uc</SUB></I> and into
+the lower zone z < 0.2m, <I>E<SUB>lc</SUB></I> can be found. These three
+energies <I>E<SUB>cc</SUB></I>, <I>E<SUB>uc</SUB></I> and <I>E<SUB>lc</SUB></I> 
+and the corresponding masses <I>M<SUB>cc</SUB></I>,
+<I>M<SUB>uc</SUB></I> and <I>M<SUB>lc</SUB></I> of the zones allow the calculation of the energy
+deposition into the complete superconducting core region.
+Each fusion neutron carries an energy from the D–T reaction
+of <I>E<SUB>DT</SUB></I> = 14.1 MeV and if the total neutron power generated
+in the plasma is given by, for example: <I>P<SUB>neut</SUB></I> = 139 MW then
+the total number of fusion neutrons produced per second will
+be <I>P<SUB>neut</SUB></I>/<I>E<SUB>DT</SUB></I>. The power deposition into the central region
+will therefore be <I>P<SUB>cc</SUB></I> = <I>E<SUB>cc</SUB></I><I>M<SUB>cc</SUB></I><I>P<SUB>neut</SUB></I>/<I>E<SUB>DT</SUB></I>. Similarly for the
+complete core volume, the power deposition will be
 
-<LI><a href="ChristmasCards/ChristmasCards.htm">Our Christmas cards over the last years</a>
+<P><I>P<SUB>tot</SUB></I> = (<I>E<SUB>cc</SUB></I><I>M<SUB>cc</SUB></I> + <I>E<SUB>uc</SUB></I><I>M<SUB>uc</SUB></I>
+ + <I>E<SUB>lc</SUB></I><I>M<SUB>lc</SUB></I>)<I>P<SUB>neut</SUB></I>/<I>E<SUB>DT</SUB></I> .&nbsp;&nbsp;&nbsp; (1)
 
-<LI><A HREF="art/art.htm"><U>Art:</A></U>some drawing, painting and sculpture.</A></U> </LI>
 
-<LI><A HREF="links.htm">Links</A> (PenOp, Culham fusion, Tokamak Energy)</LI></UL>
-<P><HR></P></BODY>
-<P>&nbsp;</FONT>Copyright 2005 Colin Windsor : Last updated 5/1/2018</P>
-</HTML>
+<P><IMG SRC="fig2.jpg">
+<FONT FACE="Arial" SIZE=2><P><B>Figure 2. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>
+The relative weight of neutron and gamma power deposition as a function of energy on a log scale for a geometry with 0.15 m
+radius core and 0.15 m thickness shield. The relative weight is higher in the mid-plane zone closer to the centre of the source in both cases.
+Most of the heat arises from neutrons and gamma rays of relatively high energies above 100 keV.
+</font>
+
+
+
+<FONT FACE="Times New Roman" SIZE=3>
+<P><B>Table 1.</B> A selection of results (with external shield correction) for
+a plasma major radius <I>R<SUB>0</SUB></I> = 1.0 m and 174 MW fusion power as a
+function of superconducting core radius <I>r<SUB>sc</SUB></I> and shield thickness <I>d</I>. A
+small correction for the tungsten carbide external shield with water
+cooling has been made as detailed in section 4. The penultimate
+italic line shows the results that were used in the simplified Costley
+<I>et al</I>  study with major radius <I>R<SUB>0</SUB></I> = 1.35 m also including the
+external shield. The bold italic line shows the results for the full
+Costley study including engineering features. The cryogenic power
+<I>P<SUB>cryo</SUB></I> will be defined in section 8 and the time <I>t<SUB>adi</SUB></I> for adiabatic
+heating constrained to a defined temperature rise in section 9.</FONT>
+<TABLE BORDER=1>
+<TR><TD><I>r<SUB>sc</SUB></I> (m)</td><td><I>d</I> (m)</td><td> <I>P<SUB>cc</SUB></I> (kW)</td><td> <I>P<SUB>tot</SUB></I> (kW)</td>
+<td><I>P<SUB>cryo</SUB></I> (MW)</td><td> <I>t<SUB>adi</SUB></I> (s)</td></tr>
+<TR><TD>0.15</td><td> 0.15</td><td> 173.72</td><td> 520.19</td><td> 28.30</td><td> 1.13 </td></tr>
+<TR><TD>0.15</td><td> 0.20</td><td> 96.46 </td><td>279.09 </td><td> 16.00</td><td> 2.10 </td></tr>
+<TR><TD>0.15</td><td> 0.25</td><td> 51.22 </td><td> 142.31</td><td>  8.66</td><td> 4.12 </td></tr>
+<TR><TD>0.15</td><td> 0.30</td><td> 26.37 </td><td> 70.34 </td><td>  4.58</td><td> 8.33 </td></tr>
+<TR><TD>0.15</td><td> 0.35</td><td> 13.91 </td><td> 35.96 </td><td>  2.50</td><td> 16.29</td></tr>
+<TR><TD>0.15</td><td> 0.40</td><td> 7.00  </td><td> 17.26 </td><td>  1.30</td><td> 33.95</td></tr>
+<TR><TD>0.20</td><td> 0.15</td><td> 260.84</td><td> 763.92</td><td> 40.30</td><td> 1.36 </td></tr>
+<TR><TD>0.20</td><td> 0.20</td><td> 142.20</td><td> 400.73</td><td> 22.28</td><td> 2.60 </td></tr>
+<TR><TD>0.20</td><td> 0.25</td><td> 75.57 </td><td> 204.68</td><td> 12.06</td><td> 5.09 </td></tr>
+<TR><TD>0.20</td><td> 0.30</td><td> 38.88 </td><td> 100.83</td><td>  6.34</td><td> 10.33</td></tr>
+<TR><TD>0.20</td><td> 0.35</td><td> 20.20 </td><td>  50.83</td><td>  3.42</td><td> 20.49</td></tr>
+<TR><TD>0.20</td><td> 0.40</td><td> 10.14 </td><td>  24.35</td><td>  1.77</td><td> 42.78</td></tr>
+<TR><TD>0.25</td><td> 0.20</td><td> 194.51</td><td> 532.67</td><td> 28.93</td><td> 3.06 </td></tr>
+<TR><TD>0.25</td><td> 0.25</td><td> 102.92</td><td> 268.65</td><td> 15.45</td><td> 6.06 </td></tr>
+<TR><TD>0.25</td><td> 0.30</td><td> 52.44 </td><td> 131.03</td><td>  8.04</td><td> 12.42</td></tr>
+<TR><TD>0.25</td><td> 0.35</td><td> 26.90 </td><td>  65.24</td><td>  4.28</td><td> 24.95</td></tr>
+<TR><TD>0.25</td><td> 0.40</td><td> 13.54 </td><td> 31.43 </td><td>  2.22</td><td> 51.78</td></tr>
+<TR><TD>0.23</td><td> 0.37</td><td> 7.85  </td><td> 29.80 </td><td>  1.66</td><td> 88.00</td></tr>
+<TR><TD>0.23</td><td> 0.32</td><td> 13.72 </td><td> 56.40 </td><td>  2.98</td><td>  —   </td></tr>
+</TABLE>
+These simple calculations are readily incorporated into a
+spreadsheet or the code reading the MCNP output file. Table 1
+below shows the selection of these powers for the plasma major
+radius <I>R<SUB>0</SUB></I> = 1 m and a fusion power <I>P<SUB>tot</SUB></I> = 174 MW. The main
+results are the total rate of energy deposition, <I>P<SUB>tot</SUB></I> and the rate
+of energy deposition, <I>P<SUB>cc</SUB></I> in the mid-plane zone z = ±0.2 m.
+The time for adiabatic heating within a defined temperature
+range <I>t<SUB>adi</SUB></I>, and the cryogenic power <I>P<SUB>cryo</SUB></I> will
+ be defined later.
+Figure 3 shows plots of the natural logarithm of the
+heat deposition against the three variables of shield thickness,
+plasma major radius and superconducting core radius. The
+points fit rather well to the linear regression lines shown in
+all the plots. The slopes against any given variable are quite
+similar for all plots. Including fits to all the data points
+gives the mean slope against major radius <I>S<SUB>Ro</SUB></I>
+= -1.276 ± 0.070 m<SUP>-1</SUP>, the mean slope against superconducting core radius 
+<I>S<SUB>rsc</SUB></i> = 6.752 ± 0.819 m<SUP>-1</SUP> and the mean slope against shield
+thickness <I>S<SUB>d</SUB></I> = -13.733 ± 0.245 m<SUP>-1</SUP>. The good linearity
+means that a fair approximation to all the computed data can
+be obtained by choosing a median logarithm of heat deposition
+value at for example (<I>R<SUB>0</SUB>,r<SUB>sc</SUB>, d) </I>= (1.00 m, 0.2 m, 0.3 m) and
+performing a linear summation of products of the distances
+from this point multiplied by the mean gradients:
+
+<P><I>log<SUB>e</SUB> P(R<SUB>0</SUB>,r<SUB>sc</SUB>, d) = log<SUB>e</SUB> P(1.0, 0.2, 0.3) + (R<SUB>0</SUB> - 1.0)S<SUB>Ro</SUB>
++ (r<SUB>sc</SUB> - 0.2)S<SUB>rsc</SUB> + (d - 0.3)S<SUB>d</SUB> </I>. &nbsp;&nbsp;&nbsp;  (2)
+
+<P><IMG SRC="fig3.jpg">
+<FONT FACE="Arial" SIZE=3><P><B>Figure 3. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>
+Three plots of the natural logarithm of the power
+deposition plotted against (a) the shield thickness <I>d</I> from plasmas at
+several major radii <I>R<SUB>0</SUB></I> for a superconducting core radius <I>r<SUB>sc</SUB></I> = 0.2 m,
+(b) the major radius <I>R<SUB>0</SUB></I> for several shield thicknesses and (c) the
+superconducting core radius for a major radius of<I> R<SUB>0</SUB></I> = 1.4 m. The
+lines are least-squares fits to the data. The open circles indicate the
+Costley <I>et al</I> [2] pilot plant.
+</font>
+
+
+<P>As a test of the approximation, figure 4 shows the
+estimated natural logarithms of the 93 values of the heat
+depositions compared with their computed values. The
+agreement has a standard deviation of 0.054 in the natural
+logarithm, or 5.5%.
+
+
+<P><IMG SRC="fig4.jpg">
+<FONT FACE="Arial" SIZE=3><P><B>Figure 4. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>A scatter plot of the linear fit model for the logarithm of
+the heat deposition to the computed values.
+</font>
+
+
+<P>Figure 5 illustrates some of the geometric factors that
+contribute to the results presented. Since the heat deposition
+from neutrons generated at any point at a radius <I>R<SUB>0</SUB></I> will be the
+same, it is equivalent to view all neutrons as being generated
+at a single point at (<I>X, Y</I> ) = (<I>R<SUB>0</SUB></I>, 0) as indicated in the figure.
+All the distances involved in the calculation can be evaluated
+analytically [9]. A good fit of order 10% to the heat deposition
+computations at any given major radius could be made with
+the simple model that the neutrons travel through the shield
+and across the core along linear paths with an exponential
+attenuation depending on the material. The deposited power
+increases with core radius because of the increased solid angle,
+and decreases with shield thickness.
+
+
+<P><IMG SRC="fig5.jpg">
+<FONT FACE="Arial" SIZE=2><P><B>Figure 5. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>The geometric factors involved in 
+the heat deposition into a shielded central superconducting core of radius <I>r<SUB>sc</SUB></I> 
+surrounded by a
+cylindrical shield of thickness <I>d</I> from a neutron source at radius <I>R<SUB>0</SUB></I>. 
+All the distances in the figure can be evaluated analytically and
+integrations made in the approximation of linear paths.
+</font>
+
+
+<FONT FACE="Arial" SIZE=4><P><B>4. The effect of the plasma vessel outer surfaces</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+
+<P>The previous section described results for the simplest situation
+of an elliptical cross-section plasma with shielding only of the
+central core containing the superconducting windings. All
+neutrons hitting the outer, upper and lower surfaces of the
+vessel were assumed lost. A subsequent calculation was
+performed for the situation with a 0.5 m cylindrical thick
+blanket shield starting at a radius of 1.55 m extending to 2.05 m,
+together with top and bottom surfaces also 0.5 m thick starting
+at ±1.05 m and ending at ±1.55 m. Figure 6 shows the layout
+of the shield including the various internal boundaries used to
+optimize the statistics in the MCNP calculation.
+The results are given in table 2 below for the case of core
+radius <I>r<SUB>sc</SUB></I> = 0.2 m and inner shield thickness <I>d</I>= 0.4 m.
+The computations with the external shield took considerably
+longer—around 20 h. Looking first at the total power line
+of table 2, the power deposited into the central mid-plane
+region of the core for major radius <I>R<SUB>0</SUB></I> = 1.0 m, <I>r<SUB>sc</SUB></I> = 0.2 m
+and <I>d</I>= 0.40 m has increased by about 6.5%. Looking at
+the mid-plane power, the inclusion of the external shield has
+increased the heat input by only 0.78%. It seems possible
+that the tungsten carbide and water outer shield appear rather
+‘black’ to the neutron flux and that relatively few are reflected
+back. Also, the spherical tokamak geometry means that the
+solid angle subtended by the central superconducting core at
+the outer wall is not large.
+
+<P><B>Table 2.</B><FONT FACE="Times New Roman" SIZE=3> The power deposition in kW of typical core and shield configurations without and with the external shields (outer, upper and lower)
+for a total fusion power of 174 MW and neutron power 139 MW.</FONT>
+
+<TABLE BORDER=1>
+<TR><TD>- </TD><td><I>r<SUB>sc</SUB></I> (m) </TD><td><I>d</I>(m)</TD><td> No shield</TD><td> With shield </TD><td> Increase</TD></tr>
+<TR><TD>Total deposited power    <I>P<SUB>tot</SUB></I></TD><td> 0.2 </TD><td> 0.4 </TD><td> 22.97 kW </TD><td> 24.46 kW </TD><td>6.50%</TD></tr>
+<TR><TD>Mid-plane deposited power <I>P<SUB>cc</SUB></I></TD><td> 0.2 </TD><td> 0.4 </TD><td> 9.41 kW  </TD><td>  9.48 kW </TD><td>0.78%</TD></tr>
+</TABLE>
+
+
+<FONT FACE="Arial" SIZE=4><P><B>5. The effect of the fusion neutron source profile</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+<P>The first computations considered a small, uniform, elliptical
+cross-section neutron source centred near the major radius.
+It is known from both experiment and theory that the fusion
+neutron source profile is highly peaked within the perimeter of
+the plasma. This occurs because the neutron production varies
+as the square of the temperature. More precise profiles have
+been calculated using the SCENE[10] magneto-hydrodynamic
+(MHD) equilibrium code. The parameters used here were
+evaluated for a major radius <I>R<SUB>0</SUB></I> = 1.0 m and minor radius
+a = 0.54 m, with peaked density and temperature profiles. The
+number of fusion neutrons produced is given by (<I>N<SUB>DT</SUB></I>/2)<SUP>2</SUP>
+<<span style='font-family:Symbol'>s</span>sv>
+where <I>N<SUB>DT</SUB></I> is the density of the deuterium–tritium fuel and
+<<span style='font-family:Symbol'>s</span>sv> is the nuclear reactivity between D and T. Both the
+density and temperature are approximately constant on a
+flux surface, so the number of fusion-produced neutrons is
+also approximately constant on a flux surface. A fit to the
+equilibrium flux surfaces was made using the Miller [11]
+description in terms of the Shafranov shift, triangularity and
+elongation as a function of minor radius, and is given in
+table 3. 
+
+<P><B>Table 3.</B><FONT FACE="Times New Roman" SIZE=3> The major radius <I>R<SUB>0</SUB></I>, radial minor radius <I>a<SUB>r</SUB></I> , vertical minor
+radius <I>a<SUB>z</SUB></I> and weight of the 8 radial shells.</FONT>
+<TABLE BORDER=1>
+<TR><TD>Shell</TD><td><I>R<SUB>0</SUB></I> (m)</td><td></I><I>a<SUB>r</SUB></I> (m)</i></td><td><I>a<SUB>z</SUB></I> (m)</td><td>Weight</td></tr>
+<TR><TD>1</TD><td> 0.9984</TD><td> 0.0625</TD><td> 0.1549</TD><td> 0.5321</TD></tr>
+<TR><TD>2</TD><td> 0.9900</TD><td> 0.1250</TD><td> 0.3160</TD><td> 0.3358</TD></tr>
+<TR><TD>3</TD><td> 0.9768</TD><td> 0.1875</TD><td> 0.4821</TD><td> 0.1080</TD></tr>
+<TR><TD>4</TD><td> 0.9585</TD><td> 0.2500</TD><td> 0.6487</TD><td> 0.0258</TD></tr>
+<TR><TD>5</TD><td> 0.9354</TD><td> 0.3125</TD><td> 0.8115</TD><td> 0.0057</TD></tr>
+<TR><TD>6</TD><td> 0.9073</TD><td> 0.3750</TD><td> 0.9707</TD><td> 0.0013</TD></tr>
+<TR><TD>7</TD><td> 0.8743</TD><td> 0.4375</TD><td> 1.1344</TD><td> 0.0003</TD></tr>
+<TR><TD>8</TD><td> 0.8364</TD><td> 0.5000</TD><td> 1.3229</TD><td> 0.0001</TD></tr>
+</TABLE>
+
+The intensity of fusion-produced neutrons falls off
+exponentially with the minor radius; so that over 99% of the
+neutrons are produced within the first half of the minor radial
+distance and over 50% are generated within the first one-eighth.
+
+
+<P><IMG SRC="fig6.jpg">
+<FONT FACE="Arial" SIZE=3><P><B>Figure 6. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>The inclusion of an external shield. The blue areas represent the central superconducting core, which now extends into the
+external shield. The orange shield surrounds the assembly at twice the thickness surrounding the core.</font>
+
+
+<P>Figure 7(a), on the left, shows the Miller poloidal flux
+surfaces at eight radial positions. However this profile is not
+straightforward to use with MCNP. Elliptical cross-section
+toroidal flux surfaces are standard in MCNP and the figure 7(b)
+on the right shows a similar set of flux surfaces using such
+elliptical toruses (which ignores the effects of triangularity).
+They differ appreciably near the top and bottom of the plasma
+but are very similar near the centre where most of the neutron
+intensity is concentrated. A choice has been made to centre
+each torus at the correct position determined by the Shafranov
+shift and to match the inner radius distance. This means that
+the radius at which the peak of the vertical height distribution
+occurs is in error, but this is only significant at larger minor
+radii where the emitted intensity is much lower. Using these
+elliptical toroidal flux surfaces it is possible to evaluate the heat
+deposition from each of the annular shells in turn, and to plot
+the heat deposition as a function of the shell number.
+Figure 8 shows the total power deposited (circles) and
+the power deposited in the central 0.4m of the central
+superconducting core (triangles) for each of the shells shown
+in figure 7(b) assuming that the same total power is emitted
+from each shell. One by one, the volumes between adjacent
+elliptical toruses are assumed to generate all the neutrons, so
+that it is possible to compare how the heat deposition varies.
+
+Figure 7. (a) The Miller [11] representation of the plasma flux surfaces for a plasma of major radius 1m, superconducting core radius
+<I>r<SUB>sc</SUB></I> = 0.15 m, and shield thickness <I>d</I>= 0.15 m plasma. (b) By choosing elliptical cross-sections with the same minimum radius as on the
+right, a very similar distribution is obtained, especially for the inner elliptical toruses which contain the bulk of the emission.
+Figure 8. The heat deposition in MW into the full length of the
+superconducting magnet core region (<I>P<SUB>tot</SUB></I> ), and into the inner
+mid-plane 0.4 m high section (<I>P<SUB>cc</SUB></I>). The full lines and points show
+the eight shells of increasing radii. The crosses Wcc and Wtot show
+the sums of these values weighted by their emission intensity. Note
+that, for this particular case of <I>R<SUB>0</SUB></I> = 1.0 m, <I>r<SUB>sc</SUB></I> = 0.15 m and
+d = 0.15 m taking the central shell approximation underestimates
+the weighted full-length total deposited power by 2.3%. However,
+for the mid-plane region it is overestimated by 0.8%.
+The point at ‘0’ corresponds to all the emission taking place
+close to a ring at the major radius. It is seen that the total
+power increases as the shell number increases towards the outer
+boundary, while the power into the central region of the column
+decreases. However the changes become quite small when
+weighted according to a typical emission profile. The cross
+and plus signs indicate the heat deposition when an average
+of the eight shells weighted according to their intensity profile
+is taken. The weighted total heat deposition is within 1% of
+the emission from the first elliptical torus used in the earlier
+computations.
+The set of toroidal shells may be used to evaluate the power
+deposition from any radial profile to within the approximation
+inherent in having only eight shells. As an example, figure 9
+shows the averaged heat deposition as a function of the width
+constant in the exponential function describing the radial
+source profile. For low widths the averaged heat deposition
+approaches the same constant value as given by the line source.
+At high widths it again approaches a constant value close to
+that given by the outer shells. However the variation between
+these two limits is only about 15% so the effects of profile
+shape are not very large.
+
+<P><IMG SRC="fig9.jpg">
+<FONT FACE="Arial" SIZE=2><P><B>Figure 9. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>
+The total deposited power <I>P<SUB>tot</SUB></I> in MW as a function of the
+width of the exponential profile function for the same conditions as
+figure 8. The cross marks the width used in the other computations.</font>
+
+
+<FONT FACE="Arial" SIZE=4><P><B>6. The choice of shield material</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+<P>Several possibilities for the choice of shielding material were
+considered. Table 4 below shows the summary of results for
+the case of 0.15 m core radius, shielding thickness 0.15m and
+major radius of 1m with a fusion power of 174 MW. The table
+shows the neutron mean free path given by MCNPand the total
+deposited power.
+
+<P>Ignoring the shield and replacing it by a void has been
+suggested, reasoning that the very fast 14.1 MeV neutrons
+have a fairly long mean free path (about 34 mm) in the largely
+copper core region and so will deposit little power. This is not
+confirmed. The copper region absorbs a considerable fraction
+of the power.
+Similarly it has been suggested that awater or hydrocarbon
+shield (oil or polythene) will work by moderating the fast
+neutrons to thermal energies where they can be easily captured.
+The cross section of these materials is quite low in the slowing
+downMeVrange, and thermalization hardly occurs. Water and
+hydrocarbons are good moderators but are poor at fast neutron
+shielding.
+
+<P><B>Table 4.</B><FONT FACE="Times New Roman" SIZE=3> The neutron mean free path and the total deposited power
+in the central superconducting core for the case of core radius
+<I>r<SUB>sc</SUB></I> = 0.15 m shield thickness <I>d</I>= 0.15 m, major radius <I>R<SUB>0</SUB></I> = 1 m
+and fusion power 174 MW.</FONT>
+
+<TABLE BORDER=1>
+<TR><TD>Material</TD><TD> Average </TD><TD> Mean </TD><TD> Deposited </TD></TR> 
+<TR><TD> -      </TD><TD> density </TD><TD> free path </TD><TD> power</TD></TR>
+<TR><TD> -      </TD><TD>  (g cm<SUP>-3</ SUP>) </TD><TD> (mm) </TD><TD> (MW)</TD></TR>
+<TR><TD>Void shield </TD><TD>  0.00</TD><TD>  8  </TD><TD> 2.13</TD></TR>
+<TR><TD>Water-only shield </TD><TD> 1.00 </TD><TD> 31 </TD><TD> 1.67</TD></TR>
+<TR><TD>Hydrocarbon, CH<SUB>2</SUB> </TD><TD> 0.80 </TD><TD> 23 </TD><TD> 1.35</TD></TR>
+<TR><TD>MnI<SUB>2</SUB>, EuI<SUB>2</SUB> mixture </TD><TD> 5.26 </TD><TD> 64 </TD><TD> 1.23</TD></TR>
+<TR><TD>Zirconium borohydride, Zr(BH<SUB>4</SUB>)<SUB>4</SUB> </TD><TD> 1.18 </TD><TD> 48 </TD><TD> 1.10</TD></TR>
+<TR><TD>Tungsten carbide and water </TD><TD> 11.83 </TD><TD> 19 </TD><TD> 0.49</TD></TR>
+</TABLE>
+
+
+
+<P>Cross-section data suggest that elements with a large
+cross section in this slowing down region include manganese,
+europium and iodine. A 50% mixture by volume of europium
+iodide, EuI<SUB>2</SUB> and manganese iodide, MnI<SUB>2</SUB> was tried but the
+mean free path remains long and the power deposition in the
+central column high. Better performance was obtained with
+zirconium borohydride, Zr(BH<SUB>4</SUB>)<SUB>4</SUB>.
+
+<P>The last combination tried was a mixture of 66% tungsten
+carbide, 7.2% iron and 1.8% nickel with 25% cooling water.
+This gave the shortest mean free path and the best fusion power
+absorption of all the materials tried. The high atomic number
+of tungsten (74), its many absorption resonances in the keV
+range and the high density of tungsten carbide (15.63 g cm-3)
+are likely to be the key to its good performance. This material
+has also been noted by Hong <I>et al</I>  [12] as the best material for
+neutron shielding from the variety of materials they considered.
+
+
+
+<FONT FACE="Arial" SIZE=4><P><B>7. Interpolation between the corrected results using
+linear least-squares fitting</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+<P> The computations presented in section 3 have been
+approximately corrected for the effect of the outer shield
+discussed in section 4 and for the use of one elliptical torus
+rather than a weighted sum discussed in section 5 and fitted
+to a more precise linear interpolation than that given in (2).
+For arbitrary values of the parameters (<I>R<SUB>0</SUB></I>,<I>r<SUB>sc</SUB></I>, <I>d</I>),
+ first the nearest of the computed array points 
+(<I>R<SUB>0i</SUB> ,r<SUB>sci</SUB> ,d<SUB>i</SUB></I> ) is found. A
+linear interpolation is then made, similar to that of (2) but using
+local values for the gradients with respect to
+<I>R<SUB>0</SUB></I>,<I>r<SUB>sc</SUB></I> and <I>d</I> and
+starting from the nearest computed point. The reliability of
+these fits can be found by dividing the dataset of computed
+values into a 50% training and 50% testing set, and using the
+training set for performing the linear interpolation constants,
+and comparing the interpolated values at the test points with
+their actual values. A scatter plot of the predicted logarithm of
+the heat deposition against actual values is shown in figure 10.
+The test points fit to the computed values to within 2.2%. This
+procedure was written into a Visual Basic macro, which has
+been incorporated into the systems code described by Costley
+<I>et al</I>  [2].
+
+
+<P><IMG SRC="fig10.jpg">
+<FONT FACE="Arial" SIZE=2><P><B>Figure 10. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>A scatter plot of the interpolated natural logarithms
+loge Pinterp of the power deposition compared with those computed
+using the MCNP code loge Pmcnp. The differences are only
+about 2%. 
+
+
+<FONT FACE="Arial" SIZE=4><P><B>8. The cryogenic power needed to remove the
+calculated heat load</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+<P> The heat deposition into the superconducting central core of
+any power plant will have to be removed actively by, for
+example, liquid neon, as assumed in the computations, or
+more conventionally by cold helium gas from a cryoplant.
+Computation shows that for the 1.35m major radius pilot plant
+the heat deposition increases by 12.4% when helium gas is
+substituted for the neon liquid. An important factor in any
+plant optimization will be the electrical power needed to run
+the cryoplant. Two important parameters in this calculation
+are the desired temperature of the superconducting core <I>T<SUB>cold</SUB></I>,
+say 20 K, and the temperature of the hot cooler into which the
+heat will be dumped <I>T<SUB>hot</SUB></I>, say 300 K. The Carnot coefficient
+of performance, <I>CoP</I> is the maximum efficiency possible in
+such a process and is given by 
+
+<P><I>CoP = <I>T<SUB>cold</SUB></I>/(<I>T<SUB>hot</SUB></I> - <I>T<SUB>cold</SUB></I>).</I>
+
+<P>The Carnot coefficient of performance must be multiplied
+by the practical efficiency of any given cryoplant. Strobridge in
+1974 collected together many of the efficiency measurements
+made at that time [13]. A clear result, which has not been
+altered by more recent data, is that the efficiency depends
+mostly on the capacity of the cryogenic unit and not particularly
+on the temperature difference. His results can be well
+fitted by the line 
+<I> <span style='font-family:Symbol'>n</span><SUB>practical</SUB> = 
+(6.5 log<SUB>10</SUB> E + 16)% </I> where <I>E</I> is the deposition power in kW. 
+The overall efficiency
+<I><span style='font-family:Symbol'>n</span><SUB>l</SUB> = 
+CoP <span style='font-family:Symbol'>n</span><SUB>practical</SUB></I>
+ will be the product of the Carnot coefficient
+of performance and the practical efficiency. This number is
+also incorporated into the Costley <I>et al</I>  system code.
+As an example the pilot plant considered by Costley <I>et al</I> 
+with major radius <I>R<SUB>0</SUB></I> = 1.35 m, 
+core radius <I>r<SUB>sc</SUB></I> = 0.23 m and
+shield thickness <I>d</I>= 0.37 m has a heat deposition of 29 kW.
+Using the results from the system code with these parameters
+it is seen that the Carnot efficiency with the conductors at 20K
+and the heat sink at 320K is 0.066. The Strobridge efficiency
+for 29 kW is 0.265 so the overall efficiency is 1.77%, and the
+cryogenic power requirement is 1.66 MW.
+
+
+<P><IMG SRC="fig11.jpg">
+<FONT FACE="Arial" SIZE=3><P><B>Figure 11. </B></font>
+<FONT FACE="Times New Roman" SIZE=3>The specific heat of 316 stainless steel and copper over
+the temperature range from 10 to 100 K. On this log–log plot the
+curves in the region relevant for high temperature superconductors,
+say 20K to 60K are almost identical and can be adequately fitted by
+the power law <I>C<SUB>v</SUB> = C<SUB>0</SUB>(T /T<SUB>i</SUB>)<SUP>p</SUP>.</I>
+</font>
+
+<FONT FACE="Arial" SIZE=4><P><B>9. The adiabatic rate of temperature rise in a
+superconducting core</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+
+<P>In some experimental pilot power plants, it may not be
+necessary to remove all the heat deposited into the central
+superconducting core at the rate at which it is delivered.
+Rather, for short experiments with pulse lengths of the order of
+the current equilibration time, typically ten times the plasma
+energy confinement time, it may be possible to use the thermal
+inertia of the large mass of the core to limit the temperature
+rise during the experimental period to an acceptable value.
+In addition there are also the plasma build-up and ramp-down
+times lasting another ten or so confinement times, during which
+there will be some power deposition. For conventional lowtemperature
+superconductors even a modest temperature rise of
+say 10 degrees is likely to be unacceptable, but this is no longer
+true for high-temperature superconductors which can be cooled
+to many degrees below their transition temperature. The key
+parameters are the mass of the core, the initial temperature <I>T<SUB>i</SUB></I>
+of the superconducting core, the final temperature <I>T<SUB>f</SUB></I> which
+the core can be allowed to rise to, and the specific heat <I>C<SUB>v</SUB></I> of
+the core material around the temperature of interest. For this
+calculation, the core material is likely to be mostly copper with
+stainless steel strengthening and cladding. Figure 11 shows
+the specific heats of 316 stainless steel and OFCH copper as a
+function of temperature [14].
+It is seen that in the important temperature range of
+between 20K and 60K they are very similar and follow
+roughly a power law curve 
+<I>C<SUB>v</SUB> = C<SUB>0</SUB>(T /c)<SUP>p</SUP></i>
+ where <I>C<SUB>0</SUB></I> = 10 J kg<SUP>-1</SUP>K<SUP>-1</SUP>, 
+T<SUB>i</SUB> = 20K and p = 2.4. This line is shown by
+the dotted curve in figure 11.
+
+<P>In a demonstration experiment, steady-state pulses at full
+power are not foreseen but the pulse duration should be long
+enough that a stable plasma exists for at least a few plasma
+confinement times. The relevant time for establishing steadystate
+plasma conditions is the current equilibration time, which
+is typically 10 to 20 times the energy confinement time. In this
+case the heat deposition may be much larger than the cryogenic
+cooling rate so that the process is essentially adiabatic; there is
+negligible time for further cooling or heat loss by conduction,
+and all the deposited heat is used in raising the temperature
+of the central core. Suppose also that the temperature of
+the superconducting core is initially at <I>T<SUB>i</SUB></I> = 20K and will
+be allowed to rise to say <I>T<SUB>f</SUB></I> = 30K during the experiment.
+During a short time <I><span style='font-family:Symbol'>d</span>t</I> the temperature <I>T</I> will rise by a small
+increment <I><span style='font-family:Symbol'>d</span>T</I> given by
+
+<P><I><span style='font-family:Symbol'>d</span>T = 
+P<SUB>tot</SUB><span style='font-family:Symbol'>d</span>t/(C<SUB>v</SUB>M)</I>. &nbsp;&nbsp;&nbsp;  (3)
+
+<P>where <I>C<SUB>v</SUB></I> is the specific heat in JK<SUP>-1</SUP> kg<SUP>-1</SUP>, 
+<I>P<SUB>tot</SUB></I> is the power level in watts and <I>M</I> is the mass in kg. 
+The time interval <I>t<SUB>adi</SUB></I>
+during which the temperature rises from <I>T<SUB>i</SUB></I> to <I>T<SUB>f</SUB></I> 
+is the integral 
+
+<P><I>t<SUB>adi</SUB> = (M/P<SUB>tot</SUB>)&#8747
+<SUB>T<SUB>i</SUB></SUB><SUP>T<SUB>f</SUB> </SUP>C<SUB>v</SUB>(T)dT
+
+<P>   =(M/P<SUB>tot</SUB>)&#8747;<SUB>T<SUB>i</SUB>
+</SUB><SUP>T<SUB>f</SUB></SUP> C<SUB>0</SUB>(T/T<SUB>i</SUB>)<SUP>p</SUP>dT
+
+<P>=[(MC<SUB>0</SUB>)/(P<SUB>tot</SUB>T<SUB>i</SUB>)<SUP>p</SUP>]
+[T<SUB>f</SUB><SUP>p+1</SUP> - T<SUB>i</SUB><SUP>p+1</SUP>].   &nbsp;&nbsp;&nbsp;</I>  (4)
+
+<P> It is thus proportional to the heat capacity constant <I>C<SUB>0</SUB></I> , the mass
+<I>M</I> of the central column and the difference of the <I>(p + 1)</I><SUP>th</SUP>
+powers of the upper and lower temperatures. It is inversely
+proportional to the <I>p</I><SUP>th</SUP> power of the starting temperature and
+the deposited power.
+The last column in table 1 shows this time for a variety
+of conditions. This calculation has also been incorporated
+into the Costley <I>et al</I>  systems spreadsheet. For their pilot
+plant conditions the time to increase the superconducting core
+temperature from 20 to 30K is 88 s, which corresponds to some
+282 ITER scaling (98y2) confinement times. This time should
+be sufficient to enable an adiabatic experiment to be completed
+without difficulty.
+
+
+<FONT FACE="Arial" SIZE=4><P><B>10. Discussion</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+<P> The heat deposition into the central superconducting core of
+radius <I>r<SUB>sc</SUB></I> of a tokamak of major radius 
+<I>R<SUB>0</SUB></I>, with a shield of
+thickness <I>d</I> is presented over a wide range of these variables.
+For all three variables the heat deposition varies nearly
+exponentially over the ranges considered, so that interpolation
+can be carried out to within a 2% accuracy. The inclusion
+of an outer shield and the likely effects of plasma profile are
+shown not to have a major influence. Tungsten carbide with
+water cooling is shown to combine good neutron and gamma
+ray shielding properties because of its high density, atomic
+number and good moderating properties.
+For the <I>R<SUB>0</SUB></I> = 1.35 m pilot plant considered by Costley
+<I>et al</I> [2] the heat deposition is 29 kW which could be removed
+by a 1.7 MW cryoplant. Alternatively, the comparatively large
+mass of the central core could enable an adiabatic experiment
+to be performed where a core temperature rise from 20 to
+30 K could take place over a time span of 88 seconds or 282
+confinement times.
+
+<P><IMG SRC="fig12.jpg">
+<FONT FACE="Arial" SIZE=2><P><B>Figure 12. </B></font>
+<FONT FACE="Times New Roman" SIZE=3> Examples of the use of the interpolated computations to investigate pilot fusion plants of differing major radii using the Costley
+<I>et al</I>  system code [2]. The aspect ratio is fixed at 1.8 corresponding to spherical tokamaks and the toroidal field is fixed at 4 T. The system
+code is used to generate the other parameters. The curves show the fusion power Pfus, the power into the superconducting core <I>P<SUB>tot</SUB></I> , and the
+cryogenic power <I>P<SUB>cryo</SUB></I>. Open symbols show the adiabatic time for a temperature rise from 20 to 30 K.
+</B></font>
+
+<P>The application of our computations to a pilot plant
+optimization is illustrated in figure 12. This shows a series
+of output parameters from the Costley <I>et al</I> [2] system code as
+the plasma major radius is varied. The code assumes a central
+superconducting core of <I>r<SUB>sc</SUB></I> = 0.23 m for <I>R<SUB>0</SUB></I> = 1.35 m, scaling
+in proportion to <I>R<SUB>0</SUB></I>. The code then evaluates the core heat
+deposition <I>P<SUB>tot</SUB></I> by interpolation, and from this the cryogenic
+power <I>P<SUB>cryo</SUB></I> required. It is seen that even at <I>R<SUB>0</SUB></I> = 0.9 m the
+deposited power is less than 100 kW and the cryogenic power
+less than 5 MW. At still smaller plasma major radii, adiabatic
+experiments become attractive. For example at <I>R<SUB>0</SUB></I> = 0.6 m,
+the larger superconducting core temperature rise from 20 to
+40 K takes 6.4 s or 54 ITER98 confinement times.
+The effects of engineering features considered in the
+paper of Costley <I>et al</I>  [2] such as a 0.05 m steel centre rod,
+0.03 m thermal shield and 0.05 m plasma–wall gap have been
+investigated and they result in a significant 89% increase in the
+heat deposition. They continue to be studied individually to
+assess their relative importance and are being included into the
+system code.
+
+<FONT FACE="Arial" SIZE=4><P><B>Acknowledgments</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+<P>The authors are grateful to many colleagues, especially Alan
+Costley, Mikhail Gryaznevich, Zach Hartwig, David Kingham,
+George Smith, Alan Sykes, Dennis Whyte and Martin Wilson
+for many helpful discussions.
+
+<FONT FACE="Arial" SIZE=4><P><B>References</B></font>
+<FONT FACE="Times New Roman" SIZE=4>
+
+
+<P>[1] Sykes A., Gryaznevich M.P., Kingham D., Costley A.E.,
+Hugill J., Smith G., Buxton P., Ball S., Chappell S. and
+Melhem Z. 2014 Recent advances on the spherical tokamak
+route to fusion power IEEE Trans. Plasma Sci. 42 482–8
+<BR>[2] Costley A.E., Hugill J. and Buxton P. 2014 On the power and
+size of tokamak fusion pilot plants and reactors Nucl.
+Fusion at press
+<BR>[3] Stambaugh R.D. <I>et al</I>  2011 Fusion nuclear science facility
+candidates Fusion Sci. Technol. 59 279–307
+<BR>[4] Hartwig Z.S., Haakonsen C.B., Mumgaard R.T. and
+Bromberg L. 2012 An initial study of demountable
+high-temperature superconducting toroidal field magnets
+for the Vulcan tokamak conceptual design Fusion Eng. Des.
+87 201–14
+<BR>[5] El-Guebaly L.A. and the ARIES Team 2003 ARIES-ST
+nuclear analysis and shield design Fusion Eng. Des.
+65 263–84
+<BR>[6] Shultis J.K. and Faw R.E. 2011 An MCNP primer Technical
+Report Kansas State University and Manhattan
+http://mne.ksu.edu/~jks/MCNPprmr.pdf
+<BR>[7] A general Monte Carlo N-particle (MCNP) transport code
+https://mcnp.lanl.gov/
+<BR>[8] Eisterer M. 2014 High fluence neutron irradiation of coated
+conductors Keynote Lecture: Workshop on Radiation Effects
+in Superconducting Magnets and Materials (Wroclaw,
+Poland, 2014) https://indico.fnal.gov/getFile.py/access?,
+sessionId=40&resId=0&materialId=1&confId=7702
+<BR>[9] Windsor C.G. 2014 A linear path approximation for the pilot
+plant neutron shield Tokamak Energy Operations Note:
+Neutron Shielding (Abingdon: Tokamak Energy, Culham
+Innovation Centre)
+<BR>[10] Wilson H.R. 1994 SCENE—simulation of self-consistent
+equilibria with neoclassical effects Technical Report
+FUS-271, UK Atomic Energy Authority (Wetherby: The
+British Library Document Supply Centre)
+<BR>[11] Miller R.L., Chu M.S., Greene J.M., Lin-Liu Y.R. and
+Waltz R.E. 1998 Noncircular, finite aspect ratio, local
+equilibrium model Phys. Plasmas 5 973–8
+www.frc.gatech.edu/rotation2/millerequilibriumpop.pdf
+<BR>[12] Hong B.G., Hwang Y.S., Kang J.S., Lee D.W., Joo H.G. and
+Ono M. 2011 Conceptual design study of a superconducting
+spherical tokamak reactor with a self-consistent system
+analysis code Nucl. Fusion 51 113013
+<BR>[13] Strobridge T.R. 1974 Cryogenic refrigerators, an updated
+survey Technical Report Tech. Note 655, National
+Bureau of Standards https://archive.org/download/
+cryogenicrefrige655stro/cryogenicrefrige655stro.pdf
+<BR>[14] Marquardt E.D., Le J.P. and Radebaugh R. 2002 Cryogenic
+material properties database 11th Int. Cryocooler Conf.
+(Keystone, CO, USA, June 2002) pp 681–7 National
+Institute of Standards, Technology, Springer
+http://cryogenics.nist.gov/Papers/ Cryo Materials.pdf
