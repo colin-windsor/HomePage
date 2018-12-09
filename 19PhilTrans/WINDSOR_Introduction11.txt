@@ -1,0 +1,831 @@
+Can the development of fusion energy be 
+accelerated? An introduction to the proceedings
+Colin Windsor
+Tokamak Energy Ltd,  Tokamak Energy Ltd, 173, Brook Drive, Milton Park, OX14 4SD, UK 
+https://orcid.org/0000-0002-9030-5849
+Keywords: Fusion energy, tokamaks, superconductors
+
+
+
+
+
+*Author for correspondence (colin.windsor@tokamakenergy.co.uk).
+†Present address: Tokamak Energy Ltd, 173, Brook Drive, Milton Park, OX14 4SD, UK
+Summary
+This introduction reviews the unique opportunity of fusion power to deliver safe, carbon-free, abundant, base 
+load power. The differences with fission power are considered: especially why a Chernobyl, Three Mile Island 
+or Fukishima accident could not happen with a fusion reactor. The Lawson triple product is introduced, along 
+with tokamaks, or magnetic bottles, whose ability to approach close to the fusion burn conditions has so far 
+put them above their competitors. Our last fusion power Discussion Meeting was organised by Derek 
+Robinson FRS in 1998, and the progress since then is reviewed.  Tokamaks are introduced, and the advantages 
+of spherical tokamaks are listed along with the special engineering challenges that they introduce. Their key 
+advantage is high plasma pressure, and the important beta parameter indicating the efficiency of the magnetic 
+field use is introduced.  High temperature superconductors are described along with the opportunities they 
+allow for higher magnetic fields at higher current densities and more modest cryogenic temperatures. The 
+question posed is whether the two developments of spherical tokamaks and high temperature 
+superconductors could lead to more economical fusion power plants and faster development than the current 
+route through ITER and DEMO.  
+
+Why we need fusion energy?
+Fusion energy already dominates our energy use, for the sun (figure 1) is our solar system’s fusion power 
+plant, providing us now with the energy to power our solar voltaic cells and to make the wind blow, and in 
+the past through photo-synthesis to capture carbon dioxide and create our heritage of fossil fuels, coal, oil and 
+gas.  It is now nearly 100 years ago, in 1920, that astro-physicist Eddington in his address to the British 
+Association entitled “The Internal Constitution of the Stars” described the mechanism that the sun uses to 
+sustain its energy production. His address is still with us on the web [1]. It included the prophetic statement: 
+“This reservoir can scarcely be other than the sub-atomic energy which, it is known, exists abundantly in all 
+matter; we sometimes dream that man will one day learn how to release it and use it for his service. The store 
+is well nigh inexhaustible, if only it could be tapped. There is sufficient energy in the sun to maintain its 
+output of heat for 15 billion years. “
+
+It was an idea whose time had come. In 1905 Einstein had shown that through relativity, energy and mass 
+were interchangeable through the famous E=mc2 equation [2]. In that same year of 1920, Aston had carefully 
+measured the masses of many of the elements and noted that they did not simply scale with the number of 
+nuclides in the atom [3].  Figure 2 shows this excess energy for each nuclide plotted against the atomic 
+number. It is seen that there is a broad minimum at around iron with atomic number 26. This is the reason 
+why 90% of the earth’s inner core is made from iron! There is relative instability at much higher or much 
+lower atomic numbers than can release this energy. Fusion is the process by which light nuclei such as 
+deuterium 2H and tritium 3H come together to make helium 4He and a neutron in the reaction:
+2D + 3T = 4He + n +17.6 MeV								(1)
+This nuclear reaction requires the deuterium and tritium ions to have enough energy, or temperature, to 
+overcome the familiar Coulomb repulsion of their positive charges. As the separation approaches nuclear 
+diameters, quantum interactions take over, but the energies required for D-T fusion are still of order 10 keV, or 
+more than 100 million degrees K. This presents a real challenge for the realisation of fusion power. 
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 1.  The sun (left) is our own solar system’s fusion power plant, but with the plasma confined by gravity. The objective is to make 
+our own fusion power plant on earth using tokamaks with confinement by magnetic fields as in the START tokamak (right)  
+
+The 17.6 MeV of fusion energy from each reaction comes directly from the difference in mass between the 
+deuteron + triton and the helium + neutron masses. From conservation of momentum the energy is split 
+roughly 4:1 between the lighter neutron and the 4-times heavier helium, so that the neutron energy is the 
+famous 14.1 MeV and the alpha particle carries the remaining 3.5 MeV.   There are two reaction products. The 
+neutron (n) has the most energy, which may be used to heat up a water jacket to make electricity and can also 
+be used to produce more tritium from the breeding reaction. The stable helium nucleus – or alpha particle 
+carries the remaining 3.5 MeV of energy, but its charge means that it interacts with the electrons in the plasma 
+and gives up its energy rapidly so helping to sustain the ion temperature and the fusion reaction. 
+
+Our world is running out of options for generating sustainable, safe, CO2-free, base-load electricity. Base-load 
+can be defined as capacity available for most of most days. Some of these options are listed in table 1. None of 
+us quite expected the very rapid decrease in solar panel costs that has taken place over the last decade. There 
+is now “Swanson's law” [4]: the observation that over two decades, the price of solar photovoltaic modules 
+dropped 20 percent for every doubling of cumulative shipped volume. It demonstrates well the utility of 
+multiple-of-a-kind manufacture. Wind power has followed a similar if less dramatic path. But the intermittent 
+nature of both sources makes them unable to contribute to the base-load on cloudy wind-less days. Such days 
+can persist for months. 
+
+Perhaps one day, battery power will solve this problem but not yet.  The biggest batteries so far have been of 
+order 32 MWh and the UK daily electricity use is around 1TWh so there remains a big gap to be filled on 
+cloudy, wind-less winter months. Coal, oil and gas will always remain as precious as raw resources, of finite 
+magnitude, useful in many ways. But burning them for heat seems not part of a sustainable planet. The CO2 
+they produce can in principle be captured by the technique of carbon sequestration, where the CO2 is frozen 
+out from the power station exhaust gases and pumped to some old gas field for storage. In practice this 
+technique has not yet proved commercially viable, and no such plant exists at present.  Burning coal, with its 
+associated sulphur dioxide emissions, is also a serious health hazard by any standards. 
+ 
+Figure 2.  The graph shows the excess energy of different nuclei plotted against atomic mass. The very light atoms have a high excess energy and can 
+become more stable by fusing together to produce larger nuclei. Heavy nuclei can become more stable by splitting up to produce fission products of 
+intermediate mass.  
+   	
+Geothermal and hydro share with coal, oil and gas the fact that they are not uniformly available over our earth 
+in the quantities needed to provide base-load power. Gas pipelines can partially overcome this but carry the 
+risk that supplies can be cut for political reasons.  Electricity interconnectors carry a similar risk, and until we 
+have an interconnector circling the globe, there is the problem that cloudy, wind-less weather can persist over 
+whole continents!
+
+Fission power ticks many of the boxes, although fast reactors, which breed their own fissile material, are 
+necessary for truly sustainable energy. Fission energy, which the UK pioneered, has served us well, but it is 
+not without risk and its public acceptance is fragile. There are three serious risks, as illustrated in figure 3:
+i)	A fission reactor carries within its core a great deal of fuel, which in the wrong circumstances can 
+lead to a catastrophic criticality as at Chernobyl. 
+ii)	After a fission reactor has been running for some time it contains appreciable quantities of highly 
+radioactive fission products. If their containment is breached, as at Three Mile Island, serious 
+contamination can result.
+iii)	After a fission reactor is shut down for any reason, there is a good deal of “delayed heating” as its 
+fuel continues to produce enough heat to melt the core, as at Fukishima. 
+   
+Figure 3.  The three accidents that changed the public acceptance of fission power, and why they are not an issue in fusion reactors. (a) In a fusion 
+reactor, fuel is continually injected so that there is no possibility of a ‘criticality’ as at Chernobyl, (b) the fusion products of alpha particles and neutrons 
+are benign compared with the release of highly active ‘fission products’ as at Three Mile Island, (c) when a fusion reactor is shut down there is no 
+‘delayed heat’ from fuel radioactive decay as at Fukishima. 
+
+Fusion power does not suffer from any of these three possibilities.  The tritium/deuterium fuel is 
+continuously injected into the reactor, so there is only enough fuel to sustain the reaction at its current level. 
+The fusion products are the relatively benign helium nuclei and neutrons. There is no possibility of delayed 
+heating when a fusion reactor is stopped. The high energy neutrons cause damage to materials and activation, 
+but these are not life-threatening issues.
+       
+We are left with fusion energy as the one option that ticks all the boxes!  
+
+Source
+Sustainability
+Safety
+CO2-free
+Base-load
+Wind
+?
+?
+?
+
+Solar
+?
+?
+?
+
+Coal
+
+
+
+?
+Gas/oil
+
+?
+
+?
+Geothermal
+?
+?
+?
+
+Hydro
+?
+?
+?
+
+Fission
+?
+
+?
+?
+Fusion
+?
+?
+?
+?
+
+Table 1.  Sources of energy, and the degree to which they satisfy the criteria of long-term sustainability, safety, carbon dioxide free emissions and 
+capability for base-load generation.  Fission needs the fast reactor for long-term sustainability and fusion needs tritium breeding.
+
+What is a tokamak
+In 1955 John Lawson at Harwell produced the classified report, now available to all [5], showing that the 
+conditions for fusion could be written in the form: nT?E > 2.1021 m-3 keV s, where n is the density, say ~4.1020 
+m-3, T is the plasma temperature, say ~15 keV and ?E is the energy confinement time say ~0.3 s. As John 
+Lawson said at the time, “even with the most optimistic assumptions, the conditions … are very severe."  If the 
+density and temperature conditions are expressed as a plasma pressure in atmospheres, it comes out as 
+around 2000 atmospheres! How can this very high pressure be contained? Containment is easy on the sun, 
+which has its own gravity. Here on earth, there are few options, but magnetic forces are one way appropriate 
+for containing the high pressure, high-temperature plasma. Figure 4 shows the design sketched by George 
+Thomson in a 1946 patent [6]. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4.  The figure from the Thomson patent showing how fusion could be confined within a toroidal magnetic field. The plasma 
+current is generated as the secondary winding of a transformer [6].
+
+A circular torus contains the plasma, and a transformer is made with the torus as the secondary winding. A 
+pulse of current down the primary circuit induces a toroidal current in the plasma, which heats up from ohmic 
+resistance and is kept in the torus shape by the “pinch” effect of the magnetic field induced by the plasma 
+current itself. The pinch effect dates from 1905 when Pollock and Barraclough [7] noticed that a tubular copper 
+pipe in a lightening conductor collapsed onto itself as shown in figure 5.  Current on the edge of a current 
+carrying wire feels the poloidal magnetic field from the wire, which creates an inwards force on the current 
+carrying wire. The same force creates a powerful inward pressure on the current-carrying centre column of a 
+spherical tokamak.
+  
+Figure 5.  The pinch effect, discovered in 1905 [7]. A current carrying wire suffers a compressive force due to the magnetic 
+field from the wire producing a force perpendicular to the wire surface. Figure by Brian James, CC BY-SA 3.0, 
+https://commons.wikimedia.org/w/index.php?curid=17808121 
+
+The ZETA experiment at Harwell in 1957 was an example of a pinch effect torus. It showed much promise and 
+produced copious neutrons, but these proved to be not the expected fusion neutrons but photo-neutrons from 
+the high energy “runaway” electrons created by the high magnetic fields. The main reason for the failure to 
+produce fusion neutrons was plasma instabilities, which have been the bugbear of fusion ever since. They 
+reduced the energy confinement time to milliseconds, from the seconds expected from conventional particle 
+Coulomb collisions. Anyone who has played with a plasma ball will have noted the plasma filaments are 
+never still but continually suffer “kink” distortions. 
+
+Progress was made in Russia in the sixties where it was realised by Shafranov that the toroidal field BT along 
+the path of the plasma torus was a key variable for improving stability and so plasma temperature. Stability 
+was improved according to a safety factor q=aBT/(R0BP) where a is the plasma minor radius and R0 its major 
+radius. This needed to be greater than about three for stability. As illustrated in figure 6, the period of the 
+paths threading the torus governed by the toroidal field needs to be short compared with the period around 
+the length of the torus governed by the poloidal field. If an aspect ratio A is defined as the ratio of the plasma 
+major and minor axes A=R0/a it is seen that q= BT/(ABP) ~>3 and that stability is generally improved for low 
+aspect ratios. It is this improved stability from the higher toroidal field, which defines a tokamak, and changed 
+the direction of fusion research.
+ 
+Figure 6.  Particle orbits around a toroidal plasma with different safety factors q. This is the ratio of the number of orbits threading the 
+torus to the number around the torus. It should be higher than around three for stability.
+
+With better stability there should be higher plasma temperatures. At the height of the cold war in 1969 Derek 
+Robinson FRS was part of the team, the “Culham five”, that went to Moscow and first showed, using laser 
+Thomson scattering, that temperatures in the T3 tokamak were indeed as favourable as had been claimed. 
+Figure 7 shows him on the left with Volodya Sannikov, a co-author with him when the results were first 
+presented in 1969.
+
+        
+
+
+
+
+
+Figure 7. Derek Robinson FRS and Volodya Sannikov, co-authors of the paper presenting the T3 tokamak temperature results [8], at a meeting in 
+Dubna in September 1969. He was the Russian contact for the Culham team.  (Courtesy of CCFE)
+
+Progress in the last twenty years 
+Derek Robinson sadly died at the height of his powers in 2002, and the fusion community owes him a great 
+debt. He was the lead organiser 20 years ago in 1998 when the last Royal Society Discussion Meeting on fusion 
+power “The approach to an ignited plasma” was held. 
+
+The proceedings of that meeting continue to be a good read [9].  The introductory talk by Roy Bickerton [10] 
+was on the “History of the approach to ignition”. Figure 8 shows his 1998 predictions for the future with ITER 
+operational in 2005, and DEMO in 2025! 
+       
+       
+       
+       
+
+
+
+
+
+
+Figure 8. A figure from the talk by Bickerton at the 1998 Discussion Meeting [10].  It shows ITER operations beginning in 2005.
+
+John Sheffield prophetically mentioned “global warning”, which was to change the public perception of the 
+need for fusion power.  Martin Keilhacker presented results from the successful JET 1997 D-T campaign, 
+which proved that serious fusion power of 16 MW could be generated on earth. This record power has never 
+been exceeded. Derek Robinson presented the spherical tokamak START results with its record ?, the ratio of 
+the plasma pressure to the pressure of the magnetic field required to contain the plasma. This important result 
+was to open the field of spherical tokamaks, leading to the possibilities for smaller fusion power plants aired 
+at this meeting. Farrokh Najmabadi talked of fusion power and the Aries project with its promise of GW 
+electric power at 7.7 US cents per kWh, but the project was never funded. Joe Kilkenny talked of inertial 
+fusion. The Livermore National Ignition Facility prediction was confidently expected to reach ignition by 
+firing enough energy at a tiny “hohlraum” containing a frozen pellet with a few milligrams of the deuterium 
+and tritium fuel. Calculations had suggested that success was near, but so far, the fusion power produced, has 
+only been of order 1/3 of that needed for ignition. This is the reason that inertial fusion was not part of this 
+meeting. Robert Aymar presented the ITER design and I remember the excitement we all felt that this project 
+was leading to a burning plasma. His talk concentrated on convincing the meeting that the physics of the 
+design was right.
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 9. The progress in the triple product towards fusion, compared with the Moore’s law for transistor performance. Both showed a 
+power law, doubling around every two years [11]. From http://www.fusenet.eu/sites/default/files/moores_law.jpg 
+  	
+The twenty years since then have been something of a setback. Figure 9 shows a figure from the European 
+Fusion Educational Network [11]. The lower line in red squares shows Gordon Moore’s law for transistors 
+with a doubling of capacity every 2 years. The upper blue line with circles shows the triple product of plasma 
+density, pressure and confinement time that John Lawson from Harwell derived in 1955 [3].  It increases 
+slightly faster with a doubling time of 1.8 years.  A little research shows that Moore’s law has continued 
+certainly up to 2016, but not so for fusion. According to the plot, the triple product goal for ITER should have 
+been achieved around 2008, but in 2018 the target for ITER tritium operations was 2035 [5]. It was the purpose 
+of this Discussion Meeting to ask if development could be accelerated.
+
+In one sense we all know that one issue is the ITER project whose budget became a large fraction of the 
+national fusion associations and their top priority. I can still remember the excitement that I felt in the late 
+1980s when the ending of the cold war was sealed by the agreement between Gorbachov and Reagan to turn 
+their swords into ploughshares by building ITER. We all accepted that this was the way forward: sharing our 
+expertise so that the whole fusion world could join in making whatever was needed to approach an ignited 
+plasma. In this Discussion Meeting no one said a word against ITER. The whole fusion community want to see 
+it built. No photos of its construction were presented, so figure 10 is given as an example from 2018.
+       
+
+
+
+
+`
+
+
+
+
+
+
+
+
+Figure 10. The ITER tokamak building in 2018. The yellow arrow indicates a man. Courtesy  ITER  
+https://www.iter.org/doc/www/content/com/Lists/WebText_2014/Attachments/236/lid_final_from_above_small.jpg
+
+What can we learn from ITER’s 50-year long story illustrated in figure 11? Why was the timetable in 
+Bickerton’s figure not been achieved? The answer is clear in retrospect. ITER is an excellent example of a 
+“megaproject”, technically a project whose cost is over $1B, (The ITER cost is above $20B). Studies of past 
+megaprojects show that cost and time overruns are the norm rather than the exception, and that the cost 
+overun tends to increase with the size of the project [12]. 
+
+One reason is that they tend to extend the boundaries of what has been done before and so encounter 
+unpredicted problems leading to unexpected costs and delays. Another reason is that megaprojects often 
+become too big for one company, one country, even one continent, and project management becomes difficult 
+with long chains of responsibility. In ITER’s case, these problems were nicely documented in the report by 
+Madia and Associates [13] who made many suggestions for improvements. Today these sound commonplace, 
+even obvious:  like “Develop a realistic project schedule”.  Time will tell if a difference has been made.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11. Some timescales for fusion projects. The ITER project is close to 50 years, the Tokamak Energy and MIT projects, which are 
+detailed in the proceedings, are close to 15 years. The ITER details are from the detailed time-line of milestones documented on their 
+website: https://www.iter.org/proj/itermilestones.
+       
+Spherical tokamaks
+It was over thirty years ago in 1983 that Sykes, Turner and Patel [14] and later Peng [15] and Peng and 
+Strickler [16] predicted the high plasma pressures ? possible with low aspect ratio spherical tokamaks.  ??is the 
+ratio of the plasma pressure (ppla = n.kT) to the magnetic pressure (pmag = B²/2?0). The theory showed that ? 
+could indeed be raised by a combination of low aspect ratio, and high elongation. Plasma pressure is a key 
+variable as fusion power PF can be written in terms of the toroidal field ?T, and plasma volume V as
+	PF = ????T4 V                                                                                                                                              (2)
+Peng and Strickler also noted the natural increase of plasma elongation ? as the aspect ratio is reduced. Alan 
+Costley has noticed that most tokamak designs tend to follow the relationship ? = 3.54A1/2. Of course, 
+elongation can also be increased by appropriate magnetic fields, but it will eventually become naturally 
+unstable and require active feedback control. 
+
+A simple-minded explanation for these increases in efficiency is suggested by figure 12 which shows the 
+toroidal magnetic field B in Tesla around a constant centre column carrying a current I as a function of radius 
+r. The field is given by Ampere’s Law B=?0.I/4?r2 or B(T)=0.2xI(MA)/r(m)2 so the smaller the radial distance the 
+higher the field for a given centre rod current. For a current of 10 MA, the field is 2 Tesla at a radius of 1 m.  In 
+the same way a plasma with higher elongation ? and triangularity ? naturally squashes the plasma in towards 
+the centre column, has a greater fraction of its volume at low radius, and so has a higher efficiency.
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 12. The toroidal magnetic field B as a function of radius for a centre rod current I of 10 MA.  The field grows larger as the plasma 
+radius decreases according to Ampere's Law.  Higher shaping of the plasma (increased elongation and triangularity) increases the 
+effective field for a given plasma radius. 
+       
+The theory was put to the test with the small tight aspect ratio tokamak START which ran at Culham from 
+1990 to 1998. It was a somewhat unofficial project steered by Programme Director Derek Robinson FRS, 
+assembled from spare parts by Tom Todd, and run by theoretician turned experimentalist Alan Sykes and 
+Mikhail Gryaznevich. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+Figure 13.  Figure 13. Left, the Start team in 1991. From the left, Alan Sykes ,Dick Colchin, Edson Del Bosco, Mikhail Gryaznevich and 
+Martin Peng [16].  On the right. the plasma pressure as measured on the START spherical tokamak by Gryaznevich et al [17].
+It soon had impressive beta values a factor three better than previous results as shown in figure 13 from the 
+paper by Gryaznevich et al  [17].  It was helped by the ability of spherical tokamaks to give impressive 
+photographs of the whole plasma, as was shown in figure 1.
+
+These results inspired a new generation of larger spherical tokamaks around the world. MAST at Culham and 
+NSTX at Princeton showed that confinement times could be more favourable for spherical tokamaks. The 
+experimental observation of the bootstrap current, driven by plasma pressure gradients, had been predicted 
+theoretically by Bickerton, Connor and Taylor in 1971 [18] and observed experimentally on the Princeton 
+tokamak TFTR by Zarnstorff et al, [19] in 1988 allowing the prospect of a power plant with reduced external 
+current drive. 
+
+However, proposals for fusion power using a normal metal centre column had difficulties in that the power 
+dissipation required large cooling plants and frequent replacement due to neutron damage. In 1998 in their 
+paper “Spherical Tokamak route to Fusion Power” Stambaugh et al. [20] proposed a JET radius (R= 2.8 m) 
+power plant with a cooled copper centre rod. It was soon followed by similar sized projects from Voss et al 
+[21] at Culham and the US ARIES project by Najmabadi et al [22]. None of the projects were built. Much 
+power was lost cooling the centre column, which needed to be replaced at intervals because of radiation 
+damage. The conclusion was clear. Superconductors are necessary to allow the higher fields and lower energy 
+dissipation from the centre column. 
+
+High Temperature Superconductors
+Ordinary low temperature superconductors date back to 1911 when Onnes demonstrated the complete 
+disappearance of electrical conductivity in mercury at 4.2K.  Superconductivity is a quantum mechanical 
+phenomena and it took until 1957 for Bardeen, Cooper and Schrieffer [23] to explain it satisfactorily. Electrons 
+attract positive ions, which interact weakly with other positive ions through electron-phonon interactions to 
+form an attractive bond, which overcomes the Ampere’s law Coulomb barrier. A “Cooper pair” ground state 
+of two electrons with zero net spin is created, which has an energy below the normal electron Fermi energy, 
+which can be occupied at low enough temperatures. The electron-phonon energy is very weak, of order a 
+milli-electron volt, and other non-superconducting states soon become occupied at modest temperatures 
+above 4.2K and superconductivity is lost. 
+       
+
+
+
+
+
+
+
+
+Figure 14. The perovskite structure the high temperature superconductor YBa2Cu3O7-x. The pure compound (x=0) is antiferromagnetic but 
+at other levels electrons in the two-dimensional planes of copper and oxygen atoms form spin density waves and create Cooper pairs of 
+spin zero which condense at low temperatures to form a superconducting Bose condensate.
+
+High temperature superconductors (HTS) were discovered in 1986 by Bednorz and Müller [24].  The theory 
+remains uncertain, but it seems likely that it is tied to the special case of the perovskite structure, and in the 
+case of materials such as the perovskite YBCO, stoichiometry is a crucial factor. Its formula may be written 
+YBa2Cu3O7-x, where x is the variable describing the non-stoichiometry. Superconductivity is found to exist 
+only when x is less than 0.6. The superconducting temperature peaks at x=0.16. It is likely that Cooper pairs 
+are again generated but this time through the magnetic interactions between the oxygen vacancies. The 
+electron spin of 1/2 creates a spin density wave, which interacts with other electrons in a way analogous to 
+the phonons of BCS superconductivity but with rather higher energies. The interacting electron spins once 
+again create Cooper pairs of spin 0 or 1, which can condense into a superconducting Bose condensate. 
+Interestingly the condensate is believed to lie along the copper-oxygen chains in the perovskite structure, 
+introducing anisotropy with respect to the field direction into the superconductor performance. Electrostatic 
+repulsion prevents the electron orbitals being on the same site: they are on the nearest-neighbour sites, with 
+the unusual d-wave pairing wave function illustrated in figure 14.  A non-quantum water-bed analogy can 
+again be made that the spin density wave interaction causes an energy depression in the surface. A second 
+electron can form a similar depression, but coulomb repulsion prevents them alighting on the same atom so 
+the depression takes up a nearest-neighbour position along the Cu-O-Cu chains. 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+Figure 15. Properties of a typical HTS superconductor. Very high current densities ~300 A/cm can be achieved at high magnetic fields 
+~25T and at relatively low temperatures ~20K.  
+
+Their importance is three-fold as illustrated in figure 15. Firstly, their superconducting temperatures can be 
+much higher than for low temperature superconductors, say 92 K for YBCO, thus reducing cryogenic power 
+needs. Secondly, superconductivity can exist at much higher magnetic fields, particularly if the temperature is 
+reduced well below the transition temperature. This extends the plasma physics: a given fusion power can be 
+achieved at lower volumes by a higher toroidal field. Thirdly, the current carrying capacity for a given area of 
+conductor is increased allowing a given current to be carried in more slender cables as discussed in the next 
+section.  Because of these properties, high temperature superconductors have the potential to be a game-
+changer for magnetic confinement fusion research.
+
+The opportunity presented by spherical tokamaks and high 
+temperature superconductors
+The disadvantage of the spherical tokamak is clear. The need for a slender centre column imposes engineering 
+and radial space constraints on any design. With low temperature superconductors the need for a neutron 
+shield thicker than a metre makes a spherical tokamak unfeasible. However, the higher fields and operating 
+temperature of high temperature superconductors opens a new opportunity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 16. The variation of tokamak major radius (lines) given by lower aspect ratio (X-axis) by and higher magnetic toroidal fields 
+(Yaxis). The figure uses the equation shown from Costley’s paper in this issue, using the relation Costley noted for the change in 
+elongation (kappa) with aspect ratio. The data are scaled to the ITER operating point.  
+
+Alan Costley’s paper in this volume gives in his equation 2 the expression for the fusion triple product in 
+terms of tokamak size R02, toroidal field BT3 and shape ?7/2/A3 for a tokamak plasma operating in steady-state 
+conditions.  It encapsulates the opportunities for smaller tokamaks given by higher field and tighter aspect 
+ratio.
+
+
+												(3)
+As mentioned earlier, the elongation ? increases naturally with decreasing aspect ratio A.  The empirical 
+relationship has been evaluated by Costley as ? = 3.54/A1/2. Incorporating this into the above equation gives 
+   	nT?E  ? H2. q-3. R2. B3. A-19/4                                                  					 (4)
+In this equation the terms H2/q3  can be thought of as constant values to be achieved. The equation applies 
+generally, but scaling to ITER which has R0=6.2 m, B0=5.3 T, and A0=3.1, it becomes
+       R=R0 .(B/B0)-3/2.(A/A0)19/8                                                					 (5) 
+So that the plasma major radius for ITER fusion conditions scales inversely as the toroidal field to the power 
+3/2, and rather strongly with aspect ratio to the power 19/8. Figure 16 illustrates this relationship when 
+presented as contours of the plasma major radius R as a function of toroidal field B and aspect ratio A at 
+constant nT?E, H and q.  
+
+Papers in this issue
+The first paper is by Dan Clery whose brief was to tell us of the non-tokamak ways to fusion power, excluding 
+the stellerator – a relative of the tokamak. It is a characteristic of new technologies that they involve risk. Some 
+revisit abandoned schemes from the early days of fusion research. We have seen in the case of inertial fusion 
+that, despite enormous investment, strange unexpected instabilities have meant that they did not achieve the 
+results their big codes had predicted. That is a message for all to take on board!  Our computer codes need to 
+contain all the relevant physics. If all the relevant physics is not yet known, then some risks must be taken. 
+These can be minimised by incremental development where difficulties are solved one-by-one and by small 
+increments rather than all together in a single big increment. The uniquely safe and inexhaustible nature of 
+fusion power makes it such a prize that investors are quite willing to take risks. One conclusion for this 
+meeting is that: “To accelerate fusion we need to take some calculated risks.”
+
+The second paper is by Tony Donné the Programme Manager of EUROfusion. It gives a systematic outline of 
+the Eurofusion “Roadmap” and the eight “missions” that EUROfusion is aiming to address, such as heat-
+exhaust systems, neutron resistant materials and tritium self-sufficiency, needed to design the European 
+DEMO reactor. Donné stressed the need for integration of these, the involvement of industry, and for a 14 
+MeV neutron source for materials testing.  
+
+Guenter Janeschitz‘s paper used his experience gained at ITER and from his leadership of the Karlsruhe 
+International School on Fusion Technologies to take an alternative view of tokamak power plant design. His 
+paper takes the view that the tokamak outer breeding wall, building construction and licensing costs tend to 
+be independent of plasma size, so that larger sizes and powers are optimal. His paper does discuss shape 
+effects in detail and suggests an ideal aspect ratio of 2.5
+Yutaka Kamada has not submitted a paper, but he spoke of the new JET-sized low-temperature 
+superconductor JapanTokamak-60cmSuperAdvanced JT-60SA. It should be ready by 2020 and will be able to 
+increase the lead the Japanese already have in approaching higher triple products in non-tritium plasmas [25]. 
+Some details are shown in table 2 and figures 17 and 18 from the official website [25].
+
+JT-60SA
+ITER
+Major radius (m)
+~3.0
+~6.2
+Minor radius (m)
+<1.18
+<2.0
+Plasma current (MA)
+<5.5
+<15
+On-axis toroidal field (T)/TF conductor
+<2.3/NbTi
+<5.3/Nb3Sn
+Plasma elongation
+<2.0
+<1.8
+Plasma triangularity
+<0.5
+<0.5
+Plasma volume (m3)
+~140
+~840
+Inductive pulse length (s)
+100
+>400
+
+Table 2. The parameters of the new Japanese tokamak JT-60SA compared with ITER. [25]
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+
+Figure 17.  Left: A cut-away view of the JT-60SA tokamak. It has conventional low temperature superconducting coils giving a toroidal 
+field of 2.3 T. Its plasma major radius is 3m making it around the size of JET. It is not capable of D-T operations [25].  Right: Important 
+operational parameters of the JT-60SA tokamak compared with the earlier JT-60-I, ITER and DEMO [25].
+       
+
+Since the 1957 ZETA experiments at Harwell, plasma instabilities have been the bugbear of fusion. Howard 
+Wilson’s paper gives us hope that fusion theory could help to mitigate their effects. He explained how “the 
+most compact fusion reactors will benefit from high confinement." He emphasized the different strategies for 
+the development of fusion and their different balances of risk and speed.
+       
+Ian Chapman’s paper speaks of the very exciting UKAEA scene at present including the role of JET and its 
+programme in support of ITERMAST upgrade is due to be running later this year and the meeting wished it 
+good fortune!  We all have much to learn from their new superX divertor for carrying the external energy 
+away, and ELM mitigation operations. We wish for record results from the coming JET D-T campaign in a 
+year or so. I’m sure the whole UK fusion community as represented here wants to work with you in making 
+the most of these opportunities.
+       
+The two papers by Hartmut Zohm and Alan Costley form a debate on tokamak size that comes to some 
+conclusions. Both agree that toroidal field dependence is crucial to the debate. Both agree that smaller size 
+does generally go with higher fields. Both agree that engineering constraints can limit performance with 
+today’s materials. The Costley side of the debate also considers aspect ratio A and elongation??, as important 
+variables, which Zohm agreed needs to be investigated further. Zohm recognised HTS magnets might permit 
+smaller size, but felt improved performance would be needed.  Costley also points out that the beta-
+independent versions of the ITER confinement time scalings – and it is now generally accepted that at reactor 
+relevant low collisionalities the confinement time is independent of beta - lead to significantly lower fusion 
+power for a given fusion gain.  Lower fusion power will aid the construction of smaller fusion tokamaks. 
+       
+Melanie Windridge’s paper considers the opportunity given by High Temperature Superconducting magnets 
+(HTS). These can operate in magnetic fields of up to 20 Tesla, have higher current density than conventional 
+low temperature magnets and require less cryogenic cooling. This is the way forward proposed by Tokamak 
+energy, Princeton Plasma Physics Laboratory and MIT. The disadvantage of HTS at this stage is that it is not a 
+mature technology, so not without risk and not cheap. That is why Tokamak Energy have set up an HTS team 
+in Oxfordshire, where there is unrivalled experience in magnet technologies, to develop HTS techniques.
+       
+Jon Menard’s paper describes his Fusion Nuclear Science Facility with spherical tokamaks and HTS magnets. 
+His paper gives the detailed quantitative analysis of the variation of performance with aspect ratio self-
+consistently with elongation, which many at the meeting had been asking for. Designs with aspect ratio 
+around two were possible but their confinement times remain an unsolved issue. The fusion community wish 
+him good luck with this project and in getting NSTX -upgrade back running again. World-wide fusion 
+projects are great, but we need additional different projects also. There is a considerable risk in putting all 
+your eggs into one basket.
+       
+Dennis Whyte’s paper delighted us all with his news.  $50M of private money from Commonwealth Fusion 
+Systems will be invested to develop HTS magnets and for detailed design of the Smallest Possible Affordable 
+Robust Compact tokamak (SPARC). The fusion community congratulates him and the whole team for getting 
+this project under way. We wish them good fortune.
+       
+Elizabeth Surrey's paper concentrates on the engineering challenges of accelerated demonstrator systems 
+relevant to a fusion power plant. A detailed discussion is given of the component systems relevant to a fusion 
+power plant. Also discussed are the need to demonstrate tritium self-sufficiency, issues relating to the 
+economic production of electricity, remote handling schemes, the control of the plasma, safety and licensing 
+by a nuclear authority.  She stressed the need for an integrated approach to these, involving industry and 
+considering the supply chain at an early stage. Computational engineering and verification would be 
+important. Her paper did not dwell on the key engineering challenge of smaller tokamaks. These have a 
+general problem of how the limited radial space available for the central column and its radiation shield can 
+adequately reduce heat deposition and radiation damage.  
+       
+George Smith gave us some answers to these questions. There are new materials such as the cemented 
+tungsten carbides - familiar from tool steel cutting heads. They can combine high strength and toughness with 
+very high temperature operations and good neutron and gamma shielding. His paper reviews the engineering 
+properties of pure tungsten carbides, and treats in some detail the properties of the candidate cermet material, 
+WC-FeCr. The problem of how to manufacture the large shield of this type required for a power plant remains 
+open. 
+       
+Nick Lopes Cardoso addressed the economic reasons that governments and utilities may invest in the 
+Eurofusion road map power plant. He thought it impossible to introduce fusion power on the timescale 
+envisaged by the Paris 2015 agreement on climate change. The rate of growth of the different energy markets 
+like fission, wind and solar are shown to have been remarkably similar with a doubling time of around 2.5 
+years. Energy is a market, and a very large one too! However growth rates will all depend on the product 
+offered. He introduced a “Valley of death” when the time-scale for the return on capital in a power plant is 
+much greater than the desired doubling time for growth. However if faster fusion can give us a modular 
+power plant at the right cost and time-scale, industry will buy it and it could be implemented on the 
+timescales considered as necessary by energy policy makers. The private investors to faster fusion are the 
+proof of this.
+
+The meeting posed the question “Can development of fusion power be accelerated?” We have heard enough 
+to understand that it can be accelerated, not by pursuing a single line of development alone, but by pursuing 
+several new ideas in parallel, and especially those based on higher field, lower aspect ratio and lower power 
+devices. In his final round up comments, Mike Zarnstoff gave us the good summary sentence: “de-risk at 
+minimum size”.  
+
+In conclusion I would like to thank several people for making this meeting a success. First the organising 
+committee, Jack Connor, Melanie Windridge, Dennis Whyte and Guenter Janeschitz for getting the 
+programme together and constant support. The programme chairs, and especially Mike Zarnstoff in the last 
+session, ensured that the discussions continued well, and that the whole meeting kept exactly to time.  Special 
+thanks are due to Annabel Sturgess and all her helpers from the Society for organising the meeting so well and 
+to Bailey Fallon for help with the preparation of the papers for publication in the proceedings.  Lastly thanks 
+are due to all the participants for their interest in fusion and their excellent questions, the speakers who have 
+educated us on their way to accelerating fusion, and my colleagues, Jack Connor, Melanie Windridge, Alan 
+Costley and David Kingham for helpful comments on the paper.
+
+References
+
+
+1.  Eddington A. S. , 1920, Address to the British Association for the Advancement of Science, Cardiff. 
+https://archive.org/stream/reportofbritisha20repo/reportofbritisha20repo_djvu.txt
+2. Einstein A, 1905, Does the inertia of a body depend upon its energy content? Annalen der Physik, 18, 639–643,  
+English translations: http://www.fourmilab.ch/etexts/einstein/E_mc2/www/  
+3. Aston  F. W.1920, Isotopes and atomic weights, Nature 105, p. 617  http://www.chemteam.info/Chem-
+istory/Aston-MassSpec.html
+4. 2012, Pricing sunshine: the rise of solar energy. The Economist  https://www.economist.com/graphic-
+detail/2012/12/28/pricing-sunshine
+5. Lawson J., 1955 Harwell Report A.E.R.E  GP/R 1807 https://www.euro-fusion.org/wpcms/wp-
+content/uploads/2012/10/dec05-aere-gpr1807.pdf
+6.  Thomson, G.P. and Blackman M. 1946, British patent 817,681. “Improvements in Gas Discharge Apparatus 
+for Producing Thermonuclear Reactions” in Haines M G, 1996, Plasma Phys. Control. Fusion 38, 643, 
+http://iopscience.iop.org/article/10.1088/0741-3335/38/5/001
+7. Pollock J. A. and Barraclough S. 1905, Proc. R. Soc. New South Wales 39 131 
+8. Peacock N. J., Robinson D. C., Forrest M J. , Wilcock P D., and Sannikov V V, Measurement of the electron 
+temperature by Thomson scattering in Tokamak T3, Nature 224 488-490. doi:10.1038/224488a0
+9. Robinson D. C., Windsor C. G., Keilhacker M., Lawson J. D. and Pert G. J., 1999, The approach to ignited 
+plasma, Phil. Trans. R. Soc. Lond. A   357,371-640 http://rsta.royalsocietypublishing.org/content/357/1752/
+10. Bickerton R. J., History of the approach to ignition, 1999 Phil. Trans. R. Soc. Lond. A    357 397-413;  DOI: 
+10.1098/rsta.1999.0334. 
+11. The European Fusion Education Network: Fusion  Research Today:  http://www.fusenet.eu/node/42).  
+Figure: http://www.fusenet.eu/sites/default/files/moores_law.jpg.
+12. Bent Flyvbjerg, 2014, What You Should Know About Megaprojects and Why: An Overview, Project 
+Management Journal, April/May 2014,  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2424835
+13. Madia and Associates, 2013, Final Report of the 2013 ITER Management Assessment, 
+http://www.firefusionpower.org/2013-iter-management-assessment.pdf
+14. A Sykes, M F Turner, and S. Patel, 1983, Proceedings of the 11th European Conf. on CFPP, Aachen, Vol. 2, p. 
+363. 
+15. Y-K Martin Peng, 1984, Spherical Torus, Compact Fusion at Low Yield", ORNL/FEDC-87/7 (December 
+1984)
+16. Peng Y-K.M. and Strickler D.J. 1986 Features of spherical torus plasmas Nucl. Fusion 26 769
+17. Gryaznevich, M., 2011, ITER-IAEA-ICTP Workshop, Trieste, Italy, 3-14 October 2011
+http://indico.ictp.it/event/a10172/session/26/contribution/16/material/0/0.pdf
+18. Gryaznevich  M et al, Achievement of Record ? in the START Spherical Tokamak, Phys. Rev. Letters 80, pp 
+3973-3975, 1998  https://doi.org/10.1103/PhysRevLett.80.3972
+19. Bickerton R J, Connor J W and Taylor J B, 1971 Nature Phys. Sci. 229 110, 
+https://www.nature.com/articles/physci229110a0
+20 Zarnstorff M. C., Bell M. G., Bitter M., Goldston R. J., Grek B., Hawryluk R. J., Hill K., D. Johnson D., 
+McCune D., Park H., Ramsey A., Taylor G., and Wieland R., 1968, Bootstrap current in TFTR, Phys. Rev. Lett. 
+60, 1306, https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.60.1306
+21. Stambaugh R., Chan V., Miller, M Schaffer 1998, The Spherical Tokamak route to Fusion Power, Fusion 
+Technology 33  p1,  https://www.tandfonline.com/doi/abs/10.13182/FST33-1
+22. Voss G.M., Davis S., Dnestrovskij A., Kirk A., Knight P.J., Loughlin M., O’Brien M.H., Sychugov D., 
+Tabasso A., and Wilson H.R., 2008 Conceptual design of a component test facility based on the spherical 
+tokamak. Fusion Engineering and Design, 83, 10–12,  Pages 1648-1653
+23.  Najmabadi F, and the ARIES Team, 2003, Spherical torus concept as power plants—the ARIES-ST study, 
+Fusion Engineering and Design, 65, Issue 2, Pages 143-164, https://doi.org/10.1016/S0920-3796(02)00302-
+24. Bardeen J., Cooper L. N., and Schrieffer J. R., 1957 Theory of Superconductivity, Phys. Rev. 106, 162, 
+https://doi.org/10.1103/PhysRev.106.162
+25. Bednorz J. G. and Mueller K. A. Z.  1986, Possible high Tc superconductivity in the Ba-La-Cu-O system, 
+Zeitschrift für Physik B Condensed Matter 64(2):189-193: https://link.springer.com/article/10.1007/BF01303701
+26. EUROfusion, 2012 A roadmap to the realisation of fusion energy,  https://www.euro-
+fusion.org/fileadmin/user_upload/EUROfusion/Documents/Roadmap.pdf
+27. The JT-60SA advanced tokamak website: http://www.jt60sa.org/b/index.htm
+
+R. Soc. open sci. article template 
+1   Insert your short title here 
+
+
+
+
+1
+
+
+
+
+
+Phil. Trans. R. Soc. A.	
+
+
+
+Phil. Trans. R. Soc. A.
+
+
+
+
+Phil. Trans. R. Soc. A.
+DOI 10.1098/rsta.2017.0446.
+
+
+
+
+
+
+
+
+1
+
+
+
+
