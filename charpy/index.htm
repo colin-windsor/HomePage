@@ -41,7 +41,7 @@ can be obtained by recording the results as a function of specimen temperature.
 Most ferritic alloys undergo a “ductile to brittle” transition. At high temperatures 
 the fracture is ductile with relatively high energy absorption. As the specimen 
 temperature is reduced there is a transition to brittle fracture, with much 
-lower energy absorption. The fracture surface also changes from a ‘torn’ ductile 
+lower energy absorption. The fracture surface also changes from a 'torn' ductile 
 fracture surface to a rough surface showing inter-granular separation. The change 
 with temperature is generally quite sharp and from the central temperature of the 
 distribution a ductile to brittle transition temperature may be reliably inferred. 
@@ -52,12 +52,12 @@ of radiation are shown in figure 1 [4]. The un-irradiated alloys are assigned a
 zero shift, and the change in temperature is measured as a function of irradiation level.
 <IMG SRC="chfig1.jpg" ALIGN="LEFT">
 <P><B>Figure 1: Charpy curves for half-size specimens of 12Cr-1MoVW steel before 
-and after irradiation to 10 and 17 dpa at 365ºC in the Fast Flux Test Facility  [4].</B>
+and after irradiation to 10 and 17 dpa at 365C in the Fast Flux Test Facility  [4].</B>
 
 
 
 
-<P>It is known that specimen size affects the ductile–brittle transition temperature in 
+<P>It is known that specimen size affects the ductile-brittle transition temperature in 
 Charpy impact testing [5], and there is some evidence that sub-sized Charpy tests provide 
 non-conservative estimates of embrittlement [6]. However since this paper deals only with 
 sub-sized specimens we expect our predictions to be internally consistent.
@@ -106,7 +106,7 @@ how well Charpy measurements taken at lower irradiation levels may be used
 to predict properties in the reactor-relevant range. It is important to note 
 that there are likely errors in both the Charpy shift and the irradiation dose 
 axes of these graphs. An estimate of the Charpy shift error can be made from 
-the work of Mueller et al [10] as around ±20 K. The irradiation dose error 
+the work of Mueller et al [10] as around +/- 20 K. The irradiation dose error 
 arises from the difficulties of integrating the reactor or accelerator power 
 over an irradiation which may last many months or years. It is likely to be 
 several percent. A further relevant source of errors is in the measurement 
@@ -124,7 +124,7 @@ equal to the average of the available data.
 
 <P>A problem, common with all highly-flexible least-squares fitting procedures, 
 is that in order to test the fit, the dataset must be divided into subsets of 
-“training” and “test” data, where none of the test data has been included in 
+"training" and "test" data, where none of the test data has been included in 
 the training process. This paper will use the root mean squared least squares 
 test residual <I>R<SUB>test</SUB></I> defined as the square root of the summed 
 squared difference between the network targets <I>T<SUB>i</SUB></I> and 
@@ -149,8 +149,8 @@ Paul Haynes under the direction of Chris Bishop [11]. It is able to
 perform the target-driven components method described in section 3. It does 
 not contain any error determination in the ways used in reference [2]. 
 To supplement this code, its main conclusions were confirmed with the 
-“BIGBACK” code written by David MacKay [12]. This was run using the interface 
-code “Model Manager” [13]. It includes a full Bayesian error treatment. 
+"BIGBACK" code written by David MacKay [12]. This was run using the interface 
+code "Model Manager" [13]. It includes a full Bayesian error treatment. 
 In particular it is able to lower the weightings of irrelevant variables 
 automatically.
 
@@ -167,7 +167,7 @@ is between 4 and 6.
 under the conditions of a fusion reactor, say for irradiation levels above 40 dpa. 
 There are at present very few data in this region and the present study seeks to 
 remedy this by asking whether predictions from lower irradiation levels might 
-make a useful prediction at fusion reactor levels, as well as using the modelling technique to provide insight into radiation embrittlement mechanisms. While the accuracy of such predictions is unlikely to be good enough for structural safety evaluation, it may well be sufficient to say whether today’s alloys, with measurements at only relatively low irradiation levels, may be useful for reactor applications, or whether new alloy development is essential. As more data become available at high irradiation levels we expect our model to be more precise.
+make a useful prediction at fusion reactor levels, as well as using the modelling technique to provide insight into radiation embrittlement mechanisms. While the accuracy of such predictions is unlikely to be good enough for structural safety evaluation, it may well be sufficient to say whether today's alloys, with measurements at only relatively low irradiation levels, may be useful for reactor applications, or whether new alloy development is essential. As more data become available at high irradiation levels we expect our model to be more precise.
 The neural network predictions, used for this dataset by Cottrell <I>et al</i> [2] 
 made no attempt to address this problem. They used the conventional approach, 
 dividing the whole dataset into equal randomised training and test datasets, 
@@ -212,17 +212,17 @@ irradiation levels below 20 dpa and testing is for those examples at greater
 irradiations. This is not the normal usage of BIGBACK which might conventionally 
 divide the dataset into a 50% training dataset and 50% test dataset. 
 It rather considers how it might best use the training data available to 
-“extrapolate” into the high irradiation range not covered by the training data. 
+"extrapolate" into the high irradiation range not covered by the training data. 
 It is seen that the open squares representing the training data performance 
 fall reasonably close to the dashed line representing perfect performance. 
 The closed squares representing test data with errors are more scattered 
 although do give a useful predictive accuracy considering that some points are 
 highly extrapolated beyond the training data. Note that the limited size of 
-the total dataset meant that no “validation dataset” was used so that operations 
+the total dataset meant that no "validation dataset" was used so that operations 
 like the optimisation of the hidden units were performed on the test dataset.
 
 <P>Using the test data above and for a particular irradiation level, it is 
-easy to see which of the non-atomic “fixed” inputs is most significant, 
+easy to see which of the non-atomic "fixed" inputs is most significant, 
 by first including all fixed inputs and then removing one of the inputs 
 and noting the new residual. Such results are shown in figure 4. 
 The left-hand column (light) is when all fixed inputs are included. 
@@ -236,7 +236,7 @@ less than when the variable was included.
 <IMG SRC="chfig4.jpg" ALIGN="LEFT">
 <P><B>Figure 4: The test data residual when the change in ductile to brittle 
 transition temperature is evaluated from a 5 hidden unit neural network 
-including all the fixed non-atomic inputs “All fixed”, (light) and with 
+including all the fixed non-atomic inputs "All fixed", (light) and with 
 the other non-atomic variables detailed omitted (dark). This is done for 
 test data at irradiation levels above 20. It is seen that omitting the 
 irradiation temperature input Tirr gives a significantly lower residual.</B>
@@ -284,7 +284,7 @@ a reduction in the test residual.
 obtained will show a minimum as a function of hidden unit number. If the number 
 of hidden units is too low the network will have insufficient adjustable 
 variables to fit even the training data. However if the number of hidden units 
-is too high the details of the training data may be “over fitted” to a high accuracy 
+is too high the details of the training data may be "over fitted" to a high accuracy 
 but at the expense of the fit to the test data. The optimal hidden unit number 
 may be estimated by repeating the whole forward selection process as a function 
 of hidden unit number as in figure 7.
@@ -500,7 +500,7 @@ American Society for Testing and Materials, (2001) 140
 
 <p>[5] Kurishita H, Yamamoto B, Narui M, Suwarno H, Yoshitake T, Yano Y, Yamazaki M, 
 and Matsui H, 
-<I>Specimen size effects on ductile–brittle transition temperature in Charpy impact testing, </I>
+<I>Specimen size effects on ductile-brittle transition temperature in Charpy impact testing, </I>
 (2004), Journal of Nuclear Materials Vol 329-333, p1107-1112, Proceedings of the 11th International Conference on Fusion Reactor Materials (ICFRM-11), linkinghub.elsevier.com/retrieve/pii/S0022311504001850
 
 <p>[6] Asta E P,  Cambiasso F A, Balderrama J J,  
@@ -518,10 +518,10 @@ Met. Trans. 14A, 2277-2287.
 <I>On the effects of irradiation and helium on the yield stress changes and hardening and 
 non-hardening embrittlement of ~8Cr tempered martensitic steels: 
 Compilation and analysis of existing data, </I>
-(2006), Journal of Nuclear Materials 356,  27–49.
+(2006), Journal of Nuclear Materials 356,  27-49.
 linkinghub.elsevier.com/retrieve/pii/S0022311506002418
 
-<p>[10] Mueller P, Spatig P, Bonadé R and Odette G R, 
+<p>[10] Mueller P, Spatig P, Bonade R and Odette G R, 
 <I>Fracture toughness master curve analysis of the tempered martensitic steel Eurofer97, </I>
 Proc. ICFRM-13, Nice, Dec. 2007
 
