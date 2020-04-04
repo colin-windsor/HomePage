@@ -1,0 +1,141 @@
+<HTML>
+<BODY>
+<FONT SIZE = 5 COLOR = "#990000" >
+<H2>16, La Bruyere, St Martin du Vieux Belleme, 61130, Normandy, France</H1>
+<H1>Garden plans</H1><P><HR></P>
+<DIV ID=controlDiv><OBJECT 
+ID="d1" 
+STYLE="position:absolute;left:10;top:100;width:600;height:800"
+CLASSID="CLSID:B6FFC24C-7E13-11D0-9B47-00C04FC2F51D"></OBJECT></DIV></DIV>
+<SCRIPT 
+LANGUAGE="JScript"for="window"event="onload">
+m=d1.PixelLibrary; 
+ds=m.NewDrawingSurface(); 
+ds.Font("HELVETICA",16,0,0,0,0);
+xm=-300;xx=250;ym=-350;yx=250
+wid=xx-xm;
+xc=0.05*wid;yc=0.05*wid;
+ds.Text("0",xm+xc,ym+yc);
+
+sca=0.00075*wid;
+x0=0;y0=0;
+
+x1=sca*0;y1=sca*(1400);  <!-- Scale--> 
+x2=sca*1000;y2=sca*(1400);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x1,ym+yc+y1+10*sca);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x2,ym+yc+y1+20*sca);         
+ds.Text("Scale: 10m",xm+xc+(x1+x2)/2,ym+yc+(y1+y2)/2);
+
+
+x1=sca*1137;y1=0; <!-- Boundary-->
+x2=sca*1137;y2=sca*1200;
+x3=sca*619;y3=sca*(1330-((1330-1200)*619/1137));
+x4=sca*619;y4=sca*(1330-((1330-1200)*619/1137)+34);
+x5=0;y5=sca*1330;
+ds.Line(xm+xc+x0,ym+yc+y0,xm+xc+x1,ym+yc+y1);         
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x5,ym+yc+y5);         
+ds.Line(xm+xc+x5,ym+yc+y5,xm+xc+x0,ym+yc+y0);         
+
+x1=sca*126;y1=sca*(1330-((1330-1200)*126/1137)+14); <!-- Door-->
+x2=sca*126;y2=sca*(1330-((1330-1200)*126/1137)+44);
+x3=sca*224;y3=sca*(1330-((1330-1200)*224/1137)+44);
+x4=sca*224;y4=sca*(1330-((1330-1200)*224/1137)+14);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Text("Door",xm+xc+x1,ym+yc+y1);
+
+
+x1=0;y1=sca*30; <!-- Loo Base-->
+x2=sca*195;y2=sca*30;
+x3=sca*195;y3=sca*(30+193);
+x4=0;y4=sca*(30+193);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+
+x1=0;y1=sca*(195-34);   <!-- Loo -->
+x2=sca*106;y2=sca*(195-34); 
+x3=sca*106;y3=sca*30;
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Text("Loo",xm+xc+x1,ym+yc+y1);
+
+
+x1=sca*32;y1=sca*1330 <!-- Side edge--> 
+x2=sca*32;y2=sca*(1330-230);
+x3=sca*45;y3=sca*(1330-230);
+x4=sca*45;y4=sca*(30+193);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+
+
+x1=sca*145;y1=sca*(30+193) <!-- Path--> 
+x2=sca*145;y2=sca*(1330-226-((1330-1200)*226/1137))
+x3=sca*1137;y3=sca*(1200-205);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+
+x1=sca*619;y1=sca*(1330-((1330-1200)*619/1137)); <!-- House garden-->
+x2=sca*619;y2=sca*(1330-((1330-1200)*619/1137)-100);
+x3=sca*1137;y3=sca*(1200-100);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+
+x1=sca*287;y1=sca*(1330-226-332) <!-- Lamp--> 
+ds.ArcDegrees(xm+xc+x1,ym+yc+y1,0,360,sca*30,sca*30);   // Make circles
+ds.Text("Lamp",xm+xc+x1,ym+yc+y1);
+
+x1=sca*(1137-80);y1=sca*(130);rad=sca*400    <!-- Tree-->
+ds.ArcDegrees(xm+xc+x1-0.45*rad,ym+yc+y1-0.45*rad,0,360,rad,rad);   // Make circles
+rad=sca*50 
+ds.ArcDegrees(xm+xc+x1,ym+yc+y1,0,360,rad,rad);  
+ds.Text("Tree",xm+xc+x1,ym+yc+y1);
+
+x1=sca*192;y1=sca*(189+89);  <!-- Washing line--> 
+x2=sca*(1137-116);y2=sca*(189+89);
+x3=sca*(1137-116);y3=sca*(189+89+60);
+x4=sca*192;y4=sca*(189+89+60);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x1,ym+yc+y1);         
+ds.Line(xm+xc+x1,ym+yc+y1+sca*30,xm+xc+x2,ym+yc+y2+sca*30);         
+ds.Text("Washing Line",xm+xc+x3-sca*300,ym+yc+y3);
+
+x1=sca*287;y1=sca*(500) <!-- Lawn--> 
+ds.Text("Lawn",xm+xc+x1,ym+yc+y1);
+
+
+
+ds.LineDashStyle(2);                    // Set dashed for arrows
+x1=sca*1137;y1=sca*1200;  <!-- New Shed--> 
+x2=sca*(1137-173);y2=sca*(1220);
+x3=sca*(1137-173);y3=sca*(1220-294);
+x4=sca*1137;y4=sca*(1220-294);
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Text("Shed",xm+xc+x3,ym+yc+y3);
+
+x1=sca*320;y1=sca*(1200-200);rad=250;  <!-- Patio--> 
+ds.ArcDegrees(xm+xc+x1-0.45*rad,ym+yc+y1-0.45*rad,0,360,rad,rad);   // Make circles
+ds.Text("Patio",xm+xc+x1,ym+yc+y1);
+
+x1=sca*1100;y1=sca*(1200-200);rad=620;  <!-- Pottager--> 
+ds.ArcDegrees(xm+xc+x1-0.45*rad,ym+yc+y1-0.45*rad,93,155,rad,rad);   // Make circles
+ds.Text("Pottager",xm+xc+0.75*x1,ym+yc+0.75*y1);
+
+
+
+
+d1.Image=ds.Image; 
+d1.Start();
+</SCRIPT>
+</BODY>
+</HTML>

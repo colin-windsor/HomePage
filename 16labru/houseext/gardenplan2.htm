@@ -1,0 +1,45 @@
+<HTML>
+<BODY>
+<FONT SIZE = 5 COLOR = "#990000" >
+<H2>16, La Bruyere, St Martin du Vieux Belleme, 61130, Normandy, France</H1>
+<H1>Garden plans</H1><P><HR></P>
+<DIV ID=controlDiv><OBJECT 
+ID="d1" 
+STYLE="position:absolute;left:10;top:100;width:600;height:800"
+CLASSID="CLSID:B6FFC24C-7E13-11D0-9B47-00C04FC2F51D"></OBJECT></DIV></DIV>
+<SCRIPT 
+LANGUAGE="JScript"for="window"event="onload">
+m=d1.PixelLibrary; 
+ds=m.NewDrawingSurface(); 
+ds.Font("HELVETICA",16,0,0,0,0);
+xm=-300;xx=250;ym=-350;yx=250
+
+ds.Line(xm,ym,xx,ym);         
+ds.Line(xx,ym,xx,yx);         
+ds.Line(xx,yx,xm,yx);         
+ds.Line(xm,yx,xm,ym);         
+ds.Text("2",-130,-16);
+wid=xx-xm;
+sca=0.0005*wid;
+xc=0.05*wid;yc=0.05*wid;
+ds.Text("0",xm+xc,ym+yc);
+ds.Text("1",xm+xc+x1,ym+yc+y1);
+
+
+d1.Image=ds.Image; 
+d1.Start();
+</SCRIPT>
+</BODY>
+</HTML>
+x0=0;y1=0;
+x1=sca*1137;y1=0;
+x2=sca*1300;y2=sca*1170;
+x3=sca*619;y3=sca*1300-(1300-1170)*619/1300;
+x4=sca*619;y4=sca*1300-(1300-1170)*619/1300-100;
+x5=0;y5=sca*1300;
+ds.Line(xm+xc+x0,ym+yc+y0,xm+xc+x1,ym+yc+y1);         
+ds.Line(xm+xc+x1,ym+yc+y1,xm+xc+x2,ym+yc+y2);         
+ds.Line(xm+xc+x2,ym+yc+y2,xm+xc+x3,ym+yc+y3);         
+ds.Line(xm+xc+x3,ym+yc+y3,xm+xc+x4,ym+yc+y4);         
+ds.Line(xm+xc+x4,ym+yc+y4,xm+xc+x5,ym+yc+y5);         
+ds.Line(xm+xc+x5,ym+yc+y5,xm+xc+x0,ym+yc+y0);         
