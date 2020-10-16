@@ -21,16 +21,16 @@ OX14 3DB, UK
 The design of any fusion power plant requires information on the irradiation
 hardening of low-activation ferritic/martensitic steels beyond the range of most
 present measurements. Neural networks have been used by Kemp et al (J. Nucl.
-Mater. 348 311–28) to model the yield stress of some 1811 irradiated alloys.
+Mater. 348 311-28) to model the yield stress of some 1811 irradiated alloys.
 The same dataset has been used in this study, but has been divided into a
 training set containing the majority of the dataset with low irradiation levels,
 and a test set which contains just those alloys which have been irradiated above
 a given level. For example some 4.5% of the alloys were irradiated above
-30 displacements per atom. For this ‘prediction’ problem it is found that
+30 displacements per atom. For this 'prediction' problem it is found that
 simpler networks with fewer inputs are advantageous. By using target-driven
 dimensionality reduction, linear combinations of the atomic inputs reduce the
 test residual below that achievable by adding inputs from single atoms. It is
-postulated that these combinations represent ‘mechanisms’ for the prediction
+postulated that these combinations represent 'mechanisms' for the prediction
 of irradiated yield stress.
 
 <P>
@@ -47,8 +47,8 @@ results from both these facilities remain many years away.
 
 <P>The objective of this paper is to consider which neural network might best predict the
 yield stress for these highly irradiated alloys, given the training dataset at lower irradiations.
-Neural networks are therefore being applied in a ‘prediction’ mode different to their normal
-‘interpolation’ mode. We have therefore taken extra pains in checking their validity, as outlined
+Neural networks are therefore being applied in a 'prediction' mode different to their normal
+'interpolation' mode. We have therefore taken extra pains in checking their validity, as outlined
 below. On the basis of previous experience we postulate that, in this prediction mode, simpler
 networks with fewer inputs and fewer adjustable parameters make better predictions than
 networks which include all available inputs.
@@ -66,9 +66,9 @@ ferritic/martensitic steel alloy examples <I>E<SUB>i</SUB> i = 1, . . . , 1811</
 including 31 atomic fractions <I>A<SUB>i,j</SUB> j = 1, . . . , 31</I> defining the example alloy atom weight
 percentages, and six non-atomic variables <I>B<SUB>i,j</SUB> j = 1, . . . , 6</I> defining other variables such as
 the cold work, irradiation temperature, radiation dose, helium dose, measurement temperature
-and a binary ‘as quenched’ switch. A database was originally compiled from the published
+and a binary 'as quenched' switch. A database was originally compiled from the published
 literature by Yamamoto et al [4], but has been refined here. An examination of the outliers in
-the predictions of Kemp et al [1] revealed that many were derived from ‘as quenched’ samples.
+the predictions of Kemp et al [1] revealed that many were derived from 'as quenched' samples.
 A switch was defined equal to 1 if the alloy was ‘as quenched’ and equal to 0 if the alloy had
 been annealed. As might be expected from metallurgical considerations, this variable was
 found to give a highly significant improvement, particularly to the outliers in the dataset, and
@@ -80,7 +80,7 @@ the actual value of a target parameter (here the yield stress) and the value pre
 network as a function of several input parameters (here the 31 atomic weight percentages
 and the six non-atomic variables). A conventional back propagation network is used here as
 described in the review by Bishop [5]. The first layer consists of the input parameters <I>x<SUB>i0</SUB></I>. In
-other layers each ‘neuron’, <I>i</I>, evaluates a non-linear sigmoid function of the weighted sum of
+other layers each 'neuron', <I>i</I>, evaluates a non-linear sigmoid function of the weighted sum of
 the inputs <I>j</I> to that neuron from the outputs of the previous layer times an adjustable weight <I>w<SUB>ij</SUB></I> ,
 less a threshold for that neuron <I>w<SUB>i0</SUB></I>, to give an output
 
@@ -99,7 +99,7 @@ corresponding input is removed from the network.
 may well be impaired because some inputs may contain information not related to the target
 variable. For example, some alloys may contain elements added to improve corrosion
 resistance or high temperature creep, whose concentration has no systematic effect on yield
-stress. MacKay defines such inputs as ‘irrelevant variables’ [6]. Their inclusion naturally
+stress. MacKay defines such inputs as 'irrelevant variables' [6]. Their inclusion naturally
 helps in the training of any neural network, since the irrelevant variable values may help to
 distinguish particular data examples. However such fitting will not in general lead to any
 improvement in fitting unseen data, and may well degrade prediction.
@@ -107,10 +107,10 @@ improvement in fitting unseen data, and may well degrade prediction.
 <P>Other elements may simply not show any significant variation in concentration across the
 dataset. These may be significant in predicting yield stress but we have access to no dataset
 capable of assessing this. In general their inclusion has little effect on the fit to unseen data, and
-we shall include such variables with the ‘irrelevant variables’. They are often identified simply
+we shall include such variables with the 'irrelevant variables'. They are often identified simply
 by an inspection of the dataset when a particular atomic concentration is nearly always zero.
 
-<P>Of the remaining ‘relevant’ atomic variables, it is helpful to consider why they may affect
+<P>Of the remaining 'relevant' atomic variables, it is helpful to consider why they may affect
 the yield stress in these samples. A high yield stress is generally obtained when there is a
 high density of dislocations and when the motion of dislocations leading to yield is impeded
 by the presence of various sets of defects which may exist in the sample. For example a
@@ -141,12 +141,12 @@ combination inputs with coefficients which will be determined by their ability t
 
 <P>
 Figure 2 shows a typical model of the neural network being considered. It contains the
-six non-atomic variables, which we shall call the ‘fixed variables’, and they are shown as
+six non-atomic variables, which we shall call the 'fixed variables', and they are shown as
 large circles in the set of input variables. They are always connected to the hidden units. The
 inclusion of the remaining 31 variables may or may not be helpful. We assume that the small
-circle inputs have been identified as ‘irrelevant’ atomic variables and will not be connected. The
+circle inputs have been identified as 'irrelevant' atomic variables and will not be connected. The
 remaining intermediate size circle inputs pass through a set of linear combination units (closed
-circles) to form a set of ‘mechanism’ input vectors (typically around two) which connect to
+circles) to form a set of 'mechanism' input vectors (typically around two) which connect to
 the hidden layer. In practice not all relevant atomic variables are connected to each composite
 unit. The network topology for these inputs is thus similar to dimensionality reduction methods
 which use an intermediate hidden unit layer of variable low dimensionality.
@@ -154,7 +154,7 @@ which use an intermediate hidden unit layer of variable low dimensionality.
 <P><B>3. Performance assessment: the test residual</B>
 
 <P>A problem, common to all least squares fitting procedures, is that in order to test the fit, the
-dataset must be divided into subsets of ‘training’ and ‘test’ data, where none of the test data
+dataset must be divided into subsets of 'training' and 'test' data, where none of the test data
 has been included in the fitting.
 
 <P>The strategy presented above depends on a method for assessing the performance of a
@@ -176,13 +176,13 @@ dataset.
 <P><I>O<SUB>i</SUB></I> are the outputs of the trained neural network. With the yield stress as target, the
 residual has the units of MPa and is essentially the root mean square deviation between actual
 and predicted yield stress. The neural networks used here are conventional 3-layer perceptrons
-trained by the conjugate gradient method. Two codes have been used. One is the ‘BIGBACK’
-code written by David MacKay [7]. Thiswas run using the interface code ‘Model Manager’ [8].
+trained by the conjugate gradient method. Two codes have been used. One is the 'BIGBACK'
+code written by David MacKay [7]. Thiswas run using the interface code 'Model Manager' [8].
 It includes a full Bayesian error treatment. In particular it is able to lower the weightings of
 irrelevant variables automatically. The other code used is the MAGEOM code written by
 Colin Roach and Paul Haynes under the direction of Chris Bishop [9]. It does not contain any
 error determination in the ways used in [1]. However it is able to perform the target-driven
-dimensionality reduction described in section 3. It is also able to perform the ‘leave-one-out’
+dimensionality reduction described in section 3. It is also able to perform the 'leave-one-out'
 method in which all examples in the complete dataset are used for training except, say, the
 first, which becomes the test example. The whole process is then repeated from scratch with
 the second example as test example until all examples in the dataset have been tested. The
@@ -196,7 +196,7 @@ in this case repetitions of the training with different initial seed numbers may
 answers, because of the differing selection of test examples from the dataset. By choosing
 a fixed set of examples for the test dataset this common cause of fluctuations from different
 selections of example alloys being included in the training dataset is not present. Applying the
-MacKay ‘BIGBACK’ code with the training data including all the dataset up to irradiations
+MacKay 'BIGBACK' code with the training data including all the dataset up to irradiations
 of 30 dpa, and the test dataset including all the dataset at higher irradiations gives the results
 shown in figure 3. The code operates by considering all hidden units up to some specified value,
 say 12, and say five different values for the initial random seed. The results are ordered in the
@@ -221,7 +221,7 @@ of hidden units may be found from the shallow minimum as about seven hidden unit
 
 
 <P>Input vector dimensionality reduction is generally a desirable aim in neural network studies.
-The fewer the inputs to the neural net, the less it is likely to ‘over-learn’ from questionable
+The fewer the inputs to the neural net, the less it is likely to 'over-learn' from questionable
 variables, and the better is the network likely to be able to generalize. Yet simply cutting
 out variables, or reducing the weight magnitudes of relevant atomic inputs may lead to loss
 in performance. The method proposed here is to consider all the relevant atomic variables
@@ -244,9 +244,9 @@ The included atomic elements may be, and have been in the figure, arranged in an
 initial saliency, that is according to the magnitude of the reduction of the residual that occurs
 when they are included. The next few atoms on the list are Ta, Mo, Si andW. Those at the end
 of the list which give little reduction, or an increase, in the test residual are possible candidates
-for ‘irrelevant variables’—the small unconnected inputs of figure 2.
+for 'irrelevant variables' - the small unconnected inputs of figure 2.
 
-<P>This ‘forward sequential selection of features’ method [11] can be continued by always
+<P>This 'forward sequential selection of features' method [11] can be continued by always
 including the most salient atomic input, in this case Mn, along with the six fixed inputs, and
 then considering the possible inclusion of all other remaining atomic variables. This process is
 continued until the inclusion of extra atomic inputs gives no further reduction in the residual.
@@ -346,7 +346,7 @@ predicting yield stress remains generally good, if less good than the committee 
 
 <IMG alt="Figure 10.  The faeint points with errors and the small light dots indicate the predictions for the full dataset (without restriction to a range of irradiation levels).  The points with errors were from the BIGBACK code, using a committee structure involving an average of training runs with hidden unit numbers varying from 4 to 13. This procedure means that the same examples are being used for both training and test data. The points were predicted using the leave-one-out method, which does not permit overlap between training and test data. The other two plots are trained with low irradiation levels and have test results with irradiation level >30 dpa. The darker points with errors are identical to figure 9a. The full triangles show the best test results achieved using the target-driven components method with 5 hidden units." src="HirrYSFig10.jpg" align=right> 
 
-<P>The other two sets of points represent ‘prediction’ runs where the training dataset is for
+<P>The other two sets of points represent 'prediction' runs where the training dataset is for
 low irradiation examples and the test dataset for examples with irradiation level >30 dpa.
 The points with error bars are identical to figure 9(a) and represent the best results from the
 BIGBACK code with the same target-driven components as run 678. The residual is some
@@ -354,7 +354,7 @@ BIGBACK code with the same target-driven components as run 678. The residual is 
 this comparison is unsound, as the BIGBACK does not minimize the residual, but rather the
 log-predictive error which weights each example point according to the predicted Bayesian
 uncertainty. The full triangles represent the best scatter plots achieved during run 678, the
-target-driven components run that has also been illustrated in figures 5–7. This run included
+target-driven components run that has also been illustrated in figures 5-7. This run included
 some 40 different initial seed values and the scatter plot shown is the run giving the smallest
 test residual. This minimum residual, 116, is only 11% worse than that achieved using the
 leave-one-out code for the complete data set.
@@ -401,7 +401,7 @@ used, with the training data being from 0 to 30 dpa and the test data from 30 to
 each atomic input a comment has been added indicating a suggested metallurgical implication
 for the inclusion of the atom. The separate runs have different numbers of hidden units Nh,
 as shown. The Rmin line records the minimum average residual recorded during each run.
-The atoms given heavy type—nickel, molybdenum and niobium (Ni, Mo, Nb)—all activate
+The atoms given heavy type- nickel, molybdenum and niobium (Ni, Mo, Nb)-all activate
 strongly under neutron irradiation and so are undesirable in any alloy designed for use at high
 irradiation levels. There exist substitutes for each of these elements which are shown in italics.
 These substitutes have similar (although not identical) metallurgical effects and are manganese
@@ -446,13 +446,12 @@ compared with 155 with all irradiation temperatures included.
 
 <P>It has been shown that it is possible to predict the yield stress of alloys over a range of
 irradiation levels significantly beyond the domain of the training set. Thus it is possible to
-perform ‘prediction’ rather than just ‘interpolation’ using neural networks.
+perform 'prediction' rather than just 'interpolation' using neural networks.
 
 <P>We have found that the conditions under which this gives best results usually imply a
 simpler network that would be used for an interpolation problem. This may involve few hidden
 units, but it may also imply the need for other methods to reduce the input dimensionality.
-
-<P>One such method has been to introduce ‘target-driven component selection’. Linear
+<P>One such method has been to introduce 'target-driven component selection'. Linear
 combinations of atomic inputs are found which most reduce the yield stress target residual.
 This method has been shown to give better results than forward selection or by the Bayes
 treatment of weighted atomic variables. We suggest that the good performance which
@@ -464,7 +463,7 @@ mobilities [12]. These may operate largely independently of the detailed alloy c
 and so a general smoothness condition can be assured. However the extrapolation will naturally
 become increasingly uncertain further from the training dataset and so these predictions
 should always be treated with suitable caution. The Bayesian BIGBACK code explicitly
-provides an estimate of this uncertainty—subject to the assumptions made in preparing
+provides an estimate of this uncertainty - subject to the assumptions made in preparing
 the data.
 
 <P>Combining high irradiation atomic inputs with their reduced irradiation substitutes gave no
@@ -481,7 +480,7 @@ the European Commission.
 <P><B>References</B>
 
 <P>[1] Kemp R, Cottrell G A, Bhadeshia H K D H, Odette G R, Yamamoto T and Kishimoto H 2006 Neuralnetwork
-analysis of irradiation hardening in low-activation steels J. Nucl. Mater. 348 311–28 and
+analysis of irradiation hardening in low-activation steels J. Nucl. Mater. 348 311-28 and
 http://www.msm.cam.ac/phase-trans/2006/Kemp.JNM.2006.pdf
 <BR>[2] The International Fusion Materials Irradiation Facility (IFMIF): http://www.frascati.enea.it/ifmif/
 <BR>[3] The ITER project: http://www.iter.org/
@@ -496,11 +495,11 @@ Cambridge University Press) Materials Algorithms Project Program Library http://
 map/utilities/modules/nnecode.html
 <BR>[8] Neuromat Ltd, Model manager 2004: http://www.neuromat.com/model manager.html
 AQ3 [9] Bishop CM, Haynes P S, Roach CM, SmithMEU, Todd T N andTrotman D L 1993 Hardware implementation
-of a neural network to control plasma position in COMPASS-D Fusion Technol. 997–1001
+of a neural network to control plasma position in COMPASS-D Fusion Technol. 997-1001
 <BR>[10] Bishop C M 2006 Pattern Recognition and Machine Learning (London: Springer)
 <BR>[11] Aha DWand Bankert R L 1995 A comparative evaluation of sequential feature selection algorithms ed D Fisher
-and H Lenz Proc. 5th Int. Workshop on Artificial Intelligence and Statistics (Ft. Lauderdale, FL) pp 1–7 and
+and H Lenz Proc. 5th Int. Workshop on Artificial Intelligence and Statistics (Ft. Lauderdale, FL) pp 1-7 and
 http://citeseer.ist.psu.edu/aha95comparative.html
 <BR>[12] Brailsford A D and Bullough R 1972 The rate theory of swelling due to void growth in irradiated metals J. Nucl.
-Mater. 44 121–35
+Mater. 44 121-35
 
