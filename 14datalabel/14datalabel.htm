@@ -131,14 +131,14 @@ simplest relevant case of a point object (<I>R = 0</I>) in soil whose
 radar velocity may at least be estimated at a value <I>V=v</I>. In this
 case, <I>n</I> = 2 and only doublet data pairs <I>(y<SUB>i</SUB>, t<SUB>i</SUB></I>) and 
 <I>(y<SUB>j</SUB>, t<SUB>j</SUB>)</i> need
-be chosen. The chosen points must be different, so that <I>i = j</I>.
+be chosen. The chosen points must be different, so that <I>i <> j</I>.
 Also note that when the points are different but very close, the
 solution will be ill-conditioned, and the solution will not be
 so accurate. The solutions for the unknown variables <I>Y</I> and <I>Z</I>
 
 <P><I> Y = [(y<SUB>i</SUB><SUP>2</SUP> - y<SUB>j</SUB><SUP>2</SUP>) - (t<SUB>i</SUB><SUP>2</SUP> - t<SUB>j</SUB><SUP>2</SUP>)v<SUP>2</SUP>/4)]/[2(y<SUB>i</SUB> - y<SUB>j</SUB>)]
 
-<P>Z = (vt<SUB>i</SUB>/2)<SUP>2</SUP> - (y<SUB>i</SUB> - Y)<SUP>2</SUP>. </I>  (2)
+<P>Z = (vt<SUB>i</SUB>/2)<SUP>2</SUP> - (y<SUB>i</SUB> - Y)<SUP>2</SUP>. </I>  (2)
 
 <P>In this case, the accumulator space is only 2-D and is easily
 plotted in real space [<I>Y, Z</I>]. Fig. 2 shows such an accumulator
@@ -170,7 +170,7 @@ area.
 <P>The accumulator space is conventionally an array with
 dimensionality equal to the number of unknown parameters.
 An integer array is conventionally chosen with each unknown
-variable being appropriately digitized with a step size <I>X<SUB>i</SUB></I>
+variable being appropriately digitized with a step size <I>DX<SUB>i</SUB></I>
 for each variable <I>X<SUB>i</SUB></I>. An associative store is mathematically
 equivalent, but instead is a series of linear integer arrays,
 with one array describing the digitized value of each unknown
