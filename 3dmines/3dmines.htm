@@ -9,7 +9,7 @@
 RADAR data</P></B></FONT>
 <P></P>
 <FONT FACE="Arial" SIZE=4></B><P>Lorenzo Capineri*, PierLuigi Falorni* C. G. Windsor+ </p>
-<P>* Dipartimento Elettronica e Telecomunicazioni, Università degli Studi di Firenze, 
+<P>* Dipartimento Elettronica e Telecomunicazioni, Universita degli Studi di Firenze, 
 Via S. Marta 3, 50139 Firenze, Italy, Tel/Fax +39 055 4796376/517, <a
 href="mailto:Capineri@ieee.org">Capineri@ieee.org</a>, 
 <a href="mailto:Pfalorni@supereva.it">Pfalorni@supereva.it</A></p>
@@ -57,8 +57,8 @@ already tacled with several techniques by other authors <sup>(4)(5)(6)</sup>.
 For example a mine buried 10 cm deep in sand and scanned using a 2 cm raster
 may show signals over 20 cm in both directions. Neither a single plot of range
 along a scan (B-scan) nor signal amplitude at a given range (C-scan) provide
-more than a fraction of the useful information available in 3-D.<span
-style="mso-spacerun: yes">  </span>Classification is possible because of the
+more than a fraction of the useful information available in 3-D. 
+Classification is possible because of the
 relatively large size of most mines compared to the wavelength, and compared to
 the size of many other strongly reflecting objects. The incident RADAR pulse
 usually contains a wavelet with only a couple of maxima, but the reflected
@@ -180,9 +180,7 @@ position along a flux line.</p>
 <p>For a better understanding of how a typical contrast pattern looks like, Figure 4
 shows the first three contrast patterns found on a PFM mine scan: the first and
 the third pattern are obtained by the negative phase waves and the second one
-with the positive phase waves.</p>                                                                               </span><o:p></o:p></span></p>
-
-
+with the positive phase waves.</p>                                                             
 <IMG ALIGN="RIGHT" SRC="fig4.jpg" >
 <FONT FACE="Arial" SIZE=4><I><P>Figure 4: An example of first three contrast 
 patterns extracted with gradient-sigmoid filter from data of a PFM mine buried 
@@ -270,11 +268,11 @@ again show several apexes.</p>
 
 <IMG ALIGN="RIGHT" SRC="fig5.jpg" >
 <FONT FACE="Arial" SIZE=4><I><P>Figure 5:  The apex
-points determined from the scans over a PMN mine buried at 5 cm<span
-style="mso-spacerun: yes">  </span>depth in earth. The colour coded spheres
-indicate the positions of the apexes.<span style="mso-spacerun: yes"> 
+points determined from the scans over a PMN mine buried at 5 cm depth in earth. 
+The colour coded spheres
+indicate the positions of the apexes.
 </span>All spheres are projected on the xy, yz, zx planes. On the right the
-palette shows the map of set’s code versus sphere colour..</p></I></font>
+palette shows the map of set's code versus sphere colour..</p></I></font>
 <p>The set of apex points generated from 
 the reflections from a single buried object will generally satisfy all of the 
 following conditions.</p>
@@ -358,8 +356,7 @@ containing a mine a metal ring and a bottle </p></I></font>
 <p>The test data consisted of a set of scans over an earth tray containing several
 objects. One was a PMA mine, one a ring of metal, and one a bottle. All these
 objects gave strong signal, and there were in addition several smaller signals
-from stones and other objects present in the earth.<span style="mso-spacerun:
-yes">  </span>Figure 8 shows a perspective view, as in figure 5, of the apex
+from stones and other objects present in the earth. Figure 8 shows a perspective view, as in figure 5, of the apex
 points recorded over this area. Again the diameter of the circles represents
 the amplitude of the feature, and the grey and black colours the positive and
 negative phases. A pendant with 4 features is seen from the mine, the metal
@@ -390,14 +387,13 @@ Perceptron (MLP) network is widely used and has the structure shown in figure
 feature parameters<i style='mso-bidi-font-style:normal'><span style='color:
 black'> a<sub>0i</sub></span></i>, <i style='mso-bidi-font-style:normal'>i=1, n<sub>0</sub></i>
 are inputs to the <i style='mso-bidi-font-style:normal'>n<sub>h</sub></i>
-“neurons” in the “hidden” layer. These neurons <i style='mso-bidi-font-style:
+"neurons" in the "hidden" layer. These neurons <i style='mso-bidi-font-style:
 normal'>j=1,n<sub>h</sub></i> take a linear combination of the inputs, multiply
 them by adjustable hidden unit weights <i style='mso-bidi-font-style:normal'>w<sub>ijh</sub>,</i>
 subtract an offset <i style='mso-bidi-font-style:normal'>w<sub><span
 style='color:black'>0jh</span></sub></i>, and evaluate a sigmoidal function <i
 style='mso-bidi-font-style:normal'>s(x)</i> in order <span style='color:black'>to
-define the next layer outputs<span style="mso-spacerun: yes">  </span><i
-style='mso-bidi-font-style:normal'>a<sub>1j</sub> </i>= <i style='mso-bidi-font-style:
+define the next layer outputs a<sub>1j</sub> </i>= <i style='mso-bidi-font-style:
 normal'>s</i>(</span></span><span lang=EN-GB style='font-size:12.0pt;
 mso-bidi-font-size:10.0pt;font-family:Symbol;color:black;mso-ansi-language:
 EN-GB'>S</span><i style='mso-bidi-font-style:normal'><sub><span lang=EN-GB
@@ -405,23 +401,19 @@ style='font-size:12.0pt;mso-bidi-font-size:10.0pt;color:black;mso-ansi-language:
 EN-GB'>i=1,n0 </span></sub></i><span lang=EN-GB style='font-size:12.0pt;
 mso-bidi-font-size:10.0pt;color:black;mso-ansi-language:EN-GB'><span
 style="mso-spacerun: yes">  </span><i style='mso-bidi-font-style:normal'>a<sub>0i</sub>w<sub>ijh</sub></i>
-– <i style='mso-bidi-font-style:normal'>w<sub>0jh</sub></i>), where <i
+ <i style='mso-bidi-font-style:normal'>w<sub>0jh</sub></i>), where <i
 style='mso-bidi-font-style:normal'>s(x)=1/(1+e<sup>-x</sup>). </i></span><span
 lang=EN-GB style='font-size:12.0pt;mso-bidi-font-size:10.0pt;mso-ansi-language:
 EN-GB'>This sigmoid function gives <i style='mso-bidi-font-style:normal'>0</i>
 for <i style='mso-bidi-font-style:normal'>x</i> large, <i style='mso-bidi-font-style:
 normal'>0.5</i> for <i style='mso-bidi-font-style:normal'>x=1</i> and <i
 style='mso-bidi-font-style:normal'>1</i> for <i style='mso-bidi-font-style:
-normal'>x</i> very small. The second “target” layer has similarly takes, for
+normal'>x</i> very small. The second "target" layer has similarly takes, for
 each target neuron <i style='mso-bidi-font-style:normal'>k</i>, the results
 from the <i style='mso-bidi-font-style:normal'>j=1,n<sub>h</sub> </i>hidden
 units multiplied them by a further set of target weights <i style='mso-bidi-font-style:
 normal'>w<sub>ikt</sub></i> with an offset <i style='mso-bidi-font-style:normal'>w<sub>0kt</sub>.<span
-style='color:black'><o:p></o:p></span></i></span>
-<p class=MsoNormal style='margin-left:27.0pt;text-indent:-27.0pt;line-height:
-200%'><i style='mso-bidi-font-style:normal'><span lang=EN-GB style='font-size:
-12.0pt;mso-bidi-font-size:10.0pt;color:black;mso-ansi-language:EN-GB'><span
-style='mso-tab-count:1'>         </span>A<sub>2k</sub> </span></i><span
+A<sub>2k</sub> </span></i><span
 lang=EN-GB style='font-size:12.0pt;mso-bidi-font-size:10.0pt;color:black;
 mso-ansi-language:EN-GB'>= <i style='mso-bidi-font-style:normal'>s</i>(</span><span
 lang=EN-GB style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol;
@@ -430,7 +422,7 @@ normal'><sub><span lang=EN-GB style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
 color:black;mso-ansi-language:EN-GB'>k=1,nh </span></sub></i><span lang=EN-GB
 style='font-size:12.0pt;mso-bidi-font-size:10.0pt;color:black;mso-ansi-language:
 EN-GB'><span style="mso-spacerun: yes">  </span><i style='mso-bidi-font-style:
-normal'>a<sub>1j</sub>jk<sub>jk2</sub></i> – <i style='mso-bidi-font-style:
+normal'>a<sub>1j</sub>jk<sub>jk2</sub></i>  <i style='mso-bidi-font-style:
 normal'>w<sub>0k2</sub></i>).<i style='mso-bidi-font-style:normal'><o:p></o:p></i></span></p>
 
 <IMG ALIGN="RIGHT" SRC="fig9.jpg" >
@@ -438,18 +430,11 @@ normal'>w<sub>0k2</sub></i>).<i style='mso-bidi-font-style:normal'><o:p></o:p></
 area of earth containing known objects, a PMA mine, a ,metal ring and a bottle</p></I></font>
 
 Training
-involves minimising the residual R between the targets<i style='mso-bidi-font-style:
-normal'><sub> </sub></i><span style="mso-spacerun: yes"> </span><i
-style='mso-bidi-font-style:normal'>t<sub>k</sub>(e)</i> and the outputs <i
+involves minimising the residual R between the targets t<sub>k</sub>(e)</i> and the outputs <i
 style='mso-bidi-font-style:normal'>a<sub>2k</sub>(e)</i> for each example<i
 style='mso-bidi-font-style:normal'> e<o:p></o:p></i></span></p>
 
-<p class=MsoNormal style='margin-left:27.0pt;text-indent:-27.0pt;line-height:
-200%'><i style='mso-bidi-font-style:normal'><span lang=EN-GB style='font-size:
-12.0pt;mso-bidi-font-size:10.0pt;color:black;mso-ansi-language:EN-GB'><span
-style='mso-tab-count:1'>         </span><span style='mso-tab-count:1'>   </span></span></i><i
-style='mso-bidi-font-style:normal'><span lang=DE style='font-size:12.0pt;
-mso-bidi-font-size:10.0pt;color:black;mso-ansi-language:DE'>R =<span
+<p>R =<span
 style="mso-spacerun: yes">   </span></span></i><span lang=EN-GB
 style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol;
 color:black;mso-ansi-language:EN-GB'>S</span><span lang=EN-GB style='font-size:
@@ -514,7 +499,7 @@ example object and the <i style='mso-bidi-font-style:normal'>k<sup>th</sup></i><
 </sup>target and the network output <i style='mso-bidi-font-style:normal'>a<sub>2k</sub></i>,
 are a minimum. The number of hidden units is crucial. If it is too small the
 network has insufficient complexity to fit the training data. If it is too
-large, a common problem with larger networks, then the network “over-fits” and
+large, a common problem with larger networks, then the network "over-fits" and
 fails to fit the test data<sup>(13)</sup>.<o:p></o:p></span></p>
 
 <p class=MsoBodyText style='line-height:200%'><span lang=EN-GB
@@ -537,7 +522,7 @@ specific object.</p></I></font>
 objects</P></B></FONT>
 
 <p>In this work a method for the estimation of buried objects response by using 3-D
-contrast patterns has been developed. A new “pendant” concept has been
+contrast patterns has been developed. A new "pendant" concept has been
 introduced to obtain a simple feature set for classification with standard
 classifiers. We found also that the visualisation of pendants provides a more
 easily intelligible picture for the user. According to this method a<o:p></o:p></span></p>
@@ -590,7 +575,7 @@ penetrating radar signal processing. Home
 page: www.echommunity.com/staff.htm</p>
 
 <p>PierLuigi
-Falorni graduated in Informatic Engineering with Laurea degree at Università
+Falorni graduated in Informatic Engineering with Laurea degree at Universita
 degli Studi di Firenze with a thesis on advanced processing methods for ground
 penetrating data (GPR). At present he is doctorate student in Non Destructive
 Testing at the same University, and he is coauthor of two papers on GPR image
