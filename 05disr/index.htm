@@ -12,8 +12,8 @@ Nucl. Fusion <B>45</B> 337-350, 2005</p></A>
 <FONT SIZE=3><p ALIGN=left>C.G. Windsor, G. Pautasso*, C. Tichmann*, R.J. Buttery and T.C. Hender, 
 JET EFDA Contributors?, and the ASDEX Upgrade team</P></B>
 <p>Euratom-UKAEA Fusion Association, Culham Science Centre, Abingdon, OX14 3DB, UK* 
-<p>Euratom-Max-Planck-Institut für Plasmaphysik, Garching, D-85748, Germany
-<p>*Pamela, J. et al., Annex 1, “Overview of recent JET results”, Fusion Energy 2002 (Proc. Int. Conf., Lyon, 2002), Nuclear Fusion, 43, 1540, 2003. 
+<p>Euratom-Max-Planck-Institut fur Plasmaphysik, Garching, D-85748, Germany
+<p>*Pamela, J. et al., Annex 1, Overview of recent JET results, Fusion Energy 2002 (Proc. Int. Conf., Lyon, 2002), Nuclear Fusion, 43, 1540, 2003. 
 </p>
 <p> Accepted for publication 15/3/2005
 
@@ -49,13 +49,13 @@ containment vessel walls, and dump its current over a very short period. The res
 and halo currents in the device structure interact with the high magnetic field to create 
 large mechanical forces that may require the imposition of operational and design constraints. 
 Serious concerns are also posed by the accompanying heat load on plasma facing components 
-and the potential for creating a narrowly focused ‘runaway’ electron beam. 
+and the potential for creating a narrowly focused 'runaway' electron beam. 
 
 <p>Thus disruption avoidance, or mitigation, is highly desirable, and it is prudent to consider 
 how our knowledge of the circumstances of disruptions in a given tokamak could be used to predict 
 disruptions in another tokamak.  If successful, this approach would allow the deployment of 
 disruption protection systems in future tokamaks, such as ITER, without the need to have a 
-large number of ‘training’ disruptions in that device.  It would also enable that device to 
+large number of 'training' disruptions in that device.  It would also enable that device to 
 operate in a more cautious manner, until the safety of particular scenarios was established.
 
 <p>The starting point of such a study is the search for plasma diagnostic parameters that 
@@ -64,7 +64,7 @@ field using the ASDEX Upgrade (AUG)[3], DIII-D[4], COMPASS-D, JET[5] and JT-60U[
 and ADITYA[9] tokamaks. These studies indicate that for around 80% to 90% of disruptive shots 
 the time of disruption can be predicted early enough to take corrective action. They also 
 show a considerable measure of agreement over the best choice of parameters. 
-<p>These previous studies have all used neural network classifiers [10] for the prediction of disruptions. Neural classifiers use a database of historical data where each example is a set of plasma parameters from a given time in a given shot. During network training each training example item is associated with a “target” indicating the time to disruption, or some function of it. The parameters of the network are adjusted during the training process until, for each set of training example inputs, the network outputs most closely match their targets. The trained network can be used in subsequent testing sessions to predict the time to disruption for any new set of example parameters.  Essentially the network searches the multi-dimensional space of the chosen plasma parameters for previous examples having parameters close to the current values of the parameters, and assumes that the subsequent evolution of the plasma will be similar.  It should be noted however that neural network application developed here is unique in that the training and testing data are from 2 completely distinct sources (i.e. two different tokamaks). There is therefore a degree of extrapolation required by the network, as the data ranges of the two devices are not entirely overlapping.
+<p>These previous studies have all used neural network classifiers [10] for the prediction of disruptions. Neural classifiers use a database of historical data where each example is a set of plasma parameters from a given time in a given shot. During network training each training example item is associated with a 'target' indicating the time to disruption, or some function of it. The parameters of the network are adjusted during the training process until, for each set of training example inputs, the network outputs most closely match their targets. The trained network can be used in subsequent testing sessions to predict the time to disruption for any new set of example parameters.  Essentially the network searches the multi-dimensional space of the chosen plasma parameters for previous examples having parameters close to the current values of the parameters, and assumes that the subsequent evolution of the plasma will be similar.  It should be noted however that neural network application developed here is unique in that the training and testing data are from 2 completely distinct sources (i.e. two different tokamaks). There is therefore a degree of extrapolation required by the network, as the data ranges of the two devices are not entirely overlapping.
 In this paper, we start with a discussion of the basis of our approach, key parameters used, and description of the databases used. We then explain the neural network learning and testing procedure. To present results, we first explore performance based on training and testing within a single device, considering first ASDEX Upgrade, then JET. This then sets the framework for an evaluation of cross-machine prediction, which is performed in each direction. We then present our conclusions.
 <p><b>2. Basis of the approach</b> 
 <p>For comparison between tokamaks of differing size and structure to be valid, the plasma parameters 
@@ -170,7 +170,7 @@ disruption. There were 1290 sets of variables from 68 disruptive shots and 18 no
 shots in the final training database. Again a separate test database of 41,100 time points 
 was constructed containing all the time points within the flat-top region of the selected shots. 
 
-<IMG SRC="FIG1.gif" ALIGN="RIGHT">
+<IMG SRC="05fig1.jpg" ALIGN="RIGHT">
 <p><B>Figure 1. The scatter plot of the internal inductance against the safety factor for 
 ASDEX Upgrade (feint circles) and JET (dark triangles) disruptive and non-disruptive shots. 
 The larger symbols are just prior to the disruption. The dashed lines are for non-disruptive 
@@ -254,7 +254,7 @@ One tokamak supplies training data and another the test data.
 
 <p>A neural network code incorporating the standard Rumelhart and McClelland back 
 propagation algorithm [15], was written in 1990 as part of the European ESPRIT II 
-project “Applications of Neural Networks for Industry in Europe” [16]. 
+project 'Applications of Neural Networks for Industry in Europe' [16]. 
 This has been developed to allow leave-one-shot-out testing and to allow a smooth 
 transition to zero hidden units.
 
@@ -283,7 +283,7 @@ in the target. It was found that the residual decreased rapidly as the factor
 increased from 1 to around 8 but then showed little further change. No momentum 
 term in the back propagation formalism of Rumelhart and McClelland [15] was used.
 
-<IMG SRC="FIG2.gif" ALIGN="RIGHT">
+<IMG SRC="05fig2.jpg" ALIGN="RIGHT">
 <p><B>Figure 2. The time-to-disruption plot used to classify disruptions. A successfully 
 predicted disruption (full circles) has a trajectory passing below <i>T<SUB>thres</SUB></i>  
 between times <i>T<SUB>mit</SUB></i>  and <i>T<SUB>pred</SUB></i>. "Early" predictions, 
@@ -297,7 +297,7 @@ would follow the line of unit gradient.</B>
 to include the factors that make the prediction of disruption in a particular 
 shot practically useful or not. These are illustrated in figure 2, which shows 
 the predicted time to disruption, evaluated by inverting equation 1, against 
-the actual time to disruption for several shots. A “perfect” prediction would 
+the actual time to disruption for several shots. A 'perfect' prediction would 
 give a trajectory following the unit gradient line shown. An adjustable 
 threshold time <i>T<sub>thres</sub></i> shown by the horizontal dashed line is 
 used to define the onset of a disruption. The vertical dashed line to the right 
@@ -307,24 +307,24 @@ of the figure represents the mitigation time <i>T<sub>mit</sub></i> after which
 it is too late to perform any actions to mitigate the effects of the disruption. 
 This time has been chosen relatively arbitrarily and is not based on any particular 
 mitigation method. We shall define 4 types of shot: 
-<p>a) An “early” failure shot has a predicted time to disruption falling below  
+<p>a) An 'early' failure shot has a predicted time to disruption falling below  
 <i>T<sub>thres</sub></i> for actual times earlier than <i>T<sub>pred</sub></i>.
 
-<p>b) A “late” failure shot has a predicted time to disruption failing to fall 
+<p>b) A 'late' failure shot has a predicted time to disruption failing to fall 
 below <i>T<sub>thres</sub></i>  for any actual times before <i>T<sub>mit</sub></i>.
-In our code a shot which is both “early” and “late” is defined as a “late” shot.
+In our code a shot which is both 'early' and 'late' is defined as a 'late' shot.
 
-<p>c) An “non-disruptive” failure shot occurs if the predicted time to disruption 
+<p>c) An "non-disruptive" failure shot occurs if the predicted time to disruption 
 falls below <i>T<sub>thres</sub></i> at any time. 
 
-<p>d) A “good” shot has a predicted time to disruption falling below <i>T<sub>thres</sub></i> 
+<p>d) A 'good' shot has a predicted time to disruption falling below <i>T<sub>thres</sub></i> 
 for actual times somewhere between <i>T<sub>mit</sub></i>Tmit and <i>T<sub>pred</sub></i> 
 or for a non-disruptive shot, the predicted time must remain above <i>T<sub>thres</sub></i>
 for all times.
 
-<p>Performance is defined as the  (number of “good” shots)/(total number of shots). 
-The failure rate is defined as (1 – performance) and can be subdivided into “early”, 
-“late” and “non-disruptive” failure rates.
+<p>Performance is defined as the  (number of 'good' shots)/(total number of shots). 
+The failure rate is defined as (1 - performance) and can be subdivided into 'early', 
+'late' and 'non-disruptive' failure rates.
 
 <p>The choice of <i>T<sub>mit</sub></i> and <i>T<sub>pred</sub></i> depends on the 
 tokamak, and both are critical to the performance results. In ASDEX Upgrade there 
@@ -383,23 +383,23 @@ the ASDEX Upgrade shots, the predicted time to disruption plotted against the ac
 to disruption for times up to 0.12 sec.  
 
 
-<IMG SRC="FIG3.gif" ALIGN="RIGHT">
+<IMG SRC="05fig3.jpg" ALIGN="RIGHT">
 <p><B>Figure 3 (a). The actual time to disruption from ASDEX Upgrade shots plotted against 
 the predicted time for leave-one-shot-out testing. Included times in disruptive shots above 
 the axis time limit, and all non-disruptive data are plotted down the right hand axis. 
 (b)A performance plot of the number of "late" disruption prediction errors against the 
 number of "early plus non-disruptive" errors as <i>T<SUB>thresh</SUB></i> is varied. 
 The heavy point indicates the best value of the threshold time, and the lowest failure 
-rate is indicated by “Best”.   (c). A plot of the time-residual between actual and 
+rate is indicated by 'Best'.   (c). A plot of the time-residual between actual and 
 predicted times to disruption as a function of the number of hidden units.</B>
 
 <p>The lines in figure 3a shows the ASDEX Upgrade time-to-disruption plots in the style 
 of figure 2 for leave-one-shot out-training. Perfect performance of the neural network 
 would result in all trajectories lying on the y=x line. The resulting 8.9% overall 
-failure rate of this network, which is given by a simple sum of “early”,  “late” and 
-“non-disruptive” failures, arises from 4 "late", 3 "early" and one non-disruptive shots. 
-One “late” shot is seen falling steeply on the extreme upper-left of the figure. 
-The two “early” shots are nearly flat at the bottom of the figure. Despite this 
+failure rate of this network, which is given by a simple sum of 'early', 'late' and 
+'non-disruptive' failures, arises from 4 'late', 3 'early' and one non-disruptive shots. 
+One 'late' shot is seen falling steeply on the extreme upper-left of the figure. 
+The two 'early' shots are nearly flat at the bottom of the figure. Despite this 
 good performance it is seen that the time-to-disruption traces have a systematic trend 
 away from the expected unit gradient, most notably for times further away than about 
 0.04 seconds or so from the disruption. The predicted time to disruption tends to flatten 
@@ -412,9 +412,9 @@ detailed as Run 2 in Table 1, gives a slightly reduced output residual and error
 We detail the single-layer perceptron results here for comparison with the inter-tokamak 
 results presented later. The horizontal line in figure 3a shows the threshold time giving 
 the best overall performance. This value has been determined as in figure 3b by changing 
-the threshold over a wide range and examining the number of “early” and 
-“late plus non-disruptive” errors. There is generally a minimum where the threshold is 
-neither too low to prevent indications of “early” disruptions or false alarms, nor so 
+the threshold over a wide range and examining the number of 'early' and 
+'late plus non-disruptive' errors. There is generally a minimum where the threshold is 
+neither too low to prevent indications of 'early' disruptions or false alarms, nor so 
 high to prevent the indication of a true disruption. Figure 3c shows how the performance 
 changes as the number of hidden units is increased. With more than 6 hidden units, 
 the performance is improved. This result is consistent with other studies where optimal 
@@ -441,20 +441,20 @@ turn, and the usefulness of each one evaluated from the deterioration in the per
 This shows that all parameters are useful when tested on the ASDEX Upgrade data. It should 
 be noted here that the saliency test is against the failure criteria (Fig 2) whereas the 
 network performance is optimised against the residuals. Results for networks corresponding 
-to the three most salient parameters of Table 2 are shown in “Run 3” of Table 1.
+to the three most salient parameters of Table 2 are shown in 'Run 3' of Table 1.
 
 <p>It is interesting that almost identical results are obtained when all the available 
-ASDEX Upgrade data is used for training. The similarity between this “100% learning” case 
+ASDEX Upgrade data is used for training. The similarity between this '100% learning' case 
 and the leave-one-shot-out analysis, shows that there is little tendency for these small 
-networks to exhibit the “over-learning” behaviour typical of larger networks. They have 
+networks to exhibit the 'over-learning' behaviour typical of larger networks. They have 
 only 8 adjustable parameters (7 feature parameter weights and a threshold weight), 
 compared with say 78 for a 7-input, 10-hidden unit multi-layer perceptron. The larger 
 number of variable weights in the multi-layer perceptron allows the training to pick out 
 unimportant details in the training dataset to minimise the residual between the target 
 and the network output. These details may well not occur in testing so that the extra 
-precision of the training cannot be used and the network is said to be “overtrained”
+precision of the training cannot be used and the network is said to be 'overtrained'
 
-<IMG SRC="FIG4.gif" ALIGN="RIGHT">
+<IMG SRC="05fig4.jpg" ALIGN="RIGHT">
 <P><b>Figure 4. A corresponding plot to figure 3 for the JET database. </B>
 
 
@@ -512,7 +512,7 @@ time over the two databases, as there was no certainty that the shots in the two
 from each tokamak correspond to sufficiently similar scenarios, and it also requires 
 anticipation of the average confinement time on the test device. A third choice is to treat 
 the JET/AUG mean confinement time ratio as an adjustable parameter in the inter-tokamak 
-predictions – we compare this approach with the above minor radius assumption, below.	 
+predictions we compare this approach with the above minor radius assumption, below.	 
 In section 3, the origins for the choices of mitigation and prediction times 
 (<i>T<SUB>mit</SUB></i> and <i>T<SUB>pred</SUB></i>) were given, based on previous work 
 and on the ASDEX Upgrade practical experience. For the purposes of inter-device comparisons 
@@ -526,7 +526,7 @@ could be further optimised to give best performance on the training device, befo
 scaled to the test device. We have not explored such variation in this work, and this 
 remains an issue for the future. 
 
-<IMG SRC="FIG5.gif" ALIGN="RIGHT">
+<IMG SRC="05fig5.jpg" ALIGN="RIGHT">
 <P><B>Figure 5 : The disruption prediction failure rate for JET data tested using a network 
 trained on the ASDEX Upgrade data, as a function of the time ratio between JET and ASDEX Upgrade. 
 The full curve shows the predicted JET performance at the best ASDEX Upgrade threshold 
@@ -564,7 +564,7 @@ The failure rate is decreased to 28.4 % at a confinement time ratio of  3.0.
 <TR><TD> - </td><td>   "   </td><td>Saliency:3 -li     </td><td>0     </td><td>36.36    </td><td>   "   </td><td> 0.054   </td><td>0.054   </td><td>0.061    </td><td>47.78   </td><td>25.56  </td><td>2.22     </td><td>0.00</td></tr>
 </TABLE>
 
-<IMG SRC="FIG6.gif" ALIGN="RIGHT">
+<IMG SRC="05fig6.jpg" ALIGN="RIGHT">
 <p><B>Figure 6. The plots corresponding to figures 3 and 4 for JET data tested using a network 
 trained on the ASDEX Upgrade data. All variables have been included in this test. 
 A simple perceptron with 100% learning has been used with a JET/AUG confinement time ratio of 4. 
@@ -616,11 +616,11 @@ failure rates for cases from JET and from AUG tested against the same JET traine
 between the two devices are highly consistent, separated by the same time factor applied 
 to the rest of the data.
 
-<IMG SRC="FIG7.gif" ALIGN="RIGHT">
+<IMG SRC="05fig7.jpg" ALIGN="RIGHT">
 <P><B>Figure 7. A version of figure 6(a) with the time axis extended by a factor of 5 and with 
 only a selection of shots shown. The time origin of the non-disruptive shot is arbitrarily 
 adjusted to fit in the centre of the page. With the same notation as in figure 2, 
-a “good” shot, “early”, “late”, and  “non-disruptive” failures are shown by full circles, 
+a 'good' shot, 'early', 'late', and 'non-disruptive' failures are shown by full circles, 
 triangles, crosses and feint triangles respectively. The example good shot is shown by 
 black diamonds.</B>
 
@@ -641,15 +641,20 @@ increasingly sparse information at longer times to disruption.
 <p>Of the two disruption prediction failures, shot 43814 shows an incipient disruption 
 at around 0.8 seconds before the disruption.  This is an ICRH heated pulse in which the 
 coupling is repeatedly lost and re-established with the radiated power just before ICRH 
-coupling is re-established rising close to the input power – a likely indicator of an 
+coupling is re-established rising close to the input power - a likely indicator of an 
 imminent disruption.  It is observed that the minima in the time to disruption corresponds 
 well with peaks in radiated power and the ICRH coupling being re-established. These 
 peaks end 0.8 seconds before the disruption, and the predicted time to disruption recovers 
 well to give rather close agreement between predicted and actual times to disruption. 
-However the predicted time to disruption suddenly rises to give a “late” error.  
+However the predicted time to disruption suddenly rises to give a 'late' error.  
 Shot 44087 follows a steady decrease in the predicted time to disruption around 
 0.7 to 0.5 seconds before the disruption.  Once again it recovers but later follows a 
 classic approach to the disruption.  
+
+<IMG SRC="05fig8.jpg" ALIGN="RIGHT">
+<P><B>Figure 8.  The corresponding plot to figure 5 showing the disruption prediction 
+failure rate for ASDEX Upgrade data tested using a network trained on the JET data, as 
+a function of the time ratio between JET and ASDEX Upgrade (average confinement times).</B>
 
 <p>The non-disruptive shot 49511 is shown plotted against an arbitrarily shifted time, 
 adjusted so that the interesting time region occurs in the centre of the figure.  
@@ -667,17 +672,12 @@ it is known that too rapid a switch off of heating power on JET can lead to disr
 and so the network was correctly indicating a high potential for disruption.
 
 
-<IMG SRC="FIG8.gif" ALIGN="RIGHT">
-<P><B>Figure 8.  The corresponding plot to figure 5 showing the disruption prediction 
-failure rate for ASDEX Upgrade data tested using a network trained on the JET data, as 
-a function of the time ratio between JET and ASDEX Upgrade (average confinement times).</B>
-
 <p><B>8.  Results, training on JET and testing on ASDEX Upgrade</B>
 
 <P>The situation is readily reversed so that ASDEX Upgrade data is tested on a network
  trained on JET data. It initially proved difficult to get good results for this case. 
 Improved results (see figures 8 and 9) were obtained by addressing the normalisation 
-(mapping them into the 0?1 range) of the parameters for Power Fraction, P5, and Normalised Confinement, P6. As Table 3 indicated these can be a factor of 2 or so larger for ASDEX Upgrade than for JET. However it must be emphasised that the left hand side of Table 3 refers only to the extreme values, rather than to more typical spreads. Typically on both tokamaks a few shots show up as “outliers” with values exceeding the average spread in the data by 100% or more. Simple normalisation to the largest values was not a problem in the JET from ASDEX Upgrade predictions. However in the reverse direction, it is as if the detail in the JET test tokamak Normalised Confinement parameter has been "lost in the noise" (with little dynamic range in the JET data) when trained with the generally larger ASDEX Upgrade parameter. For the AUG trained network of section 7, normalising to the JET values greatly improved the JET prediction, but of course at the expense of a decreased performance for the ASDEX Upgrade single machine prediction performance. 
+(mapping them into the 0?1 range) of the parameters for Power Fraction, P5, and Normalised Confinement, P6. As Table 3 indicated these can be a factor of 2 or so larger for ASDEX Upgrade than for JET. However it must be emphasised that the left hand side of Table 3 refers only to the extreme values, rather than to more typical spreads. Typically on both tokamaks a few shots show up as 'outliers' with values exceeding the average spread in the data by 100% or more. Simple normalisation to the largest values was not a problem in the JET from ASDEX Upgrade predictions. However in the reverse direction, it is as if the detail in the JET test tokamak Normalised Confinement parameter has been "lost in the noise" (with little dynamic range in the JET data) when trained with the generally larger ASDEX Upgrade parameter. For the AUG trained network of section 7, normalising to the JET values greatly improved the JET prediction, but of course at the expense of a decreased performance for the ASDEX Upgrade single machine prediction performance. 
 
 <p>The right hand side of Table 3 shows the lower and upper limits of the parameters 
 when they are estimated from a histogram of the data against each parameter. 
@@ -687,7 +687,7 @@ give much more understandable ranges for the parameters. Sample studies show tha
 histogram limits lead to similar values to those reported in the paper.
 
 
-<IMG SRC="FIG9.gif" ALIGN="RIGHT">
+<IMG SRC="05fig9.jpg" ALIGN="RIGHT">
 <P><B>Figure 9. The corresponding plot from figure 6 corresponding to ASDEX Upgrade 
 data tested using a network trained on the JET data. All variables have been included in 
 this test. A simple perceptron with 100% learning has been used, except in the hidden unit 
@@ -770,23 +770,23 @@ The authors acknowledge fruitful discussions with their many colleagues at Culha
 The authors would like to thank their two referees for their valuable suggestions.
 
 <p><b>References</b> 
-<p>[1] Wesson J.A., “Tokamaks”, Clarendon Press, Oxford, 1987
+<p>[1] Wesson J.A., Tokamaks, Clarendon Press, Oxford, 1987
 <p>[2] Wesson J.A. et al, "Disruptions in JET", Nuclear Fusion 29 (1989) 641-666.
-<p>[3] Tichmann Ch., Pautasso G., Fuchs J.C., Lackner, K., Mertens V.,, Morabito F.C., Schneider, W. and the ASDEX Upgrade Team. “Use of a neural network for the prediction of disruptions in ASDEX Upgrade”, 26th EPS conf. On Contr. Fusion and Plasma Physics, ECA Vol. 23J 761-764 1999.
+<p>[3] Tichmann Ch., Pautasso G., Fuchs J.C., Lackner, K., Mertens V.,, Morabito F.C., Schneider, W. and the ASDEX Upgrade Team. Use of a neural network for the prediction of disruptions in ASDEX Upgrade, 26th EPS conf. On Contr. Fusion and Plasma Physics, ECA Vol. 23J 761-764 1999.
 <p>[4] Wroblewski, D., Jahns, G.L. and Leuer, J.A.,  Nuclear Fusion 37, 725-741 1997.
 <p>[5] Milani F., "Disruption prediction at JET", Thesis: University of Aston at Birmingham, UK, 1998
 <p>[6]Yoshino R., "Neural-net disruption predictor in JT-60U", Nuclear Fusion, 43, 1771-1786, 2003
 <p>[7] Hernandez J.V., Vannucci A., Tajima T., Lin Z., Horton, W. and Mccool, S.C. "Neural Networks Prediction of some classes of tokamak disruptions", Nuclear Fusion, 36, 1009-1017,1996.
 <p>[8] Vannucci A., Oliveira K.A. and Tajima T., Forecast of TEXT plasma disruptions using soft X rays as input signal in a neural network", Nuclear Fusion, 39, 255-262,1999.
 <p>[9] Sengupta A. and Ranjan, P., Forecasting disruptions in the ADITYA tokamak using neural networks", Nuclear Fusion 40, 1993-2008, 2000.
-<p>[10] Bishop C.M, “Neural networks for pattern recognition”, Clarendon Press, Oxford, (1996)
-<p>[11] Pautasso G., Egorov S., Tichmann Ch., Fuchs J.C., Herrmann A., Maraschek M., Mast F., Mertens V., Percermeier I., Windsor C.G., Zehetbauer T. and the ASDEX Upgrade Team. “Prediction and mitigation of disruptions in ASDEX Upgrade”, Journal of Nuclear Materials 290-293, 1045-1051, 2001.
-<p>[12] Pautasso G., Tichmann C., Egorov S., Zehetbauer T., Gruber O., Maraschek M., Mast F., Mertens V., Percermeier I., Raupp, F., Treutterer, W., Windsor C.G., and the ASDEX Upgrade Team. “On-line prediction and mitigation of disruptions in ASDEX Upgrade”, Nuclear Fusion 42, (2002), 100-108.
+<p>[10] Bishop C.M, Neural networks for pattern recognition, Clarendon Press, Oxford, (1996)
+<p>[11] Pautasso G., Egorov S., Tichmann Ch., Fuchs J.C., Herrmann A., Maraschek M., Mast F., Mertens V., Percermeier I., Windsor C.G., Zehetbauer T. and the ASDEX Upgrade Team. Prediction and mitigation of disruptions in ASDEX Upgrade, Journal of Nuclear Materials 290-293, 1045-1051, 2001.
+<p>[12] Pautasso G., Tichmann C., Egorov S., Zehetbauer T., Gruber O., Maraschek M., Mast F., Mertens V., Percermeier I., Raupp, F., Treutterer, W., Windsor C.G., and the ASDEX Upgrade Team. On-line prediction and mitigation of disruptions in ASDEX Upgrade, Nuclear Fusion 42, (2002), 100-108.
 <p>[13] Franzen, P., Kaufmann, M., Mertens, V.F., Neu, G., Raupp, F., Zehetbauer, T. and the ASDEX Upgrade team, "On-line confinement regime identification for the discharge control system at ASDEX Upgrade", Fusion Technology, 33, 84-95, 1998
 <p>[14] Cannas B., Fanni, A., Marongiu E., and Sonato, P., "Disruption forecasting at JET using neural networks", Nuclear Fusion, 44, 68-76,2004.
-<p>[15] “Parallel Distributed Processing”, Ed. McClelland J and Rumelhart D E, MIT Press, 1987.
-<p>[16]  “Industrial Applications of Neural Networks: Project ANNIE Handbook”, Mason, J P and Croall, I F, Springer Verlag, 1992.
-<p>[17] “Introduction to Radial Basis Function Networks”, Orr M.J.L., http://www.anc.ed.ac.uk/~mjo/intro/intro.html
+<p>[15] Parallel Distributed Processing, Ed. McClelland J and Rumelhart D E, MIT Press, 1987.
+<p>[16]  Industrial Applications of Neural Networks: Project ANNIE Handbook, Mason, J P and Croall, I F, Springer Verlag, 1992.
+<p>[17] Introduction to Radial Basis Function Networks, Orr M.J.L., http://www.anc.ed.ac.uk/~mjo/intro/intro.html
 
 
 
