@@ -1,0 +1,363 @@
+<HTML>
+<HEAD>
+<TITLE>22FasterFusionPower</TITLE>
+</HEAD>
+<A HREF=../index.htm><IMG SRC="../home2.jpg" ALT="Colin's Homepage" ALIGN="LEFT"></A>
+
+<FONT FACE="Times New Roman" SIZE=3>As approved for publication by IntechOpen on 28/06/22:  
+
+<B><FONT FACE="Times New Roman" SIZE=6><P>Faster fusion power from spherical tokamaks with high temperature superconductors
+</B></FONT>
+
+<B><FONT SIZE=4><P>Colin Windsor and Gurdeep Kamal</B>
+<BR>Tokamak Energy Ltd, Milton Park, Oxon, OX14 4SD, UK
+
+<BR>colin.windsor@tokamakenergy.co.uk
+
+
+<P><B>Abstract</B>
+
+<P>&nbsp;&nbsp;&nbsp; The use of spherical tokamaks and high temperature superconductors (HTS) offers the possibility of achieving faster fusion power by allowing plants of high-field, high plasma pressure and good energy confinement thereby reducing the need for large plasma volumes. This spatially efficient, energy dense approach accesses quicker development and the possibility of modular construction. An overview of High-Performance Computational (HPC) capabilities at Tokamak Energy is given. We describe at a high-level and in practical terms the use of theory, models, algorithms, and applications to develop spherical tokamak designs in an integrated fashion,  A challenge of spherical tokamaks is that there is less room for the neutron and gamma shield necessary to prevent heating and radiation damage to the HTS core. Tungsten boride shield materials may be able to provide an optimal combination of inelastic (n,gamma) reactions and gamma attenuation. The neutron energy is reduced largely by inelastic reactions to energies where boron absorption occurs, while tungsten attenuates the resulting gammas rapidly.  Although inelastic scattering is shown to be the key to tungsten boride shield performance, it is shown that the remaining neutrons generated in the plasma and transmitted without reaction through the shield dominate the heat deposition in the HTS core. 
+
+<P><B>Keywords:</B> fusion, spherical tokamaks, tungsten borides, shielding, neutrons, gammas
+
+<P><B>1. Introduction</B>
+
+<P>&nbsp;&nbsp;&nbsp; Fusion power is one of the few options capable of supplying abundant safe base-line energy to the world [1]. In 1955 John Lawson, working at Harwell, defined a condition for fusion power depending on plasma density <I>n</I> and  temperature <I>T</I>. It was later extended to include confinement time <I>&tau;<SUB>E</SUB></I>, to form what is now known as the "triple product" <I>nT&tau;<SUB>E</SUB></I>  which must exceed 3.1021 keV m<SUP>-3</SUP> s for fusion reactions to be self-sustaining [2].  Costley, Hugill and Buxton [3] showed that this triple product is proportional to the equivalent triple product "<I>&beta;B<SUB>T</SUB><SUP>2</SUP></SUB>&tau;<SUB>E</SUB></I> where &beta; is the ratio of the plasma pressure,  <I>p<SUB>pla</SUB> = n.kT</I>, to the magnetic pressure <I>p<SUB>mag</SUB> = B<SUP>2</SUP>/ 2&mu;<SUB>0</SUB></I>.  <I>B<SUB>T</SUB></I> is the toroidal field and <I>&tau;<SUB>E</SUB></I>  is the energy confinement time, related to the plasma volume, <I>kT</I> is the thermal energy and <I>&mu;<SUB>0</SUB></I> is the vacuum permeabiiity constant.   They showed that the high &beta; values possible with spherical tokamaks and the higher toroidal fields  <I>B<SUB>T</SUB></I> possible with HTS were a viable alternative to ever increasing tokamak size in the search for fusion power. 
+
+<P>&nbsp;&nbsp;&nbsp;Their method in [3] was to write a "system code", in their case a simple spreadsheet, to incorporate the key input parameters and equations to calculate key output parameters. Innovations were to use the fusion gain Qfus as an input parameter to their calculations and to introduce checks to ensure that the actual plasma density was never above 0.8 of the known Greenwald density limit and the plasma normalized pressure beta value never above 0.9 of the Troyon beta limit to plasma stability. Since high density and high plasma pressure are both desirable for high fusion gain, the best plasma conditions would be those that would approach these limits.
+
+
+<P><IMG SRC="FFig1.jpg" ALT="Some results from the Costley system code">
+<P><B>Figure 1.</B>
+<BR><FONT SIZE=3> 
+Some example results from the 2017 Costley system code scanning as a function of major radius for a constant fusion gain <I>Q<SUB>fus</SUB></I>=5, spherical tokamak aspect ratio <I>A</I>=1.8, and confinement scaling <I>HIPB9y2</I>=1.9.  In this series the core diameter is increased by 8% for each change in major radius to keep the peak radial compressive stress (green squares) approximately constant. The fusion power <I>P<SUB>fus</SUB></i> (red open triangles) is seen to be roughly independent of major radius. The shield thickness (violet open squares) increases, initial rapidly from zero, with major radius. Also shown are the wall heat loading (sky blue open triangles)and the toroidal field  <I>B<SUB>T</SUB></I> (blue closed squares). Incorporated into the code are the HTS core heating (black closed triangles, with individual calculations as crosses) and the estimated HTS lifetime from the fast neutron fluence (pink open diamonds).</FONT>
+
+<P>&nbsp;&nbsp;&nbsp;Some example results using their code are shown in Figure 1.  The fusion power with these scan conditions is seen to be almost independent of tokamak size, while key engineering conditions, such as the radial compressive stress at the top of tokamak, the magnetic field at the HTS conductors and the wall loading power are all satisfactory. The purple open squares show the thickness of the shield, rising rapidly from 0.55 m major radius.  
+
+<P><B>2.  The use of modelling codes to optimize spherical tokamak designs</B>
+
+<P>&nbsp;&nbsp;&nbsp;Figure 1 describes how an integration of  tokamak physics, HTS design, neutronics and computational fluid dynamics and magneto hydrodynamic stress codes could help predict optimal tokamak design. To these we must add codes for tritium breeding, heat transfer, design, construction and decommissioning costs to produce a suite of codes that must be put together to predict a new spherical tokamak power plant design. It is with this aim that Tokamak Energy has invested in High-performance Computational (HPC) capabilities. 
+
+<P>&nbsp;&nbsp;&nbsp;The "system codes" which used to be implemented on Excel spreadsheets are greatly expanded and are verified by fitting experimental data from actual tokamaks like ST40. Future system codes are envisaged to use a single design geometry to perform calculations automatically on a suite of tools involving physics, HTS magnet design, neutronics, heat flow and engineering to obtain the parameters required to optimize a tokamak. The integration of system codes and tools used by multiple departments allows for an automated, iterative optimization of the tokamak design. HTS magnet codes need to consider quench protection and be compared to actual demo magnet experiments to verify their performance.  The analytic stress equations, once commonly used, are now replaced by finite element codes whose performance can be judged by experimental data from the ST40 tokamak. The neutronics of HTS and biological shields is now rather straightforwardly assessed by activation foils under actual conditions, and actual measurements of dose rates during shots. A major part of the successful operation of tokamak power plants depends on being able to breed tritium from the fusion neutrons interacting with lithium in a "blanket" within the biological shield. These are being designed using neutronics codes but to date have not been tested. "Process" codes have the particularly difficult job of computing the "cost of electricity" for given costs of capital borrowing and materials. They are not easy to check and can so easily be outdated by unforeseen world events. The integration of system codes and tools used by multiple departments allows for an automated, iterative, optimization of the tokamak design.
+
+<P>&nbsp;&nbsp;&nbsp;All these aspects of physics, engineering, heat flow, magnet design, neutronics, radiation damage, shielding, tritium breeding and cost estimates are possible with separate codes and the objective is to integrate them into a suite of codes using the same computer aided design CAD geometry on the same hardware. For this purpose, a high-performance computer was purchased by Tokamak Energy.  The Tokamak Energy HPC currently has over 600 cores and over 3 TB of RAM available to use and continuously uses thousands of CPU Hours daily to resolve physics and neutronics problems. Figure 2 illustrates some of the principal applications and their codes used, with illustrations of the results they have given in hours by the High-Performance Computer illustrated at the center.
+   
+<P>&nbsp;&nbsp;&nbsp;Key technological advancements needed to complete integration of CAD geometry between the suite of codes is in mesh generators. Currently, all tools have their own meshing methods with outputs in various formats. Geometrical information required to build successful inputs to the system tools are envisaged to be integrated into the CAD data. For example, neutronics heat deposition calculations require material compositions and densities for input and can output maximum heat deposition per CAD part which can then be stored as part of the CAD data for input for heat flow tools. Upgrades to the system code will utilize this data and perform meshing to the required resolution for each CAD part which are required  for the system tools. 
+
+
+<P><IMG SRC="FFig2.jpg" ALT="Soe codes used on the Tokamak Energy High Performance Computer">
+<P><B>Figure 2.</B>
+<BR><FONT SIZE=3> 
+The Tokamak Energy High-Performance Computer and examples of some of its applications and widely used code. Clockwise from the top left; the design "FREECAD" computer aided design code of ST40, An "ABAQUS" code image of the mesh representation of the design, "MCNP", the Monte Carlo Neutral Particle code showing the neutronics fluence of a possible power plant, "FISPACT" the  fusion activation code plot of the ST40 inner vacuum vessel,  The in-house "PFIT" code plots of the ST40 field line fits to ST40 image, heat transfer in the ST40 divertor, the "HEAT"  heat transfer code plots of the  temperature in the HTS coils of a power plant, the "ANSYS" code plot of the mechanical stresses in the ST40 tokamak, and the "RACOON" in-house code for calculating HTS performance. In the center is the Tokamak Energy High-Performance Computer with author GK.</FONT>
+
+<P>&nbsp;&nbsp;&nbsp;The following sections will shed some light on how we are effectively using  the HPC for streamlining the design process, with an emphasis here on shield design. The use of "tally tagging" with the neutronics code MCNP to answer key questions on the performance of shields, such as where the neutrons and gammas responsible for core heating originate, and from what reactions.
+
+<P><B>3.  Spherical tokamaks</B>
+
+<P>&nbsp;&nbsp;&nbsp;Costley [4] showed that the triple product <I>nT&tau;<SUB>E</SUB></I>  could be expressed in terms of the <I>H</I> factor, the safety factor <I>q</I>, the major radius  <I>R<SUB>0</SUB></I> the toroidal field  <I>B<SUB>T</SUB></I>, aspect ratio <I>A</I> and the plasma elongation <I>&kappa;</I> as <I>nT&tau;<SUB>E</SUB>=H<SUP>2</SUP>q<SUP>-3</SUP>R<SUB>0</SUB><SUP>2</SUP>B<SUB>T</SUB><SUP>3</SUP>A<SUP>-3</SUP></I>.  It is therefore possible to explore the dependence of the tokamak major radius  <I>R<SUB>0</SUB></I> as function of the tokamak aspect ratio and toroidal field at a constant values of the triple product, safety factor and H factor. For example, those assumed for ITER are shown in Figure 3. 
+
+<P>&nbsp;&nbsp;&nbsp;It is seen from the Figure 3 that going to lower aspect ratios (leftwards) or to higher toroidal fields (upwards) gives similar triple products from smaller tokamaks with lower major radii.  This result is important because tokamaks of ITER size may be defined as "megaprojects" (technically project over $1B: ITER is over $20B). Historical studies of megaprojects show that cost and time overruns are the norm rather than the exception [5]. The reasons are obvious enough: megaprojects tend to be too big for one company, or even one country.  They become difficult to manage as the layers of management between boss and worker become longer. With smaller tokamak power plants agility becomes possible when projects can adapt quickly to any design optimization. A breakthrough would be achieved when modular construction becomes possible with centralized manufacture remote from the construction site.
+
+   
+
+<P><IMG SRC="FFig3.jpg" ALT="The possible reduction in tokamak radius">
+<P><B>Figure 3.</B>
+<BR><FONT SIZE=3> 
+The reduction in tokamak major radius (lines labelled in metres) which may be given by lower aspect ratios (X-axis) or by higher magnetic toroidal fields (Y-axis). The figure uses the equation shown from [4]. The data are scaled to the ITER operating point at major radius  <I>R<SUB>0</SUB></I>=6.2 m, toroidal field  <I>B<SUB>0</SUB></I>=5.3 T, and aspect ratio <I>A</I>=3.1. </FONT> 
+
+<P>&nbsp;&nbsp;&nbsp;In the following sections these two opportunities, spherical tokamaks and high temperature superconductor magnets will be explored in more detail. Figure 1 does also reveal the downside of spherical tokamaks. The purple open squares in Figure 1 show that the space available for shielding diminishes slowly at large major radii but eventually rather rapidly to zero at some smaller major radius. Much of the 
+remainder of this chapter will explore the materials and mechanisms most appropriate to a fusion tokamak shield. Tungsten boride shields have proved one possible option for a fusion power plant and their performance is examined and compared with other possibilities. 
+
+<P>&nbsp;&nbsp;&nbsp;In 1983 Sykes, Turner and Patel [6] and later Peng and Strickler [7] predicted the high plasma pressures β possible with low aspect ratio spherical tokamaks. The theory showed that β could indeed be raised by a combination of low aspect ratio and high elongation. In 1998 the START spherical tokamak team at Culham Laboratory in the UK achieved a breakthrough by reaching &beta; values of order 40% [8], compared to the 6% or so achieved in JET or the 4% or so expected in ITER. 
+   
+
+
+<P><IMG SRC="FFig4.jpg" ALT="The higher toroidal fields given by spherical tokamaks">
+<P><B>Figure 4.</B>
+<BR><FONT SIZE=3> 
+In a low aspect ratio, high elongation plasma (left in blue) the orbiting electrons spend more time close to the current carrying center column than in a conventional tokamak (right in red) from [1]. Since the toroidal magnetic field drops off inversely with radius, this means that a given centre column current gives a bigger field.</FONT>
+
+<P>&nbsp;&nbsp;&nbsp;A simple-minded explanation for these increases in efficiency is suggested by Figure 4 which shows the toroidal magnetic field  <I>B<SUB>T</SUB></I> in Tesla around a center column carrying a constant current <I>I</I> as a function of radius <I>r</I>. The field is given by Ampere's Law <I>B=2&mu;<SUB>0</SUB>.I/4&pi;r<SUP>2</SUP></I> or B(Tesla)=0.2.I(MA)/r(m)<SUP>2</SUP> so the smaller the radial distance the higher the field for a given center column current. For a current of 10 MA, the field is 2 Tesla at a radius of 1 m. A plasma with higher elongation <I>&kappa;</I> and triangularity <I>&epsilon;</I> naturally squashes the plasma so that the orbiting electrons spend more time close the center column. and make a more efficient use of the available field. Another advantage allowing the prospect of a power plant with reduced external current drive was the experimental observation of the bootstrap current, driven by plasma pressure gradients, which had been predicted theoretically by Bickerton, Connor and Taylor in 1971 [9] and observed experimentally on the Princeton tokamak TFTR by Zarnstorff et al [10] in 1988. 
+
+<P>&nbsp;&nbsp;&nbsp; Bigger spherical tokamaks were soon built around the world, now upgraded to higher toroidal fields.  These include MAST-UPRADE (0.55 Tesla)  at Culham, UK [11], NSTX-U (1Tesla) at Princeton, USA [12] and GLOBUS M2 (0.82 Tesla) at St Petersberg, Russia [13].  Most recently constructed with the highest design toroidal field of 3 Tesla is the ST40 at Tokamak Energy Ltd,  Milton Park, UK. This company was founded in 2009 by START pioneers Alan Sykes and Mikhail Gryaznevich [14].  Its aim was to exploit the twin technologies of spherical tokamaks and high temperature superconductors. The ST40 design team was chaired by Alan Sykes in 2014. Engineer and draftsman John Ross rapidly iterated designs with pencil and drawing board which hardly changed when the design moved to Computer Aided Design. Figure 5 shows the design as of May 2019 when temperatures of 15x106 K were first achieved.
+
+<P><IMG SRC="FFig5.jpg" ALT="The ST40 tokamak at Tokamak Energy">
+<P><B>Figure 5.</B>
+<BR><FONT SIZE=3> 
+The ST40 tokamak in May 2019 when the milestone plasma temperature of 15x106 K was achieved. On the left is the engineering drawing along with the reconstruction of the plasma and optical image of the plasma. </FONT>
+
+<P>&nbsp;&nbsp;&nbsp; Rapid development followed and ST40 moved to larger premises with space for a neutron shield and neutral beam injection to heat the plasma to the next milestone temperature of 100x106 K which was successfully achieved in February 2022. In designing the next generation of spherical tokamaks, HPC facilities will be important particularly in solving the gyro-kinetics used to predict the plasma turbulence and plasma confinement time.
+
+<P><B>4.  High temperature superconductors </B>
+
+<P>Bednorz and Müller discovered high-temperature superconductors (HTS) back in 1986 [15]. The theory remains uncertain. The important fact is that by 2010 it was possible to buy kilometre lengths of HTS tape just 0.1mm thick and 12 mm wide. Under the optimised manufacturing conditions, now readily achieved by commercial suppliers, YBa<SUB>2</SUB>Cu<SUB>3</SUB>O<SUB>7</SUB> (YBCO) has a superconducting critical temperature of ~90K. State of the art commercial tapes are now exhibiting engineering critical current densities >1000 A/mm<SUP>2</SUP> at 20 K and 20 Tesla field applied perpendicular to the tape which is the lowest performance configuration [16].
+
+<P>&nbsp;&nbsp;&nbsp;In 2015 Tokamak Energy demonstrated a simple 25 cm radius HTS tokamak operating continuously for 29 hours under a live demonstration during the Royal Society Summer Exhibition as illustrated in Figure 6.
+
+
+
+
+
+
+
+
+
+
+<P><IMG SRC="FFig6.jpg" ALT="The HTS tokamak ST25HTS in operation">
+<P><B>Figure 6.</B>
+<BR><FONT SIZE=3> 
+The High temperature Superconducting tokamak ST25HTS in operation after for 29 hours</FONT> 
+
+<P>&nbsp;&nbsp;&nbsp;The more difficult task was to create the HTS coils needed for an operational tokamak. A key problem is quench protection when any defect or heating anomaly can create a local temperature rise above the transition temperature. With an insulated conductor the current has nowhere to go and so it heats up quickly. This can spread to nearby superconductors and so the magnet quenches and could be destroyed.  The problem can be avoided by removing any insulation between the tapes. The current from any localized normal region of tape can then spread over to neighbouring tapes and any quench is avoided, but then the time-constant for energizing the coil becomes impractically long. In research in the David Hawksworth HTS Magnet Laboratory at Tokamak Energy, a middle way of partial insulation has been developed with a precise inter-turn resistance between each tape layer to allow current transfer but avoid the time-constant problems. Figure 7 shows “Demo2”, a stack of six REBCO non-insulated pancakes with a diameter of 300 mm. Cooled to 20K it is able to take a current of 3000 A and produce a  peak field of over 10 Tesla. The magnet proved difficult to quench.  It could be quenched by turning off the current, but  the stored energy was dissipated within the magnet in the inter-turn resistance, and there was no system degradation [17].
+
+<P>&nbsp;&nbsp;&nbsp;Under construction at Tokamak Energy is a demonstration tokamak "Demo4" designed to operate at fields in the region of 20 Tesla with a full set of partially insulated HTS toroidal field coils. 
+
+
+
+
+
+
+
+
+
+
+
+<P><IMG SRC="FFig7.jpg" ALT="The DEMO2 magnet in operation">
+<P><B>Figure 7.</B>
+<BR><FONT SIZE=3> 
+
+The DEMO2 magnet constructed at Tokamak Energy [18]. The coil has a bore of 300 mm and contains six modular "pancake" coils wound with 738 m of 12 mm wide tapes with variable inter-turn resistance between tapes and reached 10 Tesla. Inset is shown the RACOON code predictions of the coil temperature compared with the measurements during a quench at the vertical line position.</FONT>
+
+<P><B>5.  Shield design explored using "tally tagging"</B>
+
+<P>Figure 8 illustrates a well-known challenge of spherical tokamaks. For a given central HTS core radius  <I>R<SUB>core</SUB></I>, (blue) and necessary vacuum gap (white) between the plasma (yellow) and the outer shield surface (brown), the available shield thickness drops rapidly with aspect ratio <I>A</I>. The HTS coils need to be actively cooled to around 20K to remove the heat deposited from the incoming neutron and gamma irradiation. Also, the performance of the HTS material can be degraded by radiation.
+
+<P>&nbsp;&nbsp;&nbsp;A related dependence was shown by the open purple squares in Figure 1 as a function of major radius for constant aspect ratio <I>A</I>=1.8.  Figure 1 illustrates the balance that tokamak design must take between the HTS design constraints limiting the fields possible with a given core radius, the physics constraints of fusion power, wall heat load, the neutronics constraints of heat deposition into the HTS core, radiation damage limitation and limiting the engineering stresses to acceptable levels. Most of these improve with larger major radius, but not all. The stored energy of the plasma increases as the cube of the size, but the surface area as the square, so that the energy per surface area increases with size [19]. This makes plasma disruptions, where some instability makes the plasma touch the wall and release its energy, a serious problem with large tokamaks and less serious with more compact tokamaks.
+
+
+<P><IMG SRC="FFig8.jpg" ALT="The increase in shield radius with aspect ratio">
+<P><B>Figure 8.</B>
+<BR><FONT SIZE=3> 
+
+The increase of shield thickness <I>T</I> with aspect ratio <I>A</I> for tokamaks of fixed major radius  <I>R<SUB>0</SUB></I>=1400 mm (red line) and fixed HTS core radius  <I>R<SUB>core</SUB></I>=250 mm (blue).</FONT>
+
+<P>&nbsp;&nbsp;&nbsp;The main disadvantages of large size are cost and construction time, which did not appear in Figure 1. In practice deciding the optimal size of a spherical tokamak power plant will be an optimization including these as well as outputs from plasma physics, HTS core construction, neutronics calculations, heat flow calculations and structural engineering constraints.
+
+<P>&nbsp;&nbsp;&nbsp;The fusion power plants envisaged use the D-T reaction when a deuterium and tritium ions collide to produce an alpha particle and a neutron <SUP>2</SUP>D + <SUP>3</SUP>T = <SUP>4</SUP>He + n +17.6 MeV. The helium alphas, being charged, tend to stay within the plasma and sustain its temperature. The neutrons, with 14.1 MeV energy, interact little with the plasma and escape to the inner and outer shields where their energy can be used to generated electricity and also to replenish the tritium ions by reactions with lithium in "blanket" layers within the shields. There are fewer size limitations to the outer shield so this discussion will center on the optimization of the inner shield.
+
+<P>&nbsp;&nbsp;&nbsp;14.1 MeV neutrons are not easy to shield.  They can be slowed down by multiple elastic collisions, moderation, or more quickly by inelastic (e.g. n,gamma) collisions. The moderation method is only practical for hydrogen moderators as the average value of the decrease in the natural logarithm of the neutron energy per collision is  unity for natural hydrogen, but only 0.158 for carbon.  The shield studies made for the Costley system code [3] results of Figure 1 supposed a layered shield with thick layers of cemented tungsten carbide and thinner layers of water. The fast neutron flux through such a shield is shown in Figure 9 taken from [20]. The half-attenuation shield distance is  53 mm. This relatively poor attenuation is possibly because of the relatively high atomic fractions of carbon and oxygen which give little attenuation to either neutrons or gammas.
+
+
+<P><IMG SRC="FFig9.jpg" ALT="The attenuation of fast neutrons though a shield">
+<P><B>Figure 9.</B>
+<BR><FONT SIZE=3> 
+The attenuation of fast neutrons (E>0.1 MeV) though a layered shield of tungsten carbide (including with a tungsten boride inner layer) with intervening water channels for coolant and neutron moderation. The inset shows a vertical section[20].</FONT>
+
+<P>&nbsp;&nbsp;&nbsp;Water coolant is now seen to have serious problems in a fusion power plant. The activation of <SUP>16</SUP>O to <SUP>16</SUP>N which decays with a 7.1 s half-life is one issue, another is the desire for heat production at higher temperatures where the water vapor pressure becomes serious. Helium gas cooling has none of these problems.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<P><IMG SRC="FFig10.jpg" ALT="The attenuation of neutrons through tungsten boride shields">
+<P><B>Figure 10.</B>
+<BR><FONT SIZE=3> 
+
+The attenuation of neutrons though monolithic shields at 1400 mm major radii of boron carbides of varying composition, including a cemented borocarbide, pure tungsten and tungsten carbide. </FONT>
+
+<P>&nbsp;&nbsp;&nbsp;Monolithic shields with varying fractions of tungsten and boron were examined [21,22] and shown to give half-attenuation coefficients as low as 40 mm as seen in Figure 10. The neutron cross sections of tungsten and boron are shown as a function of energy in Figure 11.  Tungsten is a key element as its neutron cross section has significant inelastic neutron (n, 2n) and (n, n’ gamma) reactions around the 1 to 10 MeV energies which reduce the 14.1 MeV neutrons to around 0.1 MeV energy. The  <SUP>10</SUP>B  isotope has an absorption cross section which rises inversely with neutron velocity giving a highly significant absorption below 0.1 MeV, not far above the energies where they are captured by  <SUP>10</SUP>B which makes up around 20% of natural boron. The principal reactions occurring in a tungsten boride shield are illustrated in Figure 12. Let us consider each of the numbered processes.
+
+
+<P><IMG SRC="FFig11.jpg" ALT="The cross sections for tungsten and boron">
+<P><B>Figure 11.</B>
+<BR><FONT SIZE=3> 
+The neutron cross sections for tungsten (left) and for boron (right). For tungsten the total (black), elastic (green, dashed), inelastic (red, dash-dot), (n,2n) (blue, dotted) and (n,gamma) (yellow) cross sections are shown. For boron the minority (20%)  <SUP>10</SUP>B isotope (black) and the majority <SUP>11</SUP>B isotope cross section (blue dashed) are shown. Below 10 keV the  <SUP>10</SUP>B cross section follows an inverse velocity increase with decreasing neutron energy as show in the curve labelled  <SUP>10</SUP>B<SUB>abs</SUB>. The cross sections are from the Brookhaven National Nuclear Data Centre [23].</FONT> 
+
+<P>&nbsp;&nbsp;&nbsp;Elastic scattering (i) of neutrons. Tungsten makes a good reflector as its cross section of ~3 barns of elastic cross section per atom at 14 MeV and its high mass compared to a neutron ensures little recoil energy. Most neutrons are not reflected but continue forwards with slightly reduced energy. Moderation (ii) occurs when incident neutrons collide with lighter atoms, like boron. The collisions exchange, or moderate, the neutron energy so reducing the transmitted power. The best moderator is hydrogen since its mass is almost the same as the neutron and the maximum energy is lost on collision. Inelastic (n,2n) (iii) reactions produce a different isotope of the same element. A typical reaction would be <SUP>183</SUP>W + n = <SUP>182</SUP>W + 2n + &gamma;, which is highly beneficial transforming each high energy neutron into two lower-energy neutrons of a few MeV which are easier to shield.
+
+
+<P><IMG SRC="FFig12.jpg" ALT="The processes involved in a tungsten boride shield">
+<P><B>Figure 12.</B>
+<BR><FONT SIZE=3> 
+Some of the processes involved in a tungsten boride shield protecting a high temperature superconducting core from fusion neutrons generated by a plasma. Tungsten atoms are large, boron atoms small. Protons are red, neutrons green, electrons blue and gammas violet. Fusion is fueled continuously by injecting tritium ions usually by pellet injection. These hit deuterium ions to produce helium ions and fast neutrons. The six scattering processes indicated are discussed in the text.</FONT>
+
+<P>&nbsp;&nbsp;&nbsp;Inelastic (n,n’gamma) neutron scattering (iv) means that the incident neutron forms a new compound nucleus which quickly decays to release the neutron with an appreciably lower energy and with the emission of the excess energy in the form of a gamma. These gammas must then be shielded.  (n,gamma) capture (v) is common at lower neutron energies. The neutron is absorbed to form a tungsten isotope with one higher atomic weight with the emission of a gammas of significant energy (vi). The lower energy neutrons produced by moderation or inelastic scattering become increasingly likely to be absorbed by isotopes such as  <SUP>10</SUP>B with a high neutron absorption cross section.  Gammas are shielded by scattering from electrons in the shield atoms, and thus need high atomic number (number of electrons per atom) and high number density (atoms/m3). Tungsten is a  comparatively good element for a gamma shield, while boron is not.
+
+<P>&nbsp;&nbsp;&nbsp;More detailed information on the shield scattering process may be found by using the "tally tagging" feature of the MCNP code [24]. Fluence or energy deposition tallies generally total up all particles from all sources, reactions, atoms, and isotopes. Using tally tagging the results can be broken down into any chosen set of these options. In order to limit the output file length, it is usually best to ask specific questions: "Did a neutron start in the plasma and survive all the way through the shield?",  "Did a photon heating the HTS core get born in the core itself, or did it get born in the shield?"  Each output contains a tally code of form CCCCCZZAAA.RRRRR where CCCCC optionally represents the origin tally cell number, ZZ the atom number, AAA the isotope number and RRRRR the reaction type. 
+
+<P>&nbsp;&nbsp;&nbsp;Another important refinement in fluence tallies is to separate them according to the angle the particle path makes with the normal to the tally surface. In the following examples the angles were divided into six ranges 0<SUP>o</SUP> to 30<SUP>o</SUP>, 30<SUP>o</SUP> to 60<SUP>o</SUP>, 60<SUP>o</SUP> to 90<SUP>o</SUP>, 90<SUP>o</SUP> to 120<SUP>o</SUP>, 120<SUP>o</SUP> to 150<SUP>o</SUP> and 150<SUP>o</SUP> to 180<SUP>o</SUP>. These subtend different solid angles so need to be corrected to give fluences per steradian. 
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+<P><IMG SRC="FFig13.jpg" ALT="The attenuation of fluence though a W<SUB>2</SUB>B<SUB>5</SUB> shield">
+<P><B>Figure 13.</B>
+<BR><FONT SIZE=3> 
+The attenuation of fluence through a W<SUB>2</SUB>B<SUB>5</SUB> shield for neutrons created in the plasma (red direct) and neutrons and gammas created inelastically in the shield (blue).There are no direct gammas. Inset are shown the energy spectrum of the direct neutrons (red upper right) and the indirect neutrons and gammas (blue lower left).</FONT>
+
+<P>&nbsp;&nbsp;&nbsp;Some results answering the question of where the neutrons originate from are given in Figure 13 which shows the fluences at angles <300 to the shield layers. The tally tagging distinguishes the tally volumes where each neutron originated. The red triangles show those neutrons originating in the plasma, although some elastic moderation will have occurred. The direct neutron energy spectrum at 100 mm into the shield shown inset in red at the bottom left of Figure 13 shows that this is a minor effect with elastic moderation caused by the tungsten and boron atoms giving the rapid half attenuations of 0.24 and 0.8 MeV respectively. The corresponding indirect neutron spectrum shown inset in blue at the bottom left of Figure 13 is from the tungsten (n, gamma) and (n,n’gamma) reactions and is very broad and centered around 0.2 MeV.  The corresponding gamma rays are seen to have a less broad distribution with some peaks centered around 1 MeV. The tally tagging feature can also identify the origin of the indirect fluence in more detail. It shows that most of the indirect neutrons come back from tungsten atoms further into the shield. The indirect gammas came equally from tungsten and boron atoms within a few centimeters of the fluence position.
+  
+<P>&nbsp;&nbsp;&nbsp;An illustration of the energy dependence of the neutrons as they pass through a W<SUB>2</SUB>B<SUB>5</SUB> shield is given in Figure 14.  Neutrons incident on the shield make up a "pool" of 14 MeV neutrons which extends with decreasing fluence through the shield. At any shield position a fraction "falls down the waterfall" to energies around 0.2 MeV. At the base of the "waterfall" the neutrons lose further energy by moderation down a gently sloping riverbed. In W<SUB>2</SUB>B<SUB>5</SUB> as their energy reaches 0.001 MeV energies, they soon become almost completely absorbed by  <SUP>10</SUP>B as in a porous sandy riverbed.   
+   
+<P>&nbsp;&nbsp;&nbsp;A simple model of the W<SUB>2</SUB>B<SUB>5</SUB> shield is that the fluence of direct neutrons of around 14 MeV energy exists across the shield with around 30 mm half attenuation distance. Inelastic (n,n’gamma) reactions lower the neutron energy to around 0.2 MeV, but the resulting gamma rays are attenuated in only a few centimeters. Further moderation reduces the neutron energy to the level where they are absorbed by  <SUP>10</SUP>B. In a pure tungsten shield, the waterfall from 14 to 0.2 MeV is again present, but there is no  <SUP>10</SUP>B absorption so once again low energy neutrons build up steadily through the shield leading to an ever-increasing pool of low energy neutrons.  
+
+
+
+
+
+
+<P><IMG SRC="FFig14.jpg" ALT="Operation of a W3B5 shield">
+<P><B>Figure 14.</B>
+<BR><FONT SIZE=3> 
+An illustration of the energy dependence of the neutrons passing through a W<SUB>2</SUB>B<SUB>5</SUB> shield. Neutrons incident on the shield come from a "pool" at 14 MeV.  This pool decreases in width through the shield as (n,n’gamma) inelastic reactions produces an energy "waterfall" reducing the neutron energy to around 0.2 MeV. At the bottom of the waterfall moderation reduces the energy gradually (the rocky riverbed)  until energies where it is almost wholly absorbed by  <SUP>10</SUP>B (the sandy riverbed). The gammas produced by the inelastic scattering are absorbed in a few centimeters so that the diagram is valid throughout the bulk of the shield.</FONT>
+
+<P>W<SUB>2</SUB>B<SUB>5</SUB> is exceptional in that its  <SUP>10</SUP>B absorption removes most neutrons within a localized region of the shield so that the energy spectrum is almost identical through the bulk of the shield.
+
+<P>&nbsp;&nbsp;&nbsp;The HTS core of a tokamak power plant needs to be kept at temperatures of order 20K. The heat deposition into the core determines the cryogenic power necessary to maintain this low temperature. The power deposition is also a determinant of the HTS radiation damage. The neutron and gamma power depositions into the core have been evaluated previously, but here the tally tagging option of MCNP has been used to investigate the processes by which this heat arrives at the HTS material. Figure 15 shows the neutron and gamma contributions to the heat deposition into a fully cooled core region which includes the central inconel sleeve, the copper cladding surrounding the HTS and the 316L stainless inner vacuum vessel. It was established that the total HTS gamma heating was some four times larger than the total neutron heating [21]. It is clear from the figure that the largest gamma contributions arise around the HTS tape layers and the surrounding materials, copper cladding and the inner vacuum vessel. Contributions from the shield layers are around an order of magnitude less and fall of rapidly into the shield. Direct gammas from the plasma and outer wall are very low.
+
+<P>&nbsp;&nbsp;&nbsp;In contrast the major contribution to the neutron heat deposition is from the plasma itself out at 1400 mm radius (way off the scale of the figure!). As described earlier at each shield layer some of these neutrons are inelastically scattered to give much lower energy neutrons which are soon absorbed, and gammas which are rapidly attenuated within the shield. Some 14 MeV neutrons do persist all through the shield and provide the bulk of the heat deposition. Neutrons inelastically scattered by the HTS core volume and the shield give contributions which are significant but  around an order of magnitude lower.
+
+
+
+
+
+
+
+
+<P><IMG SRC="FFig15.jpg" ALT="Origins of heat deposition in a W<SUB>2</SUB>B<SUB>5</SUB> shield">
+<P><B>Figure 15.</B>
+<BR><FONT SIZE=3> 
+The origins of the heat deposition into the cooled core of the tokamak including the inconel sleeve, HTS coils, copper cladding and stainless inner vacuum vessel and shield layers as shown inset at the top of the figure. The major gamma component arises from the core components with the shield component decreasing rapidly. The neutron component is dominated by the direct contribution from the plasma itself and the outer wall reflector.</FONT> 
+
+<P>&nbsp;&nbsp;&nbsp;Again, the tally tagging feature of  MCNP can be used to explore in more detail the elements, isotopes and reactions which give rise to the heat deposition. Figure 16 shows the neutron (left) and gamma (right) contributions to the heat deposition in the actual HTS materials within the core (excluding heat into the cold inconel center rod and  the 316L stainless steel inner pressure vessel included in Figure 16).  The figure shows that the direct neutron energy deposition is still dominated by the “direct” contributions, principally from neutrons generated within the plasma itself, but also from neutrons scattered from the tungsten and water reflector layers beyond the plasma. The next highest contribution is around 20 times lower and come from n(n’, gamma) interactions in the HTS material itself. In contrast the principal gamma heating arises from (n, gamma), (n,n’ gamma), (n,2n) and fluorescence reactions. These tend to be largest close to and fall off quite rapidly into the shield layers. Direct gamma heating is negligible.
+
+<P>&nbsp;&nbsp;&nbsp;The effects of these results on radiation damage are clear. Fast neutron damage will arise from the 14 MeV neutron fluence component which penetrates the shield. Gamma damage in contrast can be identified as coming from (n,n’gamma) reactions in <SUP>63</SUP>Cu from the heat sink material surrounding the HTS tapes and from <SUP>56</SUP>Fe and <SUP>58</SUP>Ni in the Hastalloy of the HTS tapes. (n, gamma) reactions from <SUP>184</SUP>W and <SUP>182</SUP>W in the shield are significant but reduce rapidly into the shield.
+  
+
+
+
+<P><IMG SRC="FFig16.jpg" ALT="Reactions in the HTS core of a tokamak with a W<SUB>2</SUB>B<SUB>5</SUB> shield">
+<P><B>Figure 16.</B>
+<BR><FONT SIZE=3> 
+The originating positions and reactions responsible for the neutron energy deposition into the HTS core volumes of a spherical tokamak power plant. The colored upper band and labels record the various tally volumes contributing to the energy deposition.  The different symbols record the reaction method. "Direct" refers to neutrons originating in the plasma core itself, most from the plasma, some from the outer reflector, both off the scale of the neutron graph.</FONT> 
+
+<P><B>6.  Conclusions</B>
+
+<P>Spherical tokamaks with HTS magnets are one of few options for safe, abundant energy on a small footprint. This chapter addresses a key issue: finding a material that can shield the HTS core while maintaining small major radius and low aspect ratio. It explores the operational performance of tungsten boride tokamak shields particularly using the tally tagging option of MCNP to detail the locations, atoms and reactions contributing to neutron and gamma fluence and energy depositions. These studies have revealed that the W<SUB>2</SUB>B<SUB>5</SUB> shield operation is dominated by the slightly moderated near 14 MeV neutrons produced in the plasma. At all positions well within the shield, this fluence of neutrons is attenuated by inelastic (n,n’gamma) reactions to produce lower energy neutrons which can be absorbed by  <SUP>10</SUP>B and gammas which are absorbed by tungsten in a few centimeters. Our HPC capability has been instrumental in our design process. It will be increasingly used in our quest for faster fusion.   
+
+<P><B>Acknowledgements</B>
+
+<P>The authors are most grateful to their colleagues at Tokamak Energy, particularly Jack Astbury, Guy Morgan, Chris Wilson, Sandeep Irukuvarghula, Greg Brittles, Tony Langtry, Peter Buxton, Robert Slade and George Smith for their contributions to this work.
+
+<P><B>References</B>	
+
+<P>[1] Windsor C G 2019 <A HREF="../19PhilTrans/19PhilTrans.htm">Can the development of fusion energy be accelerated? An introduction to the proceedings </A><I>Phil. Trans. R. Soc. A </I><B>377</B> 20170446 <A HREF="http://dx.doi.org/10.1098/rsta.2017.0446">
+http://dx.doi.org/10.1098/rsta.2017.0446</A> 
+
+<BR>[2] Lawson J., 1955 <I>Harwell Report A.E.R.E  GP/R 1807</I> <A HREF="https://www.euro-fusion.org/wpcms/wp-
+content/uploads/2012/10/dec05-aere-gpr1807.pdf">https://www.euro-fusion.org/wpcms/wp-
+content/uploads/2012/10/dec05-aere-gpr1807.pdf</A>
+
+<BR>[3] Costley A E, Hugill J, and Buxton P F, 2015 On the power and size of tokamak fusion pilot plants and reactors Nucl.Fusion 55 033001 <A HREF=https://iopscience.iop.org/article/10.1088/0029-5515/55/3/033001/pdf>
+https://iopscience.iop.org/article/10.1088/0029-5515/55/3/033001</A>
+
+<BR>[4]  Costley A E, 2019 Towards a compact spherical tokamak fusion pilot plant, Phil. Trans. R. Soc. A 377 , 20170439, <A HREF="https://doi.org/10.1098/rsta.2017.0439">
+https://doi.org/10.1098/rsta.2017.0439</A>>
+
+<BR>[5] Flyvbjerg B, 2014, What You Should Know About Megaprojects and Why: An Overview, Project Management Journal, April/May 2014, <A HREF="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2424835">
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2424835
+</A>
+<BR>[6] Sykes A, Turner M F, Patel S, 1983 Proceedings of the 11th European Conf. on Controlled Fusion and Plasma Physics, Aachen, Germany, vol. 2, p. 363.
+
+<BR>[7] Peng Y-KM, Strickler D J, 1986 Features of spherical torus plasmas. Nucl. Fusion 26, 769, <A HREF="https://doi:10.1088/0029-5515/26/6/005>
+https://doi:10.1088/0029-5515/26/6/005</A>
+
+<BR>[8] Gryaznevich M et al. 1998 Achievement of record β in the START spherical tokamak. Phys. Rev. Lett. 80, 3973-3975.
+<A HREF="https://doi:10.1103/PhysRevLett.80.3972">
+HREF="https://doi:10.1103/PhysRevLett.80.3972</A>
+
+<BR>[9] Bickerton R J, Connor J W, Taylor J B, 1971 Diffusion driven plasma currents and bootstrap tokamak. Nat. Phys. Sci. 229, 110, <A HREF="https://doi:10.1038/physci229110a0">
+https://doi:10.1038/physci229110a0</A>
+<BR>[10]  Zarnstorff M C et al. 1968 Bootstrap current in TFTR. Phys. Rev. Lett. 60, 1306,
+<A HREF= "https://doi:10.1103/PhysRevLett.60.1306">
+ https://doi:10.1103/PhysRevLett.60.1306</A>
+
+<BR>[11] Mega-Amp Spherical Tokamak Upgrade, Culham Centre for Fusion Energy, UK,
+<A HREF="https://ccfe.ukaea.uk/research/mast-upgrade/">
+https://ccfe.ukaea.uk/research/mast-upgrade/</A>
+
+<BR>[12] National Spherical Torus Upgrade, Princeton Plasma Physics Laboratory, USA, <A HREF="https://www.pppl.gov/research/nstx-u">
+https://www.pppl.gov/research/nstx-u</A>
+
+<BR>[13] Globus M2 tokamak, Ioffe Institute, St Petersberg, Russia  <A HREF="https://www.nature.com/articles/d42473-021-00131-5">
+https://www.nature.com/articles/d42473-021-00131-5</A>
+
+<BR>[14] Tokamak Energy, Milton Park, Didcot, UK.  <A HREF="https://www.tokamakenergy.co.uk/>
+https://www.tokamakenergy.co.uk/</A>
+
+<BR>[15] Bednorz JG, Müller KAZ. 1986 Possible high Tc superconductivity in the Ba-La-Cu-O system. Zeitschrift für Physik B Condensed Matter 64, 189193. <A HREF="https://doi:10.1007/BF01303701>
+https://doi:10.1007/BF01303701</A>
+
+<BR>[16] Molodyk, Alexander et al. 2021 Development and large volume production of extremely high current density YBa<SUB>2</SUB>Cu<SUB>3</SUB>O<SUB>7</SUB> superconducting wires for fusion. Scientific Reports 11    <A HREF="https://doi.org/10.1038/s41598-021-81559-z>
+https://doi.org/10.1038/s41598-021-81559-z</A>
+
+<BR>[17] Tokamak Energy Tests Patented Partial Insulation Technology, 2021,  Superconductor Week Vol. 35, No. 9, November 05, 2021 
+
+<BR>[18] Nuclear Engineering International News 23/09/2021 Tokamak Energy demonstrates new magnet technology for fusion power
+
+<BR>[19] Hender J C, Wesley C, Bialek J et al 2007 Chapter 3: MHD stability, operational limits and disruptions,  Nuclear Fusion 47(6):S128, 
+<A HREF="https://DOI: 10.1088/0029-5515/47/6/S03">
+https://DOI: 10.1088/0029-5515/47/6/S03</A>
+
+<BR>[20] Windsor C G and Morgan J G 2017 Neutron and gamma flux distributions and their implications for radiation damage in the shielded superconducting core of a fusion power plant Nucl.Fusion 57 116032 <A HREF="https://iopscience.iop.org/article/10.1088/1741-4326/aa7e3e>
+https://iopscience.iop.org/article/10.1088/1741-4326/aa7e3e</A>
+
+<BR>[21] Windsor C G, Astbury J O, Davidson J J, McFadzean C J R, Morgan J G, Wilson C and Humphry-Baker S A 2021 Tungsten boride shields in a spherical tokamak fusion power plant Nucl. Fusion 61 086018 
+<A HREF="https://doi.org/10.1088/1741-4326/ac09ce">
+https://doi.org/10.1088/1741-4326/ac09ce</A>
+
+<BR>[22] Windsor C G, Astbury J O, Morgan J G, Wilson C and Humphry-Baker S A 2022 Activation and transmutation of tungsten boride shields in a spherical tokamak Nucl. Fusion 62 036009 
+<A HREF="https://doi.org/10.1088/1741-4326/ac4866W>
+https://doi.org/10.1088/1741-4326/ac4866</A>
+
+<BR>[23] Brookhaven National Nuclear Data Center, Evaluated nuclear data file <A HREF="https://www.nndc.bnl.gov/exfor/endf00.jsp">
+https://www.nndc.bnl.gov/exfor/endf00.jsp</A>
+
+<BR>[24] McKinney G W, 2008 Tally Tagging Feature in MCNPX 2.7.A,   Los Alamos report 999LA-UR-08-06930 
+<A HREF="https://mcnp.lanl.gov/pdf_files/la-ur-08-6930.pdf">
+https://mcnp.lanl.gov/pdf_files/la-ur-08-6930.pdf</A>
+
