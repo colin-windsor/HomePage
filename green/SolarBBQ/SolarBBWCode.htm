@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>Solar BBQ</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<P>
+<A HREF="../../index.htm"><IMG ALT="Colin's Homepage" SRC="../../home2.jpg"  ALIGN="LEFT"></A>
+<P>
+<H1>The Solar Barbeque Python code
+<P><HR>
+<FONT SIZE=4>
+<P>Colin Windsor July 30/2024 Solar BBQ theory
+<BR>import matplotlib.pyplot as plt
+<BR>import numpy as np
+
+<BR>sun_elev = 57  #degrees
+<BR>phi  = 90 - sun_elev  # SUn's angle from vertical in degrees
+<BR>tan = np.tan(np.pi*sun_elev/180)
+<BR>foc = 500   #mm vertical height of focal plane
+<BR>rad = 877 # mm radius of mirror
+<BR>xm = 150  # minimum x value of mirror in mm
+<BR>xx = 600  # maximum x value of mirror in mm=$A7
+<BR>dx = 25 # step of x value in mm
+<BR>nx = int((xx - xm)/dx)
+<BR>plt.xlim(0, 600)
+<BR>plt.ylim(0,600)
+<BR>x =  np.zeros(nx, float)
+<BR>y =  np.zeros(nx, float)
+<BR>xfoc =  np.zeros(nx, float)
+ipr = 1
+ifo = 1
+plt.rcParams["figure.figsize"] = [8.0, 8.0]
+for i in range(0, nx):
+    x[i] = xm + (i-1)*dx
+    y[i] = rad * (1 - np.sqrt( 1- (x[i]/rad)**2))
+    x2 = x[i] - (foc - y[i])/tan
+    a1 = np.arcsin(x[i]/rad)
+    c = phi*np.pi/180
+    xfoc[i] = x[i] +(foc-y[i])*(np.tan(phi*np.pi/180 - 2*np.arcsin(x[i]/rad)))
+    print('1> i =', i, 'x=', x[i], 'y = ', y[i], 'x2 =', x2, 'foc =',foc, 'xfoc =', xfoc[i]) #, 'a1 =', a1, 'c =', c)
+    plt.plot([x[i],x2],[y[i],foc], color = 'y' )  # incident suns rays
+    plt.plot([x[i],0],[y[i],rad], color = 'b', linewidth=0.5, linestyle = '-') # radius
+    plt.plot([x[i],xfoc[i]],[y[i],foc], color = 'g' )  # Reflected rays
+plt.plot(x, y, color = 'k' )
+plt.xlabel('x (mm)')
+plt.ylabel('y (mm)')
+plt.grid(which='both')
+plt.minorticks_on()
+if ifo >= 0:
+    strfig = 'BBQ' + '1' + '.pdf'
+    plt.savefig(strfig)
+    if ipr >= 1:
+        print('234> BBQ Figure saved', strfig)
+
+plt.pause(50)
+focmean = np.mean(xfoc)
+focstd = np.std(xfoc)
+print(('2> rad=',rad, 'focmean =', focmean, 'focstd=', focstd))
+plt.close()
+
+
+<P><HR></P>
+</BODY>
+<FONT SIZE=2>
+<P>&nbsp;</FONT>Copyright 2024 Colin Windsor : Last updated 15/9/2024</P>
+</HTML>

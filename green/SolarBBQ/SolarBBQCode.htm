@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE>Solar BBQ</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<P>
+<A HREF="../../index.htm"><IMG ALT="Colin's Homepage" SRC="../../home2.jpg"  ALIGN="LEFT"></A>
+<P>
+<H1>The Solar Barbeque Python code</H1>
+<P><HR>
+<FONT SIZE=4>
+<P>Colin Windsor July 30/2024 Solar BBQ theory
+<BR>import matplotlib.pyplot as plt
+<BR>import numpy as np
+
+<BR>sun_elev = 57  #degrees
+<BR>phi  = 90 - sun_elev  # SUn's angle from vertical in degrees
+<BR>tan = np.tan(np.pi*sun_elev/180)
+<BR>foc = 500   #mm vertical height of focal plane
+<BR>rad = 877 # mm radius of mirror
+<BR>xm = 150  # minimum x value of mirror in mm
+<BR>xx = 600  # maximum x value of mirror in mm=$A7
+<BR>dx = 25 # step of x value in mm
+<BR>nx = int((xx - xm)/dx)
+<BR>plt.xlim(0, 600)
+<BR>plt.ylim(0,600)
+<BR>x =  np.zeros(nx, float)
+<BR>y =  np.zeros(nx, float)
+<BR>xfoc =  np.zeros(nx, float)
+<BR>ifo = 1
+<BR>for i in range(0, nx):
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    x[i] = xm + (i-1)*dx
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    y[i] = rad * (1 - np.sqrt( 1- (x[i]/rad)**2))
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    x2 = x[i] - (foc - y[i])/tan
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    a1 = np.arcsin(x[i]/rad)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    c = phi*np.pi/180
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    xfoc[i] = x[i] +(foc-y[i])*(np.tan(phi*np.pi/180 - 2*np.arcsin(x[i]/rad)))
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    print('1> i =', i, 'x=', x[i], 'y = ', y[i], 'x2 =', x2, 'foc =',foc, 'xfoc =', xfoc[i]) #, 'a1 =', a1, 'c =', c)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    plt.plot([x[i],x2],[y[i],foc], color = 'y' )  # incident suns rays
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    plt.plot([x[i],xfoc[i]],[y[i],foc], color = 'g' )  # Reflected rays
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    plt.plot([x[i],0],[y[i],rad], color = 'b', linewidth=0.5, linestyle = '-') # radius
+<BR>plt.plot(x, y, color = 'k' )
+<BR>plt.xlabel('x (mm)')
+<BR>plt.grid(which='both')
+<BR>plt.minorticks_on()
+<BR>if ifo >= 0:
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    strfig = 'BBQ' + '1' + '.pdf'
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;    plt.savefig(strfig)
+<BR> &nbsp;&nbsp;&nbsp;&nbsp;   if ipr >= 1:
+<BR> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       print('234> BBQ Figure saved', strfig)
+
+<BR>plt.pause(50)
+<BR>focmean = np.mean(xfoc)
+<BR>focstd = np.std(xfoc)
+<BR>print(('2> rad=',rad, 'focmean =', focmean, 'focstd=', focstd))
+<BR>plt.close()
+
+
+<P><HR></P>
+</BODY>
+<FONT SIZE=2>
+<P>&nbsp;</FONT>Copyright 2024 Colin Windsor : Last updated 15/9/2024</P>
+</HTML>
